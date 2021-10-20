@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <!-- Internal Dependencies -->
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/admin.css')}}"
+    />
+
+    <!-- External Dependencies -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&family=Lora:ital@1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="login-form">
+      <form method="POST" autocomplete="off" action="/login">
+				<!--PASTE JINJA FORM TAGS HERE-->
+        <input id="login-button" type="submit" value="Enter" />
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+{% extends "public/layout.html" %} {% block content %}
+<section id="home-grid">
+  <div class="grid-item grid-notice" id="notice-one">Notice One</div>
+
+  <div class="grid-item" id="donate-widget">
+    <div class="grid-item-title">Donate</div>
+    <div id="paypal-container">
+      <form
+        action="https://www.paypal.com/donate"
+        method="post"
+        target="_blank"
+      >
+        <input type="hidden" name="hosted_button_id" value="22JCLDV8Y9S2Y" />
+        <input
+          type="image"
+          src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif"
+          border="0"
+          name="submit"
+          alt="Donate with PayPal button"
+        />
+        <img
+          alt=""
+          border="0"
+          src="https://www.paypal.com/en_GB/i/scr/pixel.gif"
+        />
+      </form>
+    </div>
+  </div>
+
+  <div class="grid-item" id="twitter-feed">
+    <div class="grid-item-title">Twitter</div>
+    <a
+      class="twitter-timeline"
+      data-height="95.5%"
+      data-width="100%"
+      data-dnt="true"
+      href="https://twitter.com/Athariyyah?ref_src=twsrc%5Etfw"
+    ></a>
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8"
+    ></script>
+  </div>
+
+  <div class="grid-item" id="post-one">
+    <div class="grid-item-title">Lorem Ipsum</div>
+    <div class="grid-item-subtitle">Lorem ipsum dolor sit</div>
+    <div class="grid-item-text">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus nam
+      laudantium ex beatae. Ad maxime vitae ea at velit praesentium explicabo
+      dolorum sunt, a laudantium, exercitationem quisquam perspiciatis quod
+      provident! Fuga atque sequi eaque autem accusamus maxime at distinctio,
+      perspiciatis dicta dolore quaerat animi, quibusdam quos provident modi
+      praesentium. Laboriosam ea, sapiente doloribus et at nostrum harum
+      consectetur ad nam!
+    </div>
+    <div class="grid-item-metadata">Post by Admin at 10:20 10/10/2021</div>
+  </div>
+
+  <div class="grid-item" id="post-two">
+    <div class="grid-item-title">Lorem Ipsum</div>
+    <div class="grid-item-subtitle">Lorem ipsum dolor sit</div>
+    <div class="grid-item-text">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus nam
+      laudantium ex beatae. Ad maxime vitae ea at velit praesentium explicabo
+      dolorum sunt, a laudantium, exercitationem quisquam perspiciatis quod
+      provident! Fuga atque sequi eaque autem accusamus maxime at distinctio,
+      perspiciatis dicta dolore quaerat animi, quibusdam quos provident modi
+      praesentium. Laboriosam ea, sapiente doloribus et at nostrum harum
+      consectetur ad nam!
+    </div>
+    <div class="grid-item-metadata">Post by Admin at 10:20 10/10/2021</div>
+  </div>
+
+  <div class="grid-item" id="post-three">
+    <div class="grid-item-title">Lorem Ipsum</div>
+    <div class="grid-item-subtitle">Lorem ipsum dolor sit</div>
+    <div class="grid-item-text">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus nam
+      laudantium ex beatae. Ad maxime vitae ea at velit praesentium explicabo
+      dolorum sunt, a laudantium, exercitationem quisquam perspiciatis quod
+      provident! Fuga atque sequi eaque autem accusamus maxime at distinctio,
+      perspiciatis dicta dolore quaerat animi, quibusdam quos provident modi
+      praesentium. Laboriosam ea, sapiente doloribus et at nostrum harum
+      consectetur ad nam!
+    </div>
+    <div class="grid-item-metadata">Post by Admin at 10:20 10/10/2021</div>
+  </div>
+
+  <div class="grid-item grid-notice" id="notice-two">
+    <a href="/articles">More Articles</a>
+  </div>
+</section>
+{% endblock %}

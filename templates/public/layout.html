@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Data -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Masjid Abdul Aziz Bin Baz" />
+    <meta
+      name="keywords"
+      content="Salafi Masjid Mosque London Al-Athariyyah Sunnah"
+    />
+    <meta
+      name="description"
+      content="Masjid Abdul Aziz Bin Baz | East Road | Stratford | London | E15 3QR"
+    />
+
+    <!-- Social Media Meta Data -->
+    <meta property="og:title" content="Masjid Abdul Aziz Bin Baz" />
+    <meta
+      property="og:description"
+      content="East Road | Stratford | London | E15 3QR"
+    />
+    <meta
+      property="og:image"
+      content="{{url_for('static', filename='images/TwitterCard.webp')}}"
+    />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.masjidbinbaz.com/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#305c77" />
+    <meta name="twitter:dnt" content="on" />
+
+    <title>Masjid Abdul Aziz Bin Baz</title>
+
+    <!-- Internal Dependencies -->
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/main.css')}}"
+    />
+
+    <!-- External Dependencies -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <section id="intro">
+      <div id="logo">
+        <img
+          id="logo-img"
+          src="{{url_for('static', filename='images/logo.webp')}}"
+          alt="Logo"
+        />
+      </div>
+
+      <div id="social-media-bar">
+        <div class="social-media-item">
+          <a
+            class="bi bi-twitter"
+            href="https://twitter.com/Athariyyah"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+          ></a>
+        </div>
+        <div class="social-media-item">
+          <a
+            class="bi bi-telegram"
+            href="https://t.me/Athariyyah_MasjidBinBaz"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+          ></a>
+        </div>
+        <div class="social-media-item">
+          <a
+            class="bi bi-envelope-fill"
+            href="mailto:webmaster@example.com"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu-bar">
+      <div class="menu-item">
+        <a href="/">Home</a>
+      </div>
+      <div class="menu-item">
+        <a href="/timetable">Timetable</a>
+      </div>
+      <div class="menu-item">
+        <a href="/articles">Articles</a>
+      </div>
+      <div class="menu-item">
+        <a href="/audio">Audio</a>
+      </div>
+      <div class="menu-item">
+        <a href="/about">About</a>
+      </div>
+      <div class="menu-item">
+        <a href="/contact">Contact</a>
+      </div>
+    </section>
+
+    {% block content %} {% endblock %}
+
+    <footer>
+      <div id="footer-flex">
+        <div class="footer-item">Masjid Abdul Aziz Bin Baz | &copy; 2021</div>
+        <div class="footer-item">East Road | Stratford | London | E15 3QR</div>
+      </div>
+    </footer>
+  </body>
+</html>
