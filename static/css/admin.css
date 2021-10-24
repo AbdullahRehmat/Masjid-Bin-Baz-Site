@@ -1,295 +1,293 @@
 /* GENERAL CSS STYLES */
 html {
-	margin: 0;
-	padding: 0;
-	scroll-behavior: smooth;
-	color: var(--text-color-primary);
-	font-family: "Lato", sans-serif;
-	background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  color: var(--text-color-primary);
+  font-family: "Lato", sans-serif;
+  background-color: var(--background-color);
 }
 
 :root {
-	/* Grid + Element Colors */
-	--logo--blue: #305c77;
-	--grid-element-color: #f3f3f3;
-	--grid-element-outline: #dfdfdf;
-	/* Text Colors */
-	--text-color-primary: #000000;
-	--text-color-secondary: #ffffff;
-	--metadata-color: #2d2d31;
-	--link-hover-color: #f3f3f3;
-	/* Background Colors */
-	--background-color: #ffffff;
-	--footer-background-color: #212124;
+  /* Grid + Element Colors */
+  --logo--blue: #305c77;
+  --grid-element-color: #f3f3f3;
+  --grid-element-outline: #dfdfdf;
+  /* Text Colors */
+  --text-color-primary: #000000;
+  --text-color-secondary: #ffffff;
+  --metadata-color: #2d2d31;
+  --link-hover-color: #f3f3f3;
+  /* Background Colors */
+  --background-color: #ffffff;
+  --footer-background-color: #212124;
 }
 
 body {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .grid-item {
-	padding: 0.75rem;
-	border-radius: 5px;
-	background-color: var(--grid-element-color);
-	outline: var(--grid-element-outline) 1px solid;
+  padding: 0.75rem;
+  border-radius: 5px;
+  background-color: var(--grid-element-color);
+  outline: var(--grid-element-outline) 1px solid;
 
-	/*SAFE TO REMOVE*/
-	min-height: 20vh;
+  /*SAFE TO REMOVE*/
+  min-height: 20vh;
 }
 
 .grid-item-title {
-	font-size: 1.3rem;
-	margin-bottom: 0.5rem;
-	color: var(--logo--blue);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--logo--blue);
 }
 
 .grid-item-subtitle {
-	font-size: 1.1rem;
-	margin-bottom: 0.5rem;
-	font-style: italic;
-	font-family: "Lora", serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+  font-family: "Lora", serif;
 }
 
 .grid-item-text {
-	width: 97%;
-	margin-bottom: 1rem;
-	font-size: 1rem;
-	line-height: 1.5;
-	font-family: "Lora", serif;
+  width: 97%;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: "Lora", serif;
 }
 
 .grid-item-metadata {
-	width: 100%;
-	margin-bottom: 0rem;
-	font-size: 0.8rem;
-	text-align: right;
-	color: var(--metadata-color);
+  width: 100%;
+  margin-bottom: 0rem;
+  font-size: 0.8rem;
+  text-align: right;
+  color: var(--metadata-color);
 }
 
 .grid-notice {
-	text-align: center;
-	font-size: 1rem;
-	font-family: "Lora", serif;
-	font-weight: 600;
+  text-align: center;
+  font-size: 1rem;
+  font-family: "Lora", serif;
+  font-weight: 600;
 }
 
 .grid-notice a {
-	color: var(--text-color-primary);
-	text-decoration: none;
+  color: var(--text-color-primary);
+  text-decoration: none;
 }
 
 .grid-notice a:hover {
-	color: var(--logo--blue);
+  color: var(--logo--blue);
 }
 
 .lora-bold {
-	font-weight: 600;
+  font-weight: 600;
 }
 
 .lora-italic {
-	font-style: italic;
-	font-family: "Lora", serif;
+  font-style: italic;
+  font-family: "Lora", serif;
 }
 
 .button-one {
-	width: 40%;
-	margin: auto;
-	padding: 0.3rem;
-	font-weight: 700;
-	border-radius: 3px;
-	text-align: center;
-	margin-bottom: 1.5rem;
-	background-color: #305c77;
+  width: 40%;
+  margin: auto;
+  padding: 0.3rem;
+  font-weight: 700;
+  border-radius: 3px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  background-color: #305c77;
 }
 
 .button-one > a {
-	width: 100%;
-	display: block;
-	color: #ffffff;
-	text-decoration: none;
-	text-align-last: center;
+  width: 100%;
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  text-align-last: center;
 }
 
 iframe {
-	border-radius: 5px;
-	outline: var(--grid-element-outline) solid 1px;
+  border-radius: 5px;
+  outline: var(--grid-element-outline) solid 1px;
 }
 
 img {
-	border-radius: 5px;
+  border-radius: 5px;
 }
 
 /* ADMIN LOGIN PAGE SPECIFIC CSS STYLES */
 #login-form,
 #register-form {
-	top: 50%;
-	left: 50%;
-	width: 20%;
-	position: absolute;
-	text-align: center;
-	border-radius: 5px;
-	padding: 1rem;
-	padding-top: 3rem;
-	padding-bottom: 3rem;
-	transform: translate(-50%, -50%);
-	background-color: #305c77;
+  top: 50%;
+  left: 50%;
+  width: 20%;
+  position: absolute;
+  text-align: center;
+  border-radius: 5px;
+  padding: 1rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  transform: translate(-50%, -50%);
+  background-color: #305c77;
 }
 
 .login-field,
 .register-field {
-	width: 75%;
-	padding: 0.25rem;
-	font-size: 1.1rem;
-	border-radius: 5px;
-	margin-top: 0.5rem;
-	margin-bottom: 0.5rem;
-	border: 0.3px solid #d9d9d9;
-	text-align: center;
+  width: 75%;
+  padding: 0.25rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 0.3px solid #d9d9d9;
+  text-align: center;
 }
 
 #login-button,
 #register-button {
-	margin: auto;
-	border: 0px;
-	display: block;
-	min-width: 25%;
-	padding: 0.375rem;
-	font-weight: 700;
-	color: #305c77;
-	border-radius: 3px;
-	text-align: center;
-	margin-top: 0.75rem;
-	background-color: #ffffff;
+  margin: auto;
+  border: 0px;
+  display: block;
+  min-width: 25%;
+  padding: 0.375rem;
+  font-weight: 700;
+  color: #305c77;
+  border-radius: 3px;
+  text-align: center;
+  margin-top: 0.75rem;
+  background-color: #ffffff;
 }
 
 #login-button:hover,
 #register-button:hover {
-	background-color: #d9d9d9;
+  background-color: #d9d9d9;
 }
 
 /* ADMIN LAYOUT PAGE SPECIFIC CSS STYLES */
 #admin-header {
-	height: 7vh;
-	margin-bottom: 1.5rem;
-	padding: 1.5rem;
-	background-color: var(--logo--blue);
-	outline: var(--grid-element-outline) 1px solid;
+  height: 7vh;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background-color: var(--logo--blue);
+  outline: var(--grid-element-outline) 1px solid;
 }
 
 #admin-header-text {
-	font-size: 1.5rem;
-	color: var(--text-color-secondary);
+  font-size: 1.5rem;
+  color: var(--text-color-secondary);
 }
 #admin-grid {
-	width: 95vw;
-	margin: auto;
-	display: grid;
-	grid-template-columns: 15vw 1fr;
-	gap: 0.75rem 0.75rem;
-	grid-template-areas:
-		"admin-sidebar admin-content"
-		"admin-sidebar admin-content";
+  width: 95vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 15vw 1fr;
+  gap: 0.75rem 0.75rem;
+  grid-template-areas:
+    "admin-sidebar admin-content"
+    "admin-sidebar admin-content";
 }
 
 #admin-sidebar {
-	grid-area: admin-sidebar;
-	padding: 1.5rem;
-	margin-bottom: 0.75rem;
-	border-radius: 5px;
-	text-align: center;
-	background-color: var(--logo--blue);
-	outline: var(--grid-element-outline) 1px solid;
+  grid-area: admin-sidebar;
+  padding: 1.5rem;
+  margin-bottom: 0.75rem;
+  border-radius: 5px;
+  text-align: center;
+  background-color: var(--logo--blue);
+  outline: var(--grid-element-outline) 1px solid;
 }
 
 #admin-sidebar div {
-	color: var(--text-color-secondary);
+  color: var(--text-color-secondary);
 }
 
 #admin-sidebar-title {
-	margin-bottom: 2rem;
-	font-size: 1.3rem;
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
 }
 
 #admin-sidebar-links ul {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 #admin-sidebar-links li {
-	margin-bottom: 0.5rem;
-	font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
 }
 
 #admin-sidebar-links li a {
-	text-decoration: none;
-	color: var(--text-color-secondary);
+  text-decoration: none;
+  color: var(--text-color-secondary);
 }
 
 #admin-sidebar-links li a:hover {
-	color: var(--link-hover-color);
+  color: var(--link-hover-color);
 }
 
 /* ADMIN PORTAL PAGE SPECIFIC CSS STYLES */
 #portal-grid {
-	width: 1fr;
-	margin: auto;
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 0.75rem 0.75rem;
-	grid-template-areas:
-		"portal-analytics"
-		"portal-timetable";
+  width: 1fr;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem 0.75rem;
+  grid-template-areas:
+    "portal-analytics"
+    "portal-timetable";
 }
 
 #portal-analytics {
-	grid-area: portal-analytics;
+  grid-area: portal-analytics;
 }
 
 #portal-timetable {
-	grid-area: portal-timetable;
+  grid-area: portal-timetable;
 }
-
 
 /* ADMIN ARTICLES PAGE SPECIFIC CSS STYLES */
 #articles-grid {
-	width: 1fr;
-	margin: auto;
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 0.75rem 0.75rem;
-	grid-template-areas:
-		"articles-editor";
+  width: 1fr;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem 0.75rem;
+  grid-template-areas: "articles-editor";
 }
 
 #articles-editor {
-	grid-area: articles-editor;
+  grid-area: articles-editor;
 }
 
 /* FOOTER SPECIFIC CSS STYLES */
 footer {
-	padding: 0.75rem;
-	margin-top: 0.75rem;
-	min-height: 5vh;
-	text-align: center;
-	color: var(--text-color-secondary);
-	border-top: solid 0.35rem var(--logo--blue);
-	background-color: var(--footer-background-color);
+  padding: 0.75rem;
+  margin-top: 0.75rem;
+  min-height: 5vh;
+  text-align: center;
+  color: var(--text-color-secondary);
+  border-top: solid 0.35rem var(--logo--blue);
+  background-color: var(--footer-background-color);
 }
 
 #footer-flex {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .footer-item {
-	padding: 0.1rem;
-	font-size: 12px;
+  padding: 0.1rem;
+  font-size: 12px;
 }

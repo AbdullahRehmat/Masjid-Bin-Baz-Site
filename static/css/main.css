@@ -1,481 +1,481 @@
 /* GENERAL CSS STYLES */
 html {
-	margin: 0;
-	padding: 0;
-	scroll-behavior: smooth;
-	color: var(--text-color-primary);
-	font-family: "Lato", sans-serif;
-	background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  color: var(--text-color-primary);
+  font-family: "Lato", sans-serif;
+  background-color: var(--background-color);
 }
 
 :root {
-	/* Grid + Element Colors */
-	--logo--blue: #305c77;
-	--grid-element-color: #f3f3f3;
-	--grid-element-outline: #dfdfdf;
-	/* Text Colors */
-	--text-color-primary: #000000;
-	--text-color-secondary: #ffffff;
-	--metadata-color: #2d2d31;
-	--link-hover-color: #f3f3f3;
-	/* Background Colors */
-	--background-color: #ffffff;
-	--footer-background-color: #212124;
+  /* Grid + Element Colors */
+  --logo--blue: #305c77;
+  --grid-element-color: #f3f3f3;
+  --grid-element-outline: #dfdfdf;
+  /* Text Colors */
+  --text-color-primary: #000000;
+  --text-color-secondary: #ffffff;
+  --metadata-color: #2d2d31;
+  --link-hover-color: #f3f3f3;
+  /* Background Colors */
+  --background-color: #ffffff;
+  --footer-background-color: #212124;
 }
 
 body {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
 #intro {
-	margin: 0;
-	height: 45vh;
-	padding: 0.5rem;
-	position: relative;
-	background-size: cover;
-	background-image: url(../images/background-03.jpg);
-	background-position: center;
-	filter: grayscale(0.3);
+  margin: 0;
+  height: 45vh;
+  padding: 0.5rem;
+  position: relative;
+  background-size: cover;
+  background-image: url(../images/background-03.jpg);
+  background-position: center;
+  filter: grayscale(0.3);
 }
 
 #logo {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #logo-img {
-	width: 35vw;
+  width: 35vw;
 }
 
 #social-media-bar {
-	right: 0;
-	bottom: 0;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-	position: absolute;
-	padding-right: 1rem;
-	padding-bottom: 0.5rem;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  position: absolute;
+  padding-right: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 #social-media-bar a {
-	font-size: 1.5rem;
-	margin-left: 0.5rem;
-	color: var(--logo--blue);
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+  color: var(--logo--blue);
 }
 
 #menu-bar {
-	display: flex;
-	flex-wrap: wrap;
-	min-height: 4.5vh;
-	margin-bottom: 1rem;
-	align-items: center;
-	flex-direction: row;
-	align-content: center;
-	justify-content: center;
-	background-color: var(--logo--blue);
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 4.5vh;
+  margin-bottom: 1rem;
+  align-items: center;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  background-color: var(--logo--blue);
 }
 
 .menu-item {
-	font-size: 1rem;
-	font-weight: 700;
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	cursor: context-menu;
+  font-size: 1rem;
+  font-weight: 700;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  cursor: context-menu;
 }
 
 .menu-item > a {
-	color: var(--text-color-secondary);
-	text-decoration: none;
+  color: var(--text-color-secondary);
+  text-decoration: none;
 }
 
 .menu-item > a:hover {
-	color: var(--link-hover-color);
+  color: var(--link-hover-color);
 }
 
 .grid-item {
-	padding: 0.75rem;
-	border-radius: 5px;
-	background-color: var(--grid-element-color);
-	outline: var(--grid-element-outline) 1px solid;
+  padding: 0.75rem;
+  border-radius: 5px;
+  background-color: var(--grid-element-color);
+  outline: var(--grid-element-outline) 1px solid;
 }
 
 .grid-item-title {
-	font-size: 1.3rem;
-	margin-bottom: 0.5rem;
-	color: var(--logo--blue);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--logo--blue);
 }
 
 .grid-item-subtitle {
-	font-size: 1.1rem;
-	margin-bottom: 0.5rem;
-	font-style: italic;
-	font-family: "Lora", serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+  font-family: "Lora", serif;
 }
 
 .grid-item-text {
-	width: 97%;
-	margin-bottom: 1rem;
-	font-size: 1rem;
-	line-height: 1.5;
-	font-family: "Lora", serif;
+  width: 97%;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: "Lora", serif;
 }
 
 .grid-item-metadata {
-	width: 100%;
-	margin-bottom: 0rem;
-	font-size: 0.8rem;
-	text-align: right;
-	color: var(--metadata-color);
+  width: 100%;
+  margin-bottom: 0rem;
+  font-size: 0.8rem;
+  text-align: right;
+  color: var(--metadata-color);
 }
 
 .grid-notice {
-	text-align: center;
-	font-size: 1rem;
-	font-family: "Lora", serif;
-	font-weight: 600;
+  text-align: center;
+  font-size: 1rem;
+  font-family: "Lora", serif;
+  font-weight: 600;
 }
 
 .grid-notice a {
-	color: var(--text-color-primary);
-	text-decoration: none;
+  color: var(--text-color-primary);
+  text-decoration: none;
 }
 
 .grid-notice a:hover {
-	color: var(--logo--blue);
+  color: var(--logo--blue);
 }
 
 .lora-bold {
-	font-weight: 600;
+  font-weight: 600;
 }
 
 .lora-italic {
-	font-style: italic;
-	font-family: "Lora", serif;
+  font-style: italic;
+  font-family: "Lora", serif;
 }
 
 .style-arabic-bold {
-	font-family: "Scheherazade New", serif;
-	font-weight: 700;
+  font-family: "Scheherazade New", serif;
+  font-weight: 700;
 }
 
 .style-arabic-light {
-	font-family: "Scheherazade New", serif;
-	font-weight: 400;
+  font-family: "Scheherazade New", serif;
+  font-weight: 400;
 }
 
 .style-hadeeth {
-	font-size: 1.1rem;
-	font-style: italic;
-	font-family: "Lora", serif;
-	color: var(--logo--blue);
+  font-size: 1.1rem;
+  font-style: italic;
+  font-family: "Lora", serif;
+  color: var(--logo--blue);
 }
 
 .style-reporters {
-	font-size: 1rem;
-	font-style: italic;
-	margin-top: 0.75rem;
-	font-family: "Lora", serif;
-	color: var(--metadata-color);
+  font-size: 1rem;
+  font-style: italic;
+  margin-top: 0.75rem;
+  font-family: "Lora", serif;
+  color: var(--metadata-color);
 }
 
 .button-one {
-	width: 40%;
-	margin: auto;
-	padding: 0.3rem;
-	font-weight: 700;
-	border-radius: 3px;
-	text-align: center;
-	margin-bottom: 1.5rem;
-	background-color: #305c77;
+  width: 40%;
+  margin: auto;
+  padding: 0.3rem;
+  font-weight: 700;
+  border-radius: 3px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  background-color: #305c77;
 }
 
 .button-one > a {
-	width: 100%;
-	display: block;
-	color: #ffffff;
-	text-decoration: none;
-	text-align-last: center;
+  width: 100%;
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  text-align-last: center;
 }
 
 iframe {
-	width: 100%;
-	border-radius: 5px;
-	outline: var(--grid-element-outline) solid 1px;
+  width: 100%;
+  border-radius: 5px;
+  outline: var(--grid-element-outline) solid 1px;
 }
 
 img {
-	border-radius: 5px;
+  border-radius: 5px;
 }
 
 /* INDEX PAGE SPECIFIC CSS STYLES */
 #home-grid {
-	width: 85vw;
-	min-height: 90vh;
-	margin: auto;
-	display: grid;
-	grid-template-columns: 35vw 1fr 25vw;
-	gap: 0.75rem 0.75rem;
-	grid-template-areas:
-		"notice-one notice-one donate-widget"
-		"post-one post-one donate-widget"
-		"post-one post-one twitter-feed"
-		"post-two post-two twitter-feed"
-		"post-two post-two twitter-feed"
-		"post-three post-three twitter-feed"
-		"post-three post-three twitter-feed"
-		"notice-two notice-two twitter-feed";
+  width: 85vw;
+  min-height: 90vh;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 35vw 1fr 25vw;
+  gap: 0.75rem 0.75rem;
+  grid-template-areas:
+    "notice-one notice-one donate-widget"
+    "post-one post-one donate-widget"
+    "post-one post-one twitter-feed"
+    "post-two post-two twitter-feed"
+    "post-two post-two twitter-feed"
+    "post-three post-three twitter-feed"
+    "post-three post-three twitter-feed"
+    "notice-two notice-two twitter-feed";
 }
 
 #notice-one {
-	grid-area: notice-one;
+  grid-area: notice-one;
 }
 
 #donate-widget {
-	grid-area: donate-widget;
+  grid-area: donate-widget;
 }
 
 #paypal-container {
-	height: 70%;
-	text-align: center;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+  height: 70%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #twitter-feed {
-	grid-area: twitter-feed;
+  grid-area: twitter-feed;
 }
 
 #post-one {
-	grid-area: post-one;
+  grid-area: post-one;
 }
 
 #post-two {
-	grid-area: post-two;
+  grid-area: post-two;
 }
 
 #post-three {
-	grid-area: post-three;
+  grid-area: post-three;
 }
 
 #notice-two {
-	grid-area: notice-two;
+  grid-area: notice-two;
 }
 
 /* TIMETABLE PAGE SPECIFIC CSS STYLES */
 #timetable-grid {
-	width: 85vw;
-	margin: auto;
-	padding: 0.75rem;
-	padding-top: 1.2rem;
-	border-radius: 5px;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 1.5rem 1.5rem;
-	grid-template-areas:
-		"timetable-title timetable-title"
-		"timetable-subtitle timetable-subtitle"
-		"timetable-image timetable-info"
-		"timetable-image timetable-info";
+  width: 85vw;
+  margin: auto;
+  padding: 0.75rem;
+  padding-top: 1.2rem;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 1.5rem;
+  grid-template-areas:
+    "timetable-title timetable-title"
+    "timetable-subtitle timetable-subtitle"
+    "timetable-image timetable-info"
+    "timetable-image timetable-info";
 
-	background-color: var(--grid-element-color);
-	outline: var(--grid-element-outline) 1px solid;
+  background-color: var(--grid-element-color);
+  outline: var(--grid-element-outline) 1px solid;
 }
 
 #timetable-title {
-	grid-area: timetable-title;
-	text-align: center;
-	margin-bottom: -1rem;
+  grid-area: timetable-title;
+  text-align: center;
+  margin-bottom: -1rem;
 }
 
 #timetable-subtitle {
-	grid-area: timetable-subtitle;
-	text-align: center;
+  grid-area: timetable-subtitle;
+  text-align: center;
 }
 
 #timetable-image {
-	grid-area: timetable-image;
+  grid-area: timetable-image;
 }
 
 .timetable-image {
-	width: 97%;
-	margin: auto;
-	float: right;
+  width: 97%;
+  margin: auto;
+  float: right;
 }
 
 #timetable-info {
-	grid-area: timetable-info;
+  grid-area: timetable-info;
 }
 
 /* ARTICLES PAGE SPECIFIC CSS STYLES */
 
 /* AUDIO PAGE SPECIFIC CSS STYLES */
 #audio-grid {
-	width: 85vw;
-	margin: auto;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 0.75rem 0.75rem;
-	grid-template-areas:
-		"mixlr mixlr"
-		"sc-a sc-b"
-		"sc-c sc-d";
+  width: 85vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 0.75rem;
+  grid-template-areas:
+    "mixlr mixlr"
+    "sc-a sc-b"
+    "sc-c sc-d";
 }
 
 #mixlr {
-	grid-area: mixlr;
+  grid-area: mixlr;
 }
 
 #mixlr-embed iframe {
-	height: 180px;
+  height: 180px;
 }
 
 .soundcloud-embed iframe {
-	height: 35vh;
+  height: 35vh;
 }
 
 #soundcloud-a {
-	grid-area: sc-a;
+  grid-area: sc-a;
 }
 
 /* ABOUT PAGE SPECIFIC CSS STYLES */
 #about-grid {
-	width: 85vw;
-	margin: auto;
-	padding: 0.75rem;
-	padding-top: 1.2rem;
-	border-radius: 5px;
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 1.5rem 1.5rem;
-	grid-template-areas:
-		"about-title"
-		"about-subtitle"
-		"about-text"
-		"about-signature";
+  width: 85vw;
+  margin: auto;
+  padding: 0.75rem;
+  padding-top: 1.2rem;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem 1.5rem;
+  grid-template-areas:
+    "about-title"
+    "about-subtitle"
+    "about-text"
+    "about-signature";
 
-	background-color: var(--grid-element-color);
-	outline: var(--grid-element-outline) 1px solid;
+  background-color: var(--grid-element-color);
+  outline: var(--grid-element-outline) 1px solid;
 }
 
 #about-title {
-	grid-area: about-title;
-	text-align: center;
+  grid-area: about-title;
+  text-align: center;
 }
 
 #about-subtitle {
-	margin-bottom: 0.75rem;
-	grid-area: about-subtitle;
-	text-align: center;
-	margin-bottom: -1rem;
+  margin-bottom: 0.75rem;
+  grid-area: about-subtitle;
+  text-align: center;
+  margin-bottom: -1rem;
 }
 
 #about-text {
-	width: 65vw;
-	margin: auto;
-	grid-area: about-text;
-	text-align: justify;
-	text-align-last: center;
+  width: 65vw;
+  margin: auto;
+  grid-area: about-text;
+  text-align: justify;
+  text-align-last: center;
 }
 
 #about-signature {
-	grid-area: about-signature;
+  grid-area: about-signature;
 }
 
 /* CONTACT PAGE SPECIFIC CSS STYLES */
 #contact-grid {
-	width: 85vw;
-	margin: auto;
-	padding: 0.75rem;
-	padding-top: 1.2rem;
-	border-radius: 5px;
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 1.5rem 1.5rem;
-	grid-template-areas:
-		"contact-title"
-		"contact-subtitle"
-		"contact-form";
+  width: 85vw;
+  margin: auto;
+  padding: 0.75rem;
+  padding-top: 1.2rem;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem 1.5rem;
+  grid-template-areas:
+    "contact-title"
+    "contact-subtitle"
+    "contact-form";
 
-	background-color: var(--grid-element-color);
-	outline: var(--grid-element-outline) 1px solid;
+  background-color: var(--grid-element-color);
+  outline: var(--grid-element-outline) 1px solid;
 }
 
 #contact-title {
-	grid-area: contact-title;
-	text-align: center;
-	margin-bottom: -1rem;
+  grid-area: contact-title;
+  text-align: center;
+  margin-bottom: -1rem;
 }
 
 #contact-subtitle {
-	grid-area: contact-subtitle;
-	text-align: center;
+  grid-area: contact-subtitle;
+  text-align: center;
 }
 
 #contact-form {
-	grid-area: contact-form;
+  grid-area: contact-form;
 }
 
 /* 404 PAGE SPECIFIC CSS STYLES */
 #error-grid {
-	width: 85vw;
-	margin: auto;
-	padding: 0.75rem;
-	border-radius: 5px;
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 0.75rem 0.75rem;
-	grid-template-areas:
-		"error-title"
-		"error-subtitle";
+  width: 85vw;
+  margin: auto;
+  padding: 0.75rem;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem 0.75rem;
+  grid-template-areas:
+    "error-title"
+    "error-subtitle";
 
-	background-color: var(--grid-element-color);
-	outline: var(--grid-element-outline) 1px solid;
+  background-color: var(--grid-element-color);
+  outline: var(--grid-element-outline) 1px solid;
 }
 
 #error-title {
-	grid-area: error-title;
-	text-align: center;
+  grid-area: error-title;
+  text-align: center;
 }
 
 #error-subtitle {
-	grid-area: error-subtitle;
-	text-align: center;
+  grid-area: error-subtitle;
+  text-align: center;
 }
 
 /* FOOTER SPECIFIC CSS STYLES */
 footer {
-	padding: 0.75rem;
-	margin-top: 2rem;
-	min-height: 5vh;
-	text-align: center;
-	color: var(--text-color-secondary);
-	border-top: solid 0.35rem var(--logo--blue);
-	background-color: var(--footer-background-color);
+  padding: 0.75rem;
+  margin-top: 2rem;
+  min-height: 5vh;
+  text-align: center;
+  color: var(--text-color-secondary);
+  border-top: solid 0.35rem var(--logo--blue);
+  background-color: var(--footer-background-color);
 }
 
 #footer-flex {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .footer-item {
-	padding: 0.1rem;
-	font-size: 12px;
+  padding: 0.1rem;
+  font-size: 12px;
 }
