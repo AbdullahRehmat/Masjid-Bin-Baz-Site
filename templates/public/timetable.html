@@ -1,77 +1,79 @@
 {% extends "public/layout.html" %} {% block content %}
 
 <section id="timetable-grid">
-    <div id="timetable-title" class="grid-item-title">Timetable</div>
+  <div id="timetable-title" class="grid-item-title">Timetable</div>
 
-    <div id="timetable-subtitle" class="grid-item-subtitle">
-        Current Prayer Timetable
+  <div id="timetable-subtitle" class="grid-item-subtitle">
+    Current Prayer Timetable
+  </div>
+
+  <div id="timtable-image">
+    <img
+      class="timetable-image"
+      src="{{url_for('static', filename=timetableWebP )}}"
+      alt="Prayer Timetable"
+    />
+  </div>
+
+  <div id="timetable-info">
+    <div class="button-one">
+      <a href="/downloads/{{ timetablePDF }}" rel="noopener noreferrer nofollow"
+        >Download</a
+      >
     </div>
 
-    <div id="timtable-image">
-        <img
-            class="timetable-image"
-            src="{{url_for('static', filename='uploads/May-2021Shawal-1442-MBB.webp' )}}"
-            alt="Prayer Timetable"
-        />
+    <div id="timetable-text" class="grid-item-text">
+      Muslims are obligated to pray to Allāh five set times each day. This
+      prayer is called the Salāh. It is the second pillar of Islām. Muslims take
+      time out throughout the day to focus upon this special act where they
+      focus on supplications and recitations to Allāh. The term Salāh in the
+      Arabic language means “Supplication
+      <span class="lora-italic">(Du’ā)</span>”; and in the religious usage it
+      refers to the Five Daily Prayers that are obligated upon every adult,
+      able, sane Muslim male and female.
+      <br />
+      <br />
+      The prayer times are worked out from the authentic hadeeth of the Prophet
+      (<span class="style-arabic-light">صلى الله عليه وسلم</span>). There is a
+      narration when the Angel Jibreel visited the Prophet Muhammad (<span
+        class="style-arabic-light"
+        >صلى الله عليه وسلم</span
+      >) over two days. On the first day he led the Prophet at the earliest
+      times of the Prayers. On the second day, he led him at the end times of
+      each of the Prayers. The prayer times are based around three daily events:
+      sunrise, midday, and sunset. And of course these times alter greatly
+      between the seasons of summer and winter – even by country. In Britain,
+      winter prayer times are very different to summer prayer times. Each prayer
+      is announced by the Adhān (the call to prayer), which is traditionally
+      called by the Mu’adhin who stands just outside the mosque. Nowadays people
+      have the Adhān recorded into their phones or clocks to remind them of the
+      prayer times.
+      <br />
+      <br />
+      Prophet (<span class="style-arabic-light">صلى الله عليه وسلم</span>) said:
+      <br />
+      <span class="style-hadeeth">
+        “Jibrīl led me in Salāh twice at the House. So he prayed Dhuhr the first
+        day when the shadow was similar to the length of the strap of a sandal
+        (just after midday). Then he prayed ‘Asr when an object was similar to
+        the length of its shadow. Then he prayed Maghrib when the sun had set
+        and the fasting person breaks the fast. Then he prayed ‘Ishā when the
+        twilight had vanished. Then he prayed Fajr when the true dawn began
+        (before sunrise), and when eating is prohibited for the fasting person.
+        The second occasion he prayed Dhuhr when the shadow of everything was
+        similar to the length of it, which was the time of ‘Asr the day before.
+        He prayed ‘Asr when the shadow of an object was about twice as long as
+        it. Then he prayed Maghrib at the same time as he did the first time.
+        Then he prayed ‘Ishā, the later one, when a third of the night had gone.
+        Then he prayed Fajr when the land glowed (before sunrise). Then Jibrīl
+        turned towards me and said: “O Muhammad! These are the times of the
+        Prophets before you, and the time is what is between these two times
+        (for each prayer).”
+        <br />
+      </span>
+      <span class="style-reporters">At-Tirmidhī no. 146</span>
     </div>
-
-    <div id="timetable-info">
-        <div class="button-one">
-            <a href="" rel="noopener noreferrer nofollow">Download</a>
-        </div>
-
-        <div id="timetable-text" class="grid-item-text">
-            Muslims are obligated to pray to Allāh five set times each day. This
-            prayer is called the Salāh. It is the second pillar of Islām. Muslims take
-            time out throughout the day to focus upon this special act where they
-            focus on supplications and recitations to Allāh. The term Salāh in the
-            Arabic language means “Supplication
-            <span class="lora-italic">(Du’ā)</span>”; and in the religious usage it
-            refers to the Five Daily Prayers that are obligated upon every adult,
-            able, sane Muslim male and female.
-            <br />
-            <br />
-            The prayer times are worked out from the authentic hadeeth of the Prophet
-            (<span class="style-arabic-light">صلى الله عليه وسلم</span>). There is a
-            narration when the Angel Jibreel visited the Prophet Muhammad (<span
-                class="style-arabic-light"
-                >صلى الله عليه وسلم</span
-            >) over two days. On the first day he led the Prophet at the earliest
-            times of the Prayers. On the second day, he led him at the end times of
-            each of the Prayers. The prayer times are based around three daily events:
-            sunrise, midday, and sunset. And of course these times alter greatly
-            between the seasons of summer and winter – even by country. In Britain,
-            winter prayer times are very different to summer prayer times. Each prayer
-            is announced by the Adhān (the call to prayer), which is traditionally
-            called by the Mu’adhin who stands just outside the mosque. Nowadays people
-            have the Adhān recorded into their phones or clocks to remind them of the
-            prayer times.
-            <br />
-            <br />
-            Prophet (<span class="style-arabic-light">صلى الله عليه وسلم</span>) said:
-            <br />
-            <span class="style-hadeeth">
-                “Jibrīl led me in Salāh twice at the House. So he prayed Dhuhr the first
-                day when the shadow was similar to the length of the strap of a sandal
-                (just after midday). Then he prayed ‘Asr when an object was similar to
-                the length of its shadow. Then he prayed Maghrib when the sun had set
-                and the fasting person breaks the fast. Then he prayed ‘Ishā when the
-                twilight had vanished. Then he prayed Fajr when the true dawn began
-                (before sunrise), and when eating is prohibited for the fasting person.
-                The second occasion he prayed Dhuhr when the shadow of everything was
-                similar to the length of it, which was the time of ‘Asr the day before.
-                He prayed ‘Asr when the shadow of an object was about twice as long as
-                it. Then he prayed Maghrib at the same time as he did the first time.
-                Then he prayed ‘Ishā, the later one, when a third of the night had gone.
-                Then he prayed Fajr when the land glowed (before sunrise). Then Jibrīl
-                turned towards me and said: “O Muhammad! These are the times of the
-                Prophets before you, and the time is what is between these two times
-                (for each prayer).”
-                <br />
-            </span>
-            <span class="style-reporters">At-Tirmidhī no. 146</span>
-        </div>
-    </div>
+  </div>
 </section>
 
 {% endblock %}
