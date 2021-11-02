@@ -3,15 +3,15 @@ import smtplib
 from dotenv import load_dotenv
 from flask_wtf import FlaskForm
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
-from flask import Flask, Response, request, render_template, url_for, redirect, flash, send_from_directory
-from wtforms import StringField, TextAreaField, PasswordField
+from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user
+from flask import Flask, render_template, url_for, redirect, send_from_directory
 from flask_wtf.file import FileField, FileAllowed, FileRequired
+from wtforms import StringField, TextAreaField, PasswordField
 from wtforms.validators import DataRequired, Email, Length
 from werkzeug.utils import secure_filename
 from werkzeug.security import generate_password_hash, check_password_hash
-from email.mime.text import MIMEText
 from pdf2image import convert_from_path
+from email.mime.text import MIMEText
 
 app = Flask(__name__)
 load_dotenv()
@@ -34,17 +34,17 @@ password = os.environ.get("ADMIN_EMAIL_PASSWORD")
 receiver = os.environ.get("EMAIL_RECEIVER")
 
 
-def sendMail(clientAddress, clientSubject, clientMessage):
+def send_mail(client_address, client_subject, client_message):
 
-    clientMessage = str("From: " + clientAddress +
-                        "<br />" + "<br />"
-                        " Message:" +
-                        "<br/>" + clientMessage)
+    client_message = str("From: " + client_address +
+                         "<br />" + "<br />"
+                         " Message:" +
+                         "<br/>" + client_message)
 
-    msg = MIMEText(clientMessage, "html")
+    msg = MIMEText(client_message, "html")
     msg["From"] = admin_email
     msg["To"] = receiver
-    msg["Subject"] = clientSubject
+    msg["Subject"] = client_subject
 
     s = smtplib.SMTP_SSL(host="smtp.gmail.com", port=465)
     s.login(user=admin_email, password=password)
@@ -69,11 +69,11 @@ class TimetableConfig(db.Model):
 
 
 class ContactForm(FlaskForm):
-    clientAddress = StringField('eMail Address', validators=[
-                                DataRequired()], render_kw={"placeholder": "Email"})
-    clientSubject = StringField('Subject', validators=[DataRequired()], render_kw={
-                                "placeholder": "Subject"})
-    clientMessage = TextAreaField(
+    client_address = StringField('eMail Address', validators=[
+        DataRequired()], render_kw={"placeholder": "Email"})
+    client_subject = StringField('Subject', validators=[DataRequired()], render_kw={
+        "placeholder": "Subject"})
+    client_message = TextAreaField(
         'Message', validators=[DataRequired()], render_kw={"placeholder": "Message"})
 
 
@@ -112,14 +112,14 @@ def index():
 
 @app.route("/timetable")
 def timtable():
-    d = TimetableConfig.query.filter_by(id=1).first()
-    if d:
-        timetablePDF = d.pdf
-        timetableJPEG = d.jpeg
-        timetableWebP = "uploads/" + d.webp
+    t = TimetableConfig.query.filter_by(id=1).first()
+    if t:
+        timetable_pdf = t.pdf
+        timetable_jpeg = t.jpeg
+        timetable_webp = "uploads/" + t.webp
 
-    return render_template("public/timetable.html", timetablePDF=timetablePDF,
-                           timetableJPEG=timetableJPEG, timetableWebP=timetableWebP)
+    return render_template("public/timetable.html", timetablePDF=timetable_pdf,
+                           timetableJPEG=timetable_jpeg, timetableWebP=timetable_webp)
 
 
 @app.route("/articles")
@@ -143,10 +143,10 @@ def contact():
 
     if form.validate_on_submit():
 
-        clientAddress = form.clientAddress.data
-        clientSubject = clientAddress + " : " + form.clientSubject.data
-        clientMessage = form.clientMessage.data
-        sendMail(clientAddress, clientSubject, clientMessage)
+        client_address = form.client_address.data
+        client_subject = client_address + " : " + form.client_subject.data
+        client_message = form.client_message.data
+        send_mail(client_address, client_subject, client_message)
 
         return redirect('/')
 
@@ -158,6 +158,8 @@ def download_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename, as_attachment=True)
 
 # PRIVATE PAGES
+
+
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
@@ -222,33 +224,33 @@ def admin_upload_file():
 
     if form.validate_on_submit():
         f = form.file.data
-        uploadDir = app.config['UPLOAD_FOLDER']
+        upload_dir = app.config['UPLOAD_FOLDER']
 
         # Add uploaded File to Uploads Folder
-        timetablePDF = secure_filename(f.filename)
-        f.save(os.path.join(uploadDir, timetablePDF))
+        timetable_pdf = secure_filename(f.filename)
+        f.save(os.path.join(upload_dir, timetable_pdf))
 
         # Save first PDF Page in JPEG & WebP formats
-        timetableWebP = os.path.splitext(timetablePDF)[0] + ".webp"
-        timetableJPG = os.path.splitext(timetablePDF)[0] + ".jpg"
-        pdfLocation = uploadDir + timetablePDF
+        timetable_webp = os.path.splitext(timetable_pdf)[0] + ".webp"
+        timetable_jpeg = os.path.splitext(timetable_pdf)[0] + ".jpg"
+        pdf_location = upload_dir + timetable_pdf
 
-        images = convert_from_path(pdfLocation, 500)
-        images[0].save(os.path.join(uploadDir, timetableWebP))
-        images[0].save(os.path.join(uploadDir, timetableJPG))
+        images = convert_from_path(pdf_location, 500)
+        images[0].save(os.path.join(upload_dir, timetable_webp))
+        images[0].save(os.path.join(upload_dir, timetable_jpeg))
 
         # Save File Names to Database
-        fileData = TimetableConfig(
+        file_data = TimetableConfig(
             id=1,
-            pdf=timetablePDF,
-            jpeg=timetableJPG,
-            webp=timetableWebP
+            pdf=timetable_pdf,
+            jpeg=timetable_jpeg,
+            webp=timetable_webp
         )
 
         db.session.query(TimetableConfig).delete()
         db.session.commit()
 
-        db.session.add(fileData)
+        db.session.add(file_data)
         db.session.commit()
 
     return redirect(url_for('admin_portal'))
