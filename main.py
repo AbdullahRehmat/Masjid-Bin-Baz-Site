@@ -98,9 +98,9 @@ class UploadFile(FlaskForm):
     ), FileAllowed(['pdf'])])
 
 
-app.config['TIMETABLE_PDF'] = ""
-app.config['TIMETABLE_JPEG'] = ""
-app.config['TIMETABLE_WEBP'] = ""
+# app.config['TIMETABLE_PDF'] = ""
+# app.config['TIMETABLE_JPEG'] = ""
+# app.config['TIMETABLE_WEBP'] = ""
 
 
 # PUBLIC PAGES
@@ -157,9 +157,8 @@ def contact():
 def download_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename, as_attachment=True)
 
+
 # PRIVATE PAGES
-
-
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
