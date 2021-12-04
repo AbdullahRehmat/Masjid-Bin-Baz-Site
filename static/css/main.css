@@ -11,7 +11,7 @@ html {
 :root {
   /* Grid + Element Colors */
   --logo--blue: #305c77;
-  --grid-element-color: #f3f3f3;
+  --grid-element-color: #fbfbfb;
   --grid-element-outline: #dfdfdf;
   /* Text Colors */
   --text-color-primary: #000000;
@@ -78,7 +78,7 @@ body {
 }
 
 #social-media-bar a {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   margin-left: 0.5rem;
   color: var(--logo--blue);
 }
@@ -96,7 +96,7 @@ body {
 }
 
 .menu-item {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -121,15 +121,31 @@ body {
   outline: var(--grid-element-outline) 1px solid;
 }
 
+.grid-notice {
+  text-align: center;
+  font-size: 1rem;
+  font-family: "Lora", serif;
+  font-weight: 600;
+}
+
+.grid-notice a {
+  color: var(--text-color-primary);
+  text-decoration: none;
+}
+
+.grid-notice a:hover {
+  color: var(--logo--blue);
+}
+
 .grid-item-title {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  margin-bottom: 0.25rem;
   color: var(--logo--blue);
 }
 
 .grid-item-subtitle {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
   font-style: italic;
   font-family: "Lora", serif;
 }
@@ -148,22 +164,6 @@ body {
   font-size: 0.8rem;
   text-align: right;
   color: var(--metadata-color);
-}
-
-.grid-notice {
-  text-align: center;
-  font-size: 1rem;
-  font-family: "Lora", serif;
-  font-weight: 600;
-}
-
-.grid-notice a {
-  color: var(--text-color-primary);
-  text-decoration: none;
-}
-
-.grid-notice a:hover {
-  color: var(--logo--blue);
 }
 
 .lora-bold {
@@ -203,7 +203,8 @@ body {
 .button-one {
   width: 40%;
   margin: auto;
-  padding: 0.3rem;
+  padding: 0.7rem;
+  font-size: 1rem;
   font-weight: 700;
   border-radius: 3px;
   text-align: center;
@@ -235,8 +236,8 @@ img {
   min-height: 90vh;
   margin: auto;
   display: grid;
-  grid-template-columns: 35vw 1fr 25vw;
-  gap: 0.75rem 0.75rem;
+  grid-template-columns: 35vw 1fr 23vw;
+  gap: 1rem 1rem;
   grid-template-areas:
     "notice-one notice-one donate-widget"
     "post-one post-one donate-widget"
@@ -267,6 +268,7 @@ img {
 
 #twitter-feed {
   grid-area: twitter-feed;
+  padding-bottom: 1.35rem;
 }
 
 #post-one {
@@ -324,6 +326,7 @@ img {
   width: 97%;
   margin: auto;
   float: right;
+  border: var(--grid-element-outline) 1px solid;
 }
 
 #timetable-info {
@@ -338,7 +341,7 @@ img {
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.75rem 0.75rem;
+  gap: 1rem 1rem;
   grid-template-areas:
     "mixlr mixlr"
     "sc-a sc-b"
@@ -447,7 +450,7 @@ img {
   border-radius: 5px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0.75rem 0.75rem;
+  gap: 1rem 1rem;
   grid-template-areas:
     "error-title"
     "error-subtitle";
