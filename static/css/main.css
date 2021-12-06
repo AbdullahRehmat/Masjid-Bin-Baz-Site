@@ -72,7 +72,7 @@ body {
   align-items: center;
   align-content: center;
   position: absolute;
-  padding-right: 1rem;
+  padding-right: 1.2rem;
   padding-bottom: 0.5rem;
 }
 
@@ -201,13 +201,14 @@ body {
 
 .button-one {
   width: 40%;
+  max-width: 17vw;
   margin: auto;
-  padding: 0.7rem;
-  font-size: 1rem;
-  font-weight: 700;
+  padding: 0.6rem;
+  font-size: 1.1rem;
   border-radius: 3px;
   text-align: center;
   margin-bottom: 1.5rem;
+  color: #ffffff;
   background-color: #305c77;
 }
 
@@ -439,8 +440,35 @@ img {
 
 #contact-form {
   grid-area: contact-form;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
+.contact-fields {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  border-radius: 3px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #d9d9d9;
+  font-family: "Lora", serif;
+}
+
+#client_message {
+  min-height: 15vh;
+  font-family: "Lora", serif;
+}
+/*
+#send-email {
+  width: 30%;
+  max-width: 350px;
+  color: #ffffff;
+  margin-top: 0.5rem;
+}
+*/
 /* 404 PAGE SPECIFIC CSS STYLES */
 #error-grid {
   width: 87vw;

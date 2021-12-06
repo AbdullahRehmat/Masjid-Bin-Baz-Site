@@ -148,7 +148,7 @@ def contact():
         client_message = form.client_message.data
         send_mail(client_address, client_subject, client_message)
 
-        return redirect('/')
+        return redirect(url_for('index'))
 
     return render_template("public/contact.html", form=form)
 
