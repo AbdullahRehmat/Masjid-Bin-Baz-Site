@@ -11,7 +11,7 @@ html {
 :root {
   /* Grid + Element Colors */
   --logo--blue: #305c77;
-  --grid-element-color: #fbfbfb;
+  --grid-element-color: #f5f6fa;
   --grid-element-outline: #dfdfdf;
   /* Text Colors */
   --text-color-primary: #000000;
@@ -49,7 +49,6 @@ body {
   background-size: cover;
   background-image: url(../images/background-03.jpg);
   background-position: center;
-  filter: grayscale(0.3);
 }
 
 #logo {
@@ -116,7 +115,7 @@ body {
 
 .grid-item {
   padding: 0.75rem;
-  border-radius: 5px;
+  border-radius: 3px;
   background-color: var(--grid-element-color);
   outline: var(--grid-element-outline) 1px solid;
 }
@@ -222,12 +221,12 @@ body {
 
 iframe {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 3px;
   outline: var(--grid-element-outline) solid 1px;
 }
 
 img {
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 /* INDEX PAGE SPECIFIC CSS STYLES */
@@ -293,7 +292,7 @@ img {
   margin: auto;
   padding: 0.75rem;
   padding-top: 1.2rem;
-  border-radius: 5px;
+  border-radius: 3px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem 1.5rem;
@@ -370,7 +369,7 @@ img {
   margin: auto;
   padding: 0.75rem;
   padding-top: 1.2rem;
-  border-radius: 5px;
+  border-radius: 3px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem 1.5rem;
@@ -414,7 +413,7 @@ img {
   margin: auto;
   padding: 0.75rem;
   padding-top: 1.2rem;
-  border-radius: 5px;
+  border-radius: 3px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem 1.5rem;
@@ -447,7 +446,7 @@ img {
   width: 87vw;
   margin: auto;
   padding: 0.75rem;
-  border-radius: 5px;
+  border-radius: 3px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem 1rem;
@@ -491,5 +490,5 @@ footer {
 
 .footer-item {
   padding: 0.1rem;
-  font-size: 12px;
+  font-size: 0.85rem;
 }
