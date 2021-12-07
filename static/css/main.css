@@ -414,7 +414,7 @@ img {
 #about-signature {
   text-align: center;
   font-size: 0.85rem;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
   padding-bottom: 1rem;
   color: var(--metadata-color);
 }
@@ -433,10 +433,14 @@ img {
   margin: auto;
 }
 
+#our-call-text > ol > li {
+  margin-bottom: 0.75rem;
+}
+
 #our-call-signature {
   text-align: center;
   font-size: 0.85rem;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
   padding-bottom: 1rem;
   color: var(--metadata-color);
 }
