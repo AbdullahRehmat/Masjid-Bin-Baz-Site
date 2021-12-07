@@ -1,56 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Admin - {{ name }}</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Admin - {{ name }}</title>
 
-        <!-- Internal Dependencies -->
-        <link
-            rel="stylesheet"
-            href="{{url_for('static', filename='css/admin.css')}}"
-        />
-        <script src="{{url_for('static', filename='js/app.js')}}"></script>
+    <!-- Internal Dependencies -->
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/admin.css')}}"
+    />
+    <script src="{{url_for('static', filename='js/app.js')}}"></script>
 
-        <!-- External Dependencies -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap"
-            rel="stylesheet"
-        />
-    </head>
-    <body>
-        <section id="admin-header">
-            <div id="admin-header-text">Admin: {{name}}</div>
-        </section>
+    <!-- External Dependencies -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section id="admin-header">
+      <div id="admin-header-text">Admin: {{name}}</div>
+    </section>
 
-        <section id="admin-grid">
-            <div id="admin-sidebar">
-                <div id="admin-sidebar-title">User</div>
+    <section id="admin-grid">
+      <div id="admin-sidebar">
+        <div id="admin-sidebar-title">User</div>
 
-                <div id="admin-sidebar-links">
-                    <ul>
-                        <li class="sidebar-link"><a href="/admin/portal">Portal</a></li>
-                        <li class="sidebar-link"><a href="/admin/articles">Articles</a></li>
-                        <li class="sidebar-link"><a href="/admin/logout">Logout</a></li>
-                    </ul>
-                </div>
-            </div>
+        <div id="admin-sidebar-links">
+          <ul>
+            <li class="sidebar-link"><a href="/admin/portal">Portal</a></li>
+            <li class="sidebar-link"><a href="/admin/articles">Articles</a></li>
+            <li class="sidebar-link"><a href="/admin/logout">Logout</a></li>
+          </ul>
+        </div>
+      </div>
 
-            <div id="admin-content">{% block content %} {% endblock %}</div>
-        </section>
+      <div id="admin-content">{% block content %} {% endblock %}</div>
+    </section>
 
-        <footer>
-            <div id="footer-flex">
-                <div class="footer-item">Masjid Abdul Aziz Bin Baz | &copy; 2021</div>
-                <div class="footer-item">East Road | Stratford | London | E15 3QR</div>
-            </div>
-        </footer>
-    </body>
+    <footer>
+      <div id="footer-flex">
+        <div class="footer-item">Masjid Abdul Aziz Bin Baz | &copy; 2021</div>
+        <div class="footer-item">East Road | Stratford | London | E15 3QR</div>
+      </div>
+    </footer>
+  </body>
 </html>

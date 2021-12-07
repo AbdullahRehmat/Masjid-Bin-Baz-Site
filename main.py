@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from flask_wtf import FlaskForm
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user
-from flask import Flask, render_template, url_for, redirect, send_from_directory
+from flask import Flask, render_template, url_for, redirect, request, send_from_directory
 from flask_wtf.file import FileField, FileAllowed, FileRequired
 from wtforms import StringField, TextAreaField, PasswordField
 from wtforms.validators import DataRequired, Email, Length
@@ -21,6 +21,7 @@ app.secret_key = os.environ.get("FLASK_SECRET_KEY")
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = os.environ.get("UPLOAD_FOLDER")
+app.config['BOTS_FOLDER'] = os.environ.get("BOTS_FOLDER")
 
 # Database Config
 db = SQLAlchemy(app)
@@ -260,6 +261,13 @@ def admin_upload_file():
 def logout():
     logout_user()
     return redirect('/')
+
+
+# PAGES FOR BOTS
+@app.route('/robots.txt')
+@app.route('/sitemap.xml')
+def static_from_root():
+    return send_from_directory(app.config['BOTS_FOLDER'], request.path[1:])
 
 
 # ERROR HANDLERS
