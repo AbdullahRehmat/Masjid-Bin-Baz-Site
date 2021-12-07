@@ -80,6 +80,7 @@ body {
   font-size: 1.75rem;
   margin-left: 0.5rem;
   color: var(--logo--blue);
+  text-decoration: none;
 }
 
 #menu-bar {
