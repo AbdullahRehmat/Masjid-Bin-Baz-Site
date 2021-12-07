@@ -16,7 +16,7 @@ html {
   /* Text Colors */
   --text-color-primary: #000000;
   --text-color-secondary: #ffffff;
-  --text-color-selected: rgba(48, 92, 119, 0.35);
+  --text-color-selected: rgba(48, 92, 119, 0.25);
   --metadata-color: #2d2d31;
   --link-hover-color: #212124;
   /* Background Colors */
@@ -387,37 +387,58 @@ img {
   grid-template-columns: 1fr;
   gap: 1.5rem 1.5rem;
   grid-template-areas:
-    "about-title"
-    "about-subtitle"
-    "about-text"
-    "about-signature";
+    "about"
+    "our-call";
+}
 
-  background-color: var(--grid-element-color);
-  outline: var(--grid-element-outline) 1px solid;
+#about {
+  grid-area: about;
 }
 
 #about-title {
-  grid-area: about-title;
   text-align: center;
 }
 
 #about-subtitle {
   margin-bottom: 0.75rem;
-  grid-area: about-subtitle;
   text-align: center;
-  margin-bottom: -1rem;
 }
 
 #about-text {
   width: 65vw;
   margin: auto;
-  grid-area: about-text;
   text-align: justify;
   text-align-last: center;
 }
 
 #about-signature {
-  grid-area: about-signature;
+  text-align: center;
+  font-size: 0.85rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: var(--metadata-color);
+}
+
+#our-call-title {
+  text-align: center;
+}
+
+#our-call-subtitle {
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+#our-call-text {
+  width: 65vw;
+  margin: auto;
+}
+
+#our-call-signature {
+  text-align: center;
+  font-size: 0.85rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: var(--metadata-color);
 }
 
 /* CONTACT PAGE SPECIFIC CSS STYLES */
