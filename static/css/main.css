@@ -206,7 +206,7 @@ body {
   color: var(--metadata-color);
 }
 
-.button-one {
+.button-blue {
   width: 40%;
   max-width: 17vw;
   margin: auto;
@@ -219,7 +219,7 @@ body {
   background-color: #305c77;
 }
 
-.button-one > a {
+.button-blue > a {
   width: 100%;
   display: block;
   color: #ffffff;
@@ -227,7 +227,7 @@ body {
   text-align-last: center;
 }
 
-.button-one > a:hover {
+.button-blue > a:hover {
   transition: 0.35s ease-in;
   color: var(--link-hover-color);
 }
@@ -280,7 +280,7 @@ img {
 
 #twitter-feed {
   grid-area: twitter-feed;
-  padding-bottom: 1.35rem;
+  padding-bottom: 1rem;
 }
 
 #post-one {
@@ -473,15 +473,8 @@ img {
   min-height: 15vh;
   font-family: "Lora", serif;
 }
-/*
-#send-email {
-  width: 30%;
-  max-width: 350px;
-  color: #ffffff;
-  margin-top: 0.5rem;
-}
-*/
-/* 404 PAGE SPECIFIC CSS STYLES */
+
+/* 404 ERROR PAGE SPECIFIC CSS STYLES */
 #error-grid {
   width: 87vw;
   margin: auto;
