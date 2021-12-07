@@ -11,13 +11,14 @@ html {
 :root {
   /* Grid + Element Colors */
   --logo--blue: #305c77;
-  --grid-element-color: #f3f3f3;
+  --grid-element-color: #f5f6fa;
   --grid-element-outline: #dfdfdf;
   /* Text Colors */
   --text-color-primary: #000000;
   --text-color-secondary: #ffffff;
+  --text-color-selected: rgba(48, 92, 119, 0.35);
   --metadata-color: #2d2d31;
-  --link-hover-color: #f3f3f3;
+  --link-hover-color: #212124;
   /* Background Colors */
   --background-color: #ffffff;
   --footer-background-color: #212124;
