@@ -18,7 +18,7 @@ html {
   --text-color-secondary: #ffffff;
   --text-color-selected: rgba(48, 92, 119, 0.35);
   --metadata-color: #2d2d31;
-  --link-hover-color: #f3f3f3;
+  --link-hover-color: #212124;
   /* Background Colors */
   --background-color: #ffffff;
   --footer-background-color: #212124;
@@ -83,6 +83,11 @@ body {
   text-decoration: none;
 }
 
+#social-media-bar a:hover {
+  transition: 0.35s ease-in;
+  color: var(--link-hover-color);
+}
+
 #menu-bar {
   display: flex;
   flex-wrap: wrap;
@@ -111,6 +116,7 @@ body {
 }
 
 .menu-item > a:hover {
+  transition: 0.35s ease-in;
   color: var(--link-hover-color);
 }
 
@@ -219,6 +225,11 @@ body {
   color: #ffffff;
   text-decoration: none;
   text-align-last: center;
+}
+
+.button-one > a:hover {
+  transition: 0.35s ease-in;
+  color: var(--link-hover-color);
 }
 
 iframe {
