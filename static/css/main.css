@@ -43,7 +43,7 @@ body {
 
 #intro {
   margin: 0;
-  height: 50vh;
+  height: 45vh;
   padding: 0.5rem;
   position: relative;
   background-size: cover;
@@ -472,7 +472,7 @@ img {
 
 #contact-form {
   grid-area: contact-form;
-  width: 60%;
+  width: 60vw;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -544,4 +544,240 @@ footer {
 .footer-item {
   padding: 0.1rem;
   font-size: 0.85rem;
+}
+
+/* CSS Breakpoints */
+@media (max-width: 1280px) {
+  html {
+    background-color: red;
+  }
+
+  /* INDEX PAGE SPECIFIC CSS STYLES */
+  #home-grid {
+    width: 90vw;
+    grid-template-columns: 35vw 1fr 25vw;
+  }
+  /* TIMETABLE PAGE SPECIFIC CSS STYLES */
+  #timetable-grid {
+    width: 90vw;
+  }
+
+  /* AUDIO PAGE SPECIFIC CSS STYLES */
+  #audio-grid {
+    width: 90vw;
+  }
+
+  /* ABOUT PAGE SPECIFIC CSS STYLES */
+  #about-grid {
+    width: 90vw;
+  }
+
+  /* CONTACT PAGE SPECIFIC CSS STYLES */
+  #contact-grid {
+    width: 90vw;
+  }
+
+  /* 404 ERROR PAGE SPECIFIC CSS STYLES */
+  #error-grid {
+    width: 90vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  html {
+    background-color: green;
+  }
+
+  /* INDEX PAGE SPECIFIC CSS STYLES */
+  #home-grid {
+    width: 93vw;
+    grid-template-columns: 35vw 1fr 25vw;
+  }
+
+  /* TIMETABLE PAGE SPECIFIC CSS STYLES */
+  #timetable-grid {
+    width: 93vw;
+  }
+  /* AUDIO PAGE SPECIFIC CSS STYLES */
+  #audio-grid {
+    width: 93vw;
+  }
+
+  /* ABOUT PAGE SPECIFIC CSS STYLES */
+  #about-grid {
+    width: 93vw;
+  }
+
+  #about-text {
+    width: 75vw;
+  }
+
+  #our-call-text {
+    width: 75vw;
+  }
+
+  /* CONTACT PAGE SPECIFIC CSS STYLES */
+  #contact-grid {
+    width: 90vw;
+  }
+
+  /* 404 ERROR PAGE SPECIFIC CSS STYLES */
+  #error-grid {
+    width: 93vw;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    background-color: blue;
+  }
+
+  #intro {
+    height: 55vh;
+  }
+
+  #logo-img {
+    width: 50vw;
+  }
+
+  .menu-item {
+    font-size: 1rem;
+  }
+
+  /* INDEX PAGE SPECIFIC CSS STYLES */
+  #home-grid {
+    width: 93vw;
+    min-height: 90vh;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem 1rem;
+    grid-template-areas:
+      "notice-one"
+      "donate-widget"
+      "post-one"
+      "post-one"
+      "post-two"
+      "post-two"
+      "post-three"
+      "post-three"
+      "notice-two"
+      "twitter-feed";
+  }
+
+  /* TIMETABLE PAGE SPECIFIC CSS STYLES */
+  #timetable-grid {
+    width: 93vw;
+  }
+
+  /* AUDIO PAGE SPECIFIC CSS STYLES */
+  #audio-grid {
+    width: 93vw;
+  }
+
+  /* ABOUT PAGE SPECIFIC CSS STYLES */
+  #about-grid {
+    width: 93vw;
+  }
+
+  #about-text {
+    width: 75vw;
+  }
+
+  #our-call-text {
+    width: 75vw;
+  }
+
+  /* CONTACT PAGE SPECIFIC CSS STYLES */
+  #contact-grid {
+    width: 93vw;
+  }
+
+  #contact-form {
+    width: 75vw;
+  }
+
+  /* 404 ERROR PAGE SPECIFIC CSS STYLES */
+  #error-grid {
+    width: 93vw;
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    background-color: pink;
+  }
+
+  #logo-img {
+    width: 85vw;
+  }
+
+  .menu-item {
+    font-size: 1rem;
+  }
+
+  /* INDEX PAGE SPECIFIC CSS STYLES */
+  #home-grid {
+    width: 93vw;
+    min-height: 90vh;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem 1rem;
+    grid-template-areas:
+      "notice-one"
+      "donate-widget"
+      "post-one"
+      "post-one"
+      "post-two"
+      "post-two"
+      "post-three"
+      "post-three"
+      "notice-two"
+      "twitter-feed";
+  }
+
+  /* TIMETABLE PAGE SPECIFIC CSS STYLES */
+  #timetable-grid {
+    width: 93vw;
+  }
+
+  /* AUDIO PAGE SPECIFIC CSS STYLES */
+  #audio-grid {
+    width: 93vw;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "mixlr"
+      "sc-a"
+      "sc-b"
+      "sc-c"
+      "sc-d";
+  }
+
+  /* ABOUT PAGE SPECIFIC CSS STYLES */
+  #about-grid {
+    width: 93vw;
+  }
+
+  #about-text {
+    width: 75vw;
+  }
+
+  #our-call-text {
+    width: 75vw;
+  }
+
+  /* CONTACT PAGE SPECIFIC CSS STYLES */
+  #contact-grid {
+    width: 93vw;
+  }
+
+  #contact-form {
+    width: 75vw;
+  }
+
+  /* 404 ERROR PAGE SPECIFIC CSS STYLES */
+  #error-grid {
+    width: 93vw;
+  }
 }
