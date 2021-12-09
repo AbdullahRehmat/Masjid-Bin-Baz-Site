@@ -557,9 +557,6 @@ footer {
 
 /* CSS Breakpoints */
 @media (max-width: 1280px) {
-  html {
-    background-color: red;
-  }
 
   /* INDEX PAGE SPECIFIC CSS STYLES */
   #home-grid {
@@ -593,9 +590,6 @@ footer {
 }
 
 @media (max-width: 1024px) {
-  html {
-    background-color: green;
-  }
 
   #logo-img {
     width: 50vw;
@@ -642,9 +636,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-  html {
-    background-color: blue;
-  }
 
   #intro {
     height: 55vh;
@@ -734,9 +725,6 @@ footer {
 }
 
 @media (max-width: 640px) {
-  html {
-    background-color: pink;
-  }
 
   #logo-img {
     width: 85vw;
