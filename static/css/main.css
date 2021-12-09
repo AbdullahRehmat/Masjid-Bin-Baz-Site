@@ -6,6 +6,8 @@ html {
   color: var(--text-color-primary);
   font-family: "Lato", sans-serif;
   background-color: var(--background-color);
+  scrollbar-width: auto;
+  scrollbar-color: var(--link-hover-color) var(--grid-element-color);
 }
 
 :root {
@@ -307,10 +309,12 @@ img {
   border-radius: 3px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto 5vh 1fr;
   gap: 1.5rem 1.5rem;
   grid-template-areas:
     "timetable-title timetable-title"
     "timetable-subtitle timetable-subtitle"
+    "timetable-image timetable-download"
     "timetable-image timetable-info"
     "timetable-image timetable-info";
 
@@ -338,6 +342,10 @@ img {
   margin: auto;
   float: right;
   border: var(--grid-element-outline) 1px solid;
+}
+
+#timetable-download {
+  grid-area: timetable-download;
 }
 
 #timetable-info {
@@ -546,6 +554,7 @@ footer {
   font-size: 0.85rem;
 }
 
+
 /* CSS Breakpoints */
 @media (max-width: 1280px) {
   html {
@@ -555,7 +564,7 @@ footer {
   /* INDEX PAGE SPECIFIC CSS STYLES */
   #home-grid {
     width: 90vw;
-    grid-template-columns: 35vw 1fr 25vw;
+    grid-template-columns: 35vw 1fr 27vw;
   }
   /* TIMETABLE PAGE SPECIFIC CSS STYLES */
   #timetable-grid {
@@ -588,15 +597,20 @@ footer {
     background-color: green;
   }
 
+  #logo-img {
+    width: 50vw;
+  }
+
   /* INDEX PAGE SPECIFIC CSS STYLES */
   #home-grid {
     width: 93vw;
-    grid-template-columns: 35vw 1fr 25vw;
+    grid-template-columns: 35vw 1fr 30vw;
   }
 
   /* TIMETABLE PAGE SPECIFIC CSS STYLES */
   #timetable-grid {
     width: 93vw;
+    grid-template-rows: auto auto 10vh 1fr;
   }
   /* AUDIO PAGE SPECIFIC CSS STYLES */
   #audio-grid {
@@ -651,23 +665,39 @@ footer {
     margin: auto;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem 1rem;
+    gap: 1rem;
     grid-template-areas:
       "notice-one"
       "donate-widget"
       "post-one"
-      "post-one"
       "post-two"
-      "post-two"
-      "post-three"
       "post-three"
       "notice-two"
       "twitter-feed";
   }
 
+  #twitter-widget-0 {
+    height: fit-content !important;
+  }
+
   /* TIMETABLE PAGE SPECIFIC CSS STYLES */
   #timetable-grid {
     width: 93vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 4vh 1fr;
+    grid-template-areas:
+      "timetable-title"
+      "timetable-subtitle"
+      "timetable-download"
+      "timetable-image"
+      "timetable-info";
+  }
+
+  #timetable-text {
+    width: 75%;
+    margin: auto;
+    text-align: justify;
+    text-align-last: center;
   }
 
   /* AUDIO PAGE SPECIFIC CSS STYLES */
@@ -716,6 +746,10 @@ footer {
     font-size: 1rem;
   }
 
+  .button-blue {
+    max-width: 35vw;
+  }
+
   /* INDEX PAGE SPECIFIC CSS STYLES */
   #home-grid {
     width: 93vw;
@@ -737,9 +771,28 @@ footer {
       "twitter-feed";
   }
 
+  #twitter-widget-0 {
+    height: fit-content !important;
+  }
+
   /* TIMETABLE PAGE SPECIFIC CSS STYLES */
   #timetable-grid {
-    width: 93vw;
+    width: 90vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 5vh 1fr;
+    grid-template-areas:
+      "timetable-title"
+      "timetable-subtitle"
+      "timetable-download"
+      "timetable-image"
+      "timetable-info";
+  }
+
+  #timetable-text {
+    width: 85%;
+    margin: auto;
+    text-align: justify;
+    text-align-last: center;
   }
 
   /* AUDIO PAGE SPECIFIC CSS STYLES */
