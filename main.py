@@ -132,6 +132,9 @@ def articles():
 def audio():
     return render_template("public/audio.html")
 
+@app.route("/donate")
+def donate():
+    return render_template("public/donate.html")
 
 @app.route("/about")
 def about():
