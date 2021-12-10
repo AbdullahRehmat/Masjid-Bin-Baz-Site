@@ -2,6 +2,7 @@
 html {
   margin: 0;
   padding: 0;
+  min-width: 350px;
   scroll-behavior: smooth;
   color: var(--text-color-primary);
   font-family: "Lato", sans-serif;
@@ -397,7 +398,8 @@ img {
   gap: 1rem 1rem;
   grid-template-areas:
     "donate donate"
-    "donate-paypal donate-bank";
+    "donate-paypal donate-bank-national"
+    "donate-local donate-bank-int";
 }
 
 #donate {
@@ -420,8 +422,16 @@ img {
   grid-area: donate-paypal;
 }
 
-#donate-bank {
-  grid-area: donate-bank;
+#donate-local {
+  grid-area: donate-local;
+}
+
+#donate-bank-national {
+  grid-area: donate-bank-national;
+}
+
+#donate-bank-int {
+  grid-area: donate-bank-int;
 }
 
 /* ABOUT PAGE SPECIFIC CSS STYLES */
@@ -863,9 +873,11 @@ footer {
     grid-template-columns: 1fr;
     gap: 1rem;
     grid-template-areas:
-      "donate donate"
-      "donate-paypal"
-      "donate-bank";
+    "donate"
+    "donate-paypal"
+    "donate-bank-national"
+    "donate-bank-int"
+    "donate-local"; 
   }
 
   /* ABOUT PAGE SPECIFIC CSS STYLES */

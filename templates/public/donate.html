@@ -1,7 +1,6 @@
 {% extends "public/layout.html" %} {% block content %}
 
 <section id="donate-grid">
-
   <div id="donate" class="grid-item">
     <div id="donate-title" class="grid-item-title">Donate</div>
     <div id="donate-subtitle" class="grid-item-subtitle">
@@ -12,23 +11,76 @@
   <div id="donate-paypal" class="grid-item">
     <div id="donate-paypal-title" class="grid-item-title">Paypal</div>
     <div id="donate-paypal-subtitle" class="grid-item-subtitle">
-        Donate via Paypal...
+      Donate online
     </div>
     <div id="donate-paypal-text" class="grid-item-text donate-text">
-        PLACEHOLDER TEXT
+      <div id="paypal-container">
+        <form
+          action="https://www.paypal.com/donate"
+          method="post"
+          target="_blank"
+        >
+          <input type="hidden" name="hosted_button_id" value="22JCLDV8Y9S2Y" />
+          <input
+            type="image"
+            src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif"
+            border="0"
+            name="submit"
+            alt="Donate with PayPal button"
+          />
+          <img
+            alt=""
+            border="0"
+            src="https://www.paypal.com/en_GB/i/scr/pixel.gif"
+          />
+        </form>
+      </div>
     </div>
   </div>
 
-  <div id="donate-bank" class="grid-item">
+  <div id="donate-local" class="grid-item">
+    <div id="donate-local-title" class="grid-item-title">In Person</div>
+    <div id="donate-local-subtitle" class="grid-item-subtitle">
+      Donate at the Mosque
+    </div>
+    <div id="donate-paypal-text" class="grid-item-text donate-text lora-bold">
+      Masjid Bin Baz
+      <br />
+      East Road
+      <br />
+      Stratford
+      <br />
+      E15 3QR
+    </div>
+  </div>
+
+  <div id="donate-bank-national" class="grid-item">
     <div id="donate-bank-title" class="grid-item-title">Bank Transfer</div>
     <div id="donate-bank-subtitle" class="grid-item-subtitle">
-        Donate via Bank Transfer...
+      National Bank Transfer
     </div>
     <div id="donate-bank-text" class="grid-item-text donate-text">
-        PLACEHOLDER TEXT
+      <span class="lora-bold">HSBC (UK)</span>
+      <br />
+      Account Name: <span class="lora-bold">Al-Athariyyah</span>
+      <br />
+      Account Number: <span class="lora-bold">81689851</span>
+      <br />
+      Sort Code: <span class="lora-bold">40-07-15</span>
     </div>
   </div>
 
+  <div id="donate-bank-int" class="grid-item">
+    <div id="donate-bank-title" class="grid-item-title">Bank Transfer</div>
+    <div id="donate-bank-subtitle" class="grid-item-subtitle">
+      International Bank Transfer
+    </div>
+    <div id="donate-bank-text" class="grid-item-text donate-text">
+      IBAN Code:
+      <br />
+      <span class="lora-bold">GB56MIDL 40071581689851</span>
+    </div>
+  </div>
 </section>
 
 {% endblock %}
