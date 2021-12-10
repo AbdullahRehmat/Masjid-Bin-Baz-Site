@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+<i class="uil uil-paypal"></i>
+<i class="uil uil-twitter-alt"></i>
+<i class="uil uil-telegram-alt"></i>
+<i class="uil uil-envelope-alt"></i>
+<i class="uil uil-location-point"></i>
+
+
+<i class="uil uil-exclamation-circle"></i>
+<i class="uil uil-layer-group"></i>
+
+<i class="uil uil-layers"></i>
+<i class="uil uil-document-layout-left"></i>
+<i class="uil uil-whatsapp"></i>
+<i class="uil uil-adjust-half"></i>
+<i class="uil uil-estate"></i>
+<i class="uil uil-clock"></i>
+<i class="uil uil-document-layout-right"></i>
+<i class="uil uil-sliders-v"></i>
+<i class="uil uil-info-circle"></i>
+<i class="uil uil-comment-alt-medical"></i>
