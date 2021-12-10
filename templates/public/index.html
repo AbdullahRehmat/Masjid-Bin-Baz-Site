@@ -1,7 +1,7 @@
 {% extends "public/layout.html" %} {% block content %}
 <section id="home-grid">
   <div class="grid-item grid-notice" id="notice-one">
-    <i class="uil uil-exclamation-circle"> 
+    <i class="uil uil-exclamation-circle">
       Offical Website of Masjid Abdul Aziz Bin Baz
     </i>
   </div>
@@ -17,7 +17,7 @@
         <input type="hidden" name="hosted_button_id" value="22JCLDV8Y9S2Y" />
         <input
           type="image"
-          src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif"
+          src="{{url_for('static', filename='images/paypal-dark-large.svg')}}"
           border="0"
           name="submit"
           alt="Donate with PayPal button"
@@ -38,7 +38,7 @@
       data-height="95.5%"
       data-width="100%"
       data-dnt="true"
-      data-chrome = "noheader nofooter noborders"
+      data-chrome="noheader nofooter noborders"
       href="https://twitter.com/Athariyyah?ref_src=twsrc%5Etfw"
     ></a>
     <script
