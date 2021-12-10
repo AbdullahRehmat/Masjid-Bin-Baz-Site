@@ -387,6 +387,43 @@ img {
   grid-area: sc-a;
 }
 
+/* DONATE PAGE SPECIFIC CSS STYLES */
+#donate-grid {
+  width: 87vw;
+  margin: auto;
+  border-radius: 3px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1rem;
+  grid-template-areas:
+    "donate donate"
+    "donate-paypal donate-bank";
+}
+
+#donate {
+  grid-area: donate;
+}
+
+#donate-title {
+  text-align: center;
+}
+
+#donate-subtitle {
+  text-align: center;
+}
+
+.donate-text {
+  text-align: center;
+}
+
+#donate-paypal {
+  grid-area: donate-paypal;
+}
+
+#donate-bank {
+  grid-area: donate-bank;
+}
+
 /* ABOUT PAGE SPECIFIC CSS STYLES */
 #about-grid {
   width: 87vw;
@@ -394,7 +431,7 @@ img {
   border-radius: 3px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem 1.5rem;
+  gap: 1rem 1rem;
   grid-template-areas:
     "about"
     "our-call";
@@ -469,7 +506,7 @@ img {
   border-radius: 3px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem 1.5rem;
+  gap: 1rem 1rem;
   grid-template-areas:
     "contact-title"
     "contact-subtitle"
@@ -584,6 +621,11 @@ footer {
     width: 90vw;
   }
 
+  /* DONATE PAGE SPECIFIC CSS STYLES */
+  #donate-grid {
+    width: 90vw;
+  }
+
   /* ABOUT PAGE SPECIFIC CSS STYLES */
   #about-grid {
     width: 90vw;
@@ -618,6 +660,10 @@ footer {
   }
   /* AUDIO PAGE SPECIFIC CSS STYLES */
   #audio-grid {
+    width: 93vw;
+  }
+  /* DONATE PAGE SPECIFIC CSS STYLES */
+  #donate-grid {
     width: 93vw;
   }
 
@@ -702,6 +748,11 @@ footer {
 
   /* AUDIO PAGE SPECIFIC CSS STYLES */
   #audio-grid {
+    width: 93vw;
+  }
+
+  /* DONATE PAGE SPECIFIC CSS STYLES */
+  #donate-grid {
     width: 93vw;
   }
 
@@ -801,6 +852,20 @@ footer {
       "sc-b"
       "sc-c"
       "sc-d";
+  }
+
+  /* DONATE PAGE SPECIFIC CSS STYLES */
+  #donate-grid {
+    width: 93vw;
+    margin: auto;
+    border-radius: 3px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    grid-template-areas:
+      "donate donate"
+      "donate-paypal"
+      "donate-bank";
   }
 
   /* ABOUT PAGE SPECIFIC CSS STYLES */
