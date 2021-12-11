@@ -284,6 +284,10 @@ img {
   justify-content: center;
 }
 
+#paypal-container  input {
+  width: 50%;
+}
+
 #twitter-feed {
   grid-area: twitter-feed;
   padding-bottom: 1rem;
@@ -730,6 +734,11 @@ footer {
       "post-three"
       "notice-two"
       "twitter-feed";
+  }
+
+  #paypal-container  input {
+    width: 40%;
+    padding-top: 0.5rem;
   }
 
   #twitter-widget-0 {
