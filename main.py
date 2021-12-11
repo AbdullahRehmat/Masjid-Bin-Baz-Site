@@ -136,20 +136,20 @@ def about():
     return render_template("public/about.html")
 
 
-@app.route("/contact")
-def contact():
-    form = ContactForm()
-
-    if form.validate_on_submit():
-
-        client_address = form.client_address.data
-        client_subject = client_address + " : " + form.client_subject.data
-        client_message = form.client_message.data
-        send_mail(client_address, client_subject, client_message)
-
-        return redirect(url_for('index'))
-
-    return render_template("public/contact.html", form=form)
+#@app.route("/contact")
+#def contact():
+#    form = ContactForm()
+#
+#    if form.validate_on_submit():
+#
+#        client_address = form.client_address.data
+#        client_subject = client_address + " : " + form.client_subject.data
+#        client_message = form.client_message.data
+#        send_mail(client_address, client_subject, client_message)
+#
+#        return redirect('/')
+#
+#    return render_template("public/contact.html", form=form)
 
 
 @app.route('/downloads/<path:filename>')
