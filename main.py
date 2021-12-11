@@ -99,11 +99,6 @@ class UploadFile(FlaskForm):
     ), FileAllowed(['pdf'])])
 
 
-# app.config['TIMETABLE_PDF'] = ""
-# app.config['TIMETABLE_JPEG'] = ""
-# app.config['TIMETABLE_WEBP'] = ""
-
-
 # PUBLIC PAGES
 @app.route("/")
 @app.route("/index")
