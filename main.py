@@ -1,5 +1,4 @@
 import os
-import smtplib
 from dotenv import load_dotenv
 from flask_wtf import FlaskForm
 from flask_sqlalchemy import SQLAlchemy
@@ -11,7 +10,6 @@ from wtforms.validators import DataRequired, Email, Length
 from werkzeug.utils import secure_filename
 from werkzeug.security import generate_password_hash, check_password_hash
 from pdf2image import convert_from_path
-from email.mime.text import MIMEText
 
 app = Flask(__name__)
 load_dotenv()
@@ -28,29 +26,6 @@ db = SQLAlchemy(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
-
-# E-Mail Config
-admin_email = os.environ.get("ADMIN_EMAIL")
-password = os.environ.get("ADMIN_EMAIL_PASSWORD")
-receiver = os.environ.get("EMAIL_RECEIVER")
-
-
-def send_mail(client_address, client_subject, client_message):
-
-    client_message = str("From: " + client_address +
-                         "<br />" + "<br />"
-                         " Message:" +
-                         "<br/>" + client_message)
-
-    msg = MIMEText(client_message, "html")
-    msg["From"] = admin_email
-    msg["To"] = receiver
-    msg["Subject"] = client_subject
-
-    s = smtplib.SMTP_SSL(host="smtp.gmail.com", port=465)
-    s.login(user=admin_email, password=password)
-    s.sendmail(admin_email, receiver, msg.as_string())
-    s.quit()
 
 
 class User(UserMixin, db.Model):
@@ -127,29 +102,15 @@ def articles():
 def audio():
     return render_template("public/audio.html")
 
+
 @app.route("/donate")
 def donate():
     return render_template("public/donate.html")
 
+
 @app.route("/about")
 def about():
     return render_template("public/about.html")
-
-
-#@app.route("/contact")
-#def contact():
-#    form = ContactForm()
-#
-#    if form.validate_on_submit():
-#
-#        client_address = form.client_address.data
-#        client_subject = client_address + " : " + form.client_subject.data
-#        client_message = form.client_message.data
-#        send_mail(client_address, client_subject, client_message)
-#
-#        return redirect('/')
-#
-#    return render_template("public/contact.html", form=form)
 
 
 @app.route('/downloads/<path:filename>')
