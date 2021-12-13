@@ -149,10 +149,25 @@ body {
   color: var(--logo--blue);
 }
 
+.grid-item-title-center {
+  font-size: 1.6rem;
+  margin-bottom: 0.25rem;
+  color: var(--logo--blue);
+  text-align: center;
+}
+
 .grid-item-title {
   font-size: 1.6rem;
   margin-bottom: 0.25rem;
   color: var(--logo--blue);
+}
+
+.grid-item-subtitle-center {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  font-style: italic;
+  font-family: "Lora", serif;
+  text-align: center;
 }
 
 .grid-item-subtitle {
@@ -363,6 +378,35 @@ img {
 
 /* ARTICLES PAGE SPECIFIC CSS STYLES */
 
+#articles-grid {
+  width: 87vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem 1rem;
+  grid-template-areas:
+    "articles-header"
+    "post-one"
+    "post-two"
+    "post-three";
+}
+
+#articles-header {
+  grid-area: articles-header;
+}
+
+#post-one {
+  grid-area: post-one;
+}
+
+#post-two {
+  grid-area: post-two;
+}
+
+#post-three {
+  grid-area: post-three;
+}
+
 /* AUDIO PAGE SPECIFIC CSS STYLES */
 #audio-grid {
   width: 87vw;
@@ -401,21 +445,13 @@ img {
   grid-template-columns: 1fr 1fr;
   gap: 1rem 1rem;
   grid-template-areas:
-    "donate donate"
+    "donate-header donate-header"
     "donate-paypal donate-bank-national"
     "donate-local donate-bank-int";
 }
 
-#donate {
-  grid-area: donate;
-}
-
-#donate-title {
-  text-align: center;
-}
-
-#donate-subtitle {
-  text-align: center;
+#donate-header {
+  grid-area: donate-header;
 }
 
 .donate-text {
@@ -447,20 +483,12 @@ img {
   grid-template-columns: 1fr;
   gap: 1rem 1rem;
   grid-template-areas:
-    "about"
+    "about-header"
     "our-call";
 }
 
-#about {
-  grid-area: about;
-}
-
-#about-title {
-  text-align: center;
-}
-
-#about-subtitle {
-  text-align: center;
+#about-header {
+  grid-area: about-header;
 }
 
 #about-text {
