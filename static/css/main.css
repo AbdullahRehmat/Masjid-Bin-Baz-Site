@@ -284,7 +284,7 @@ img {
   justify-content: center;
 }
 
-#paypal-container  input {
+#paypal-container input {
   width: 50%;
 }
 
@@ -512,60 +512,6 @@ img {
   color: var(--metadata-color);
 }
 
-/* CONTACT PAGE SPECIFIC CSS STYLES */
-#contact-grid {
-  width: 87vw;
-  margin: auto;
-  padding: 0.75rem;
-  border-radius: 3px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem 1rem;
-  grid-template-areas:
-    "contact-title"
-    "contact-subtitle"
-    "contact-form";
-
-  background-color: var(--grid-element-color);
-  outline: var(--grid-element-outline) 1px solid;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.002);
-}
-
-#contact-title {
-  grid-area: contact-title;
-  text-align: center;
-  margin-bottom: -1rem;
-}
-
-#contact-subtitle {
-  grid-area: contact-subtitle;
-  text-align: center;
-}
-
-#contact-form {
-  grid-area: contact-form;
-  width: 50vw;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-.contact-fields {
-  width: 100%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border-radius: 3px;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  border: 1px solid #d9d9d9;
-  font-family: "Lora", serif;
-}
-
-#client_message {
-  min-height: 15vh;
-  font-family: "Lora", serif;
-}
-
 /* 404 ERROR PAGE SPECIFIC CSS STYLES */
 #error-grid {
   width: 87vw;
@@ -736,7 +682,7 @@ footer {
       "twitter-feed";
   }
 
-  #paypal-container  input {
+  #paypal-container input {
     width: 40%;
     padding-top: 0.5rem;
   }
@@ -882,11 +828,11 @@ footer {
     grid-template-columns: 1fr;
     gap: 1rem;
     grid-template-areas:
-    "donate"
-    "donate-paypal"
-    "donate-bank-national"
-    "donate-bank-int"
-    "donate-local"; 
+      "donate"
+      "donate-paypal"
+      "donate-bank-national"
+      "donate-bank-int"
+      "donate-local";
   }
 
   /* ABOUT PAGE SPECIFIC CSS STYLES */
