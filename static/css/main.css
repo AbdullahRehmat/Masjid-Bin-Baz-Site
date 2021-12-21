@@ -23,6 +23,7 @@ html {
   --text-color-selected: rgba(48, 92, 119, 0.25);
   --metadata-color: #2d2d31;
   --link-hover-color: #212124;
+  --footer-link-color: #a1a1a9;
   /* Background Colors */
   --background-color: #ffffff;
   --footer-background-color: #212124;
@@ -613,6 +614,12 @@ footer {
 .footer-item {
   padding: 0.1rem;
   font-size: 0.85rem;
+}
+
+.footer-item > a {
+	color: var(--footer-link-color);
+	text-decoration: none;
+	font-size: 0.75rem;
 }
 
 /* CSS Breakpoints */
