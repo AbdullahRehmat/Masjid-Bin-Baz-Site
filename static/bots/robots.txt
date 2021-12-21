@@ -1,5 +1,5 @@
 User-agent: *
-Allow: /
-Disallow: /dowloads/
-
-Sitemap: http://www.masjidbinbaz.com/sitemap.xml
+Disallow: 
+Disallow: /admin/
+Disallow: /downloads/
+Sitemap: https://www.masjidbinbaz.com/sitemap.xml
