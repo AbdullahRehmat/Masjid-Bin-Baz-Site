@@ -195,6 +195,14 @@ body {
   color: var(--metadata-color);
 }
 
+.grid-item-signature {
+  text-align: center;
+  font-size: 0.85rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+  color: var(--metadata-color);
+}
+
 .lora-bold {
   font-weight: 600;
 }
@@ -500,14 +508,6 @@ img {
   text-align-last: center;
 }
 
-#about-signature {
-  text-align: center;
-  font-size: 0.85rem;
-  padding-top: 0.5rem;
-  padding-bottom: 1rem;
-  color: var(--metadata-color);
-}
-
 #our-call-title {
   text-align: center;
 }
@@ -560,6 +560,7 @@ img {
 #policy-text {
   width: 65vw;
   margin: auto;
+  font-size: 0.875rem;
   text-align: justify;
   text-align-last: center;
 }
