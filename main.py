@@ -112,6 +112,9 @@ def donate():
 def about():
     return render_template("public/about.html")
 
+@app.route("/private-policy")
+def private_policy():
+    return render_template("public/private-policy.html")
 
 @app.route('/downloads/<path:filename>')
 def download_file(filename):
