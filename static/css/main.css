@@ -107,6 +107,7 @@ body {
 .menu-item {
   font-size: 1.1rem;
   font-weight: 700;
+  letter-spacing: 0.025rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
@@ -483,12 +484,12 @@ img {
   grid-template-columns: 1fr;
   gap: 1rem 1rem;
   grid-template-areas:
-    "about-header"
+    "about"
     "our-call";
 }
 
-#about-header {
-  grid-area: about-header;
+#about {
+  grid-area: about;
 }
 
 #about-text {
@@ -538,6 +539,28 @@ img {
   padding-top: 0.5rem;
   padding-bottom: 1rem;
   color: var(--metadata-color);
+}
+
+/* PRIVATE POLICY PAGE SPECIFIC CSS STYLES */
+#private-policy-grid {
+  width: 87vw;
+  margin: auto;
+  border-radius: 3px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem 1rem;
+  grid-template-areas: "private-policy";
+}
+
+#private-policy {
+  grid-area: private-policy;
+}
+
+#policy-text {
+  width: 65vw;
+  margin: auto;
+  text-align: justify;
+  text-align-last: center;
 }
 
 /* 404 ERROR PAGE SPECIFIC CSS STYLES */
@@ -668,6 +691,11 @@ footer {
     width: 75vw;
   }
 
+  /* PRIVATE POLICY PAGE SPECIFIC CSS STYLES */
+  #private-policy-grid {
+    width: 93vw;
+  }
+
   /* CONTACT PAGE SPECIFIC CSS STYLES */
   #contact-grid {
     width: 90vw;
@@ -769,6 +797,11 @@ footer {
 
   #contact-form {
     width: 75vw;
+  }
+
+  /* PRIVATE POLICY PAGE SPECIFIC CSS STYLES */
+  #private-policy-grid {
+    width: 93vw;
   }
 
   /* 404 ERROR PAGE SPECIFIC CSS STYLES */
@@ -883,6 +916,11 @@ footer {
 
   #contact-form {
     width: 75vw;
+  }
+
+  /* PRIVATE POLICY PAGE SPECIFIC CSS STYLES */
+  #private-policy-grid {
+    width: 93vw;
   }
 
   /* 404 ERROR PAGE SPECIFIC CSS STYLES */
