@@ -3,7 +3,14 @@ from dotenv import load_dotenv
 from flask_wtf import FlaskForm
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user
-from flask import Flask, render_template, url_for, redirect, request, send_from_directory
+from flask import (
+    Flask,
+    render_template,
+    url_for,
+    redirect,
+    request,
+    send_from_directory,
+)
 from flask_wtf.file import FileField, FileAllowed, FileRequired
 from wtforms import StringField, TextAreaField, PasswordField
 from wtforms.validators import DataRequired, Email, Length
@@ -16,16 +23,16 @@ load_dotenv()
 
 # Flask Server Config
 app.secret_key = os.environ.get("FLASK_SECRET_KEY")
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['UPLOAD_FOLDER'] = os.environ.get("UPLOAD_FOLDER")
-app.config['BOTS_FOLDER'] = os.environ.get("BOTS_FOLDER")
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+app.config["UPLOAD_FOLDER"] = os.environ.get("UPLOAD_FOLDER")
+app.config["BOTS_FOLDER"] = os.environ.get("BOTS_FOLDER")
 
 # Database Config
 db = SQLAlchemy(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
-login_manager.login_view = 'login'
+login_manager.login_view = "login"
 
 
 class User(UserMixin, db.Model):
@@ -45,33 +52,46 @@ class TimetableConfig(db.Model):
 
 
 class ContactForm(FlaskForm):
-    client_address = StringField('eMail Address', validators=[
-        DataRequired()], render_kw={"placeholder": "Email"})
-    client_subject = StringField('Subject', validators=[DataRequired()], render_kw={
-        "placeholder": "Subject"})
+    client_address = StringField(
+        "eMail Address", validators=[DataRequired()], render_kw={"placeholder": "Email"}
+    )
+    client_subject = StringField(
+        "Subject", validators=[DataRequired()], render_kw={"placeholder": "Subject"}
+    )
     client_message = TextAreaField(
-        'Message', validators=[DataRequired()], render_kw={"placeholder": "Message"})
+        "Message", validators=[DataRequired()], render_kw={"placeholder": "Message"}
+    )
 
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()], render_kw={
-                           "placeholder": "Username"})
-    password = PasswordField('Password', validators=[DataRequired()], render_kw={
-                             "placeholder": "Password"})
+    username = StringField(
+        "Username", validators=[DataRequired()], render_kw={"placeholder": "Username"}
+    )
+    password = PasswordField(
+        "Password", validators=[DataRequired()], render_kw={"placeholder": "Password"}
+    )
 
 
 class RegisterForm(FlaskForm):
-    username = StringField('username', validators=[DataRequired(), Length(
-        min=4, max=15)], render_kw={"placeholder": "Username"})
-    email = StringField('email', validators=[DataRequired(), Email(
-        message='Invalid email'), Length(max=50)], render_kw={"placeholder": "E-Mail Address"})
-    password = StringField('password', validators=[DataRequired(), Length(
-        min=8, max=80)], render_kw={"placeholder": "Password"})
+    username = StringField(
+        "username",
+        validators=[DataRequired(), Length(min=4, max=15)],
+        render_kw={"placeholder": "Username"},
+    )
+    email = StringField(
+        "email",
+        validators=[DataRequired(), Email(message="Invalid email"), Length(max=50)],
+        render_kw={"placeholder": "E-Mail Address"},
+    )
+    password = StringField(
+        "password",
+        validators=[DataRequired(), Length(min=8, max=80)],
+        render_kw={"placeholder": "Password"},
+    )
 
 
 class UploadFile(FlaskForm):
-    file = FileField('Files', validators=[FileRequired(
-    ), FileAllowed(['pdf'])])
+    file = FileField("Files", validators=[FileRequired(), FileAllowed(["pdf"])])
 
 
 # PUBLIC PAGES
@@ -89,8 +109,12 @@ def timtable():
         timetable_jpeg = t.jpeg
         timetable_webp = "uploads/" + t.webp
 
-    return render_template("public/timetable.html", timetablePDF=timetable_pdf,
-                           timetableJPEG=timetable_jpeg, timetableWebP=timetable_webp)
+    return render_template(
+        "public/timetable.html",
+        timetablePDF=timetable_pdf,
+        timetableJPEG=timetable_jpeg,
+        timetableWebP=timetable_webp,
+    )
 
 
 @app.route("/articles")
@@ -112,13 +136,17 @@ def donate():
 def about():
     return render_template("public/about.html")
 
+
 @app.route("/private-policy")
 def private_policy():
     return render_template("public/private-policy.html")
 
-@app.route('/downloads/<path:filename>')
+
+@app.route("/downloads/<path:filename>")
 def download_file(filename):
-    return send_from_directory(app.config['UPLOAD_FOLDER'], filename, as_attachment=True)
+    return send_from_directory(
+        app.config["UPLOAD_FOLDER"], filename, as_attachment=True
+    )
 
 
 # PRIVATE PAGES
@@ -127,7 +155,7 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 
-@app.route("/admin/login", methods=('GET', 'POST'))
+@app.route("/admin/login", methods=("GET", "POST"))
 def login():
     form = LoginForm()
 
@@ -136,32 +164,31 @@ def login():
         if user:
             if check_password_hash(user.password, form.password.data):
                 login_user(user, remember=False)
-                return redirect(url_for('admin_portal'))
+                return redirect(url_for("admin_portal"))
 
-        return redirect(url_for('admin_portal'))
+        return redirect(url_for("admin_portal"))
 
     return render_template("admin/admin-login.html", name="Login", form=form)
 
 
-@app.route('/admin/register', methods=['GET', 'POST'])
+@app.route("/admin/register", methods=["GET", "POST"])
 @login_required
 def admin_register():
     form = RegisterForm()
 
     if form.validate_on_submit():
-        hashed_password = generate_password_hash(
-            form.password.data, method='sha256')
+        hashed_password = generate_password_hash(form.password.data, method="sha256")
 
-        new_user = User(username=form.username.data,
-                        email=form.email.data,
-                        password=hashed_password)
+        new_user = User(
+            username=form.username.data, email=form.email.data, password=hashed_password
+        )
 
         db.session.add(new_user)
         db.session.commit()
 
         return redirect(url_for("admin_portal"))
 
-    return render_template('admin/admin-register.html', form=form)
+    return render_template("admin/admin-register.html", form=form)
 
 
 @app.route("/admin/portal")
@@ -178,7 +205,7 @@ def admin_articles():
     return render_template("admin/admin-articles.html", name="Article Editor")
 
 
-@app.route('/admin/uploads', methods=['GET', 'POST'])
+@app.route("/admin/uploads", methods=["GET", "POST"])
 @login_required
 def admin_upload_file():
 
@@ -186,7 +213,7 @@ def admin_upload_file():
 
     if form.validate_on_submit():
         f = form.file.data
-        upload_dir = app.config['UPLOAD_FOLDER']
+        upload_dir = app.config["UPLOAD_FOLDER"]
 
         # Add uploaded File to Uploads Folder
         timetable_pdf = secure_filename(f.filename)
@@ -203,10 +230,7 @@ def admin_upload_file():
 
         # Save File Names to Database
         file_data = TimetableConfig(
-            id=1,
-            pdf=timetable_pdf,
-            jpeg=timetable_jpeg,
-            webp=timetable_webp
+            id=1, pdf=timetable_pdf, jpeg=timetable_jpeg, webp=timetable_webp
         )
 
         db.session.query(TimetableConfig).delete()
@@ -215,27 +239,27 @@ def admin_upload_file():
         db.session.add(file_data)
         db.session.commit()
 
-    return redirect(url_for('admin_portal'))
+    return redirect(url_for("admin_portal"))
 
 
 @app.route("/admin/logout")
 @login_required
 def logout():
     logout_user()
-    return redirect('/')
+    return redirect("/")
 
 
 # PAGES FOR BOTS
-@app.route('/robots.txt')
-@app.route('/sitemap.xml')
+@app.route("/robots.txt")
+@app.route("/sitemap.xml")
 def static_from_root():
-    return send_from_directory(app.config['BOTS_FOLDER'], request.path[1:])
+    return send_from_directory(app.config["BOTS_FOLDER"], request.path[1:])
 
 
 # ERROR HANDLERS
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('error/404.html'), 404
+    return render_template("error/404.html"), 404
 
 
 if __name__ == "__main__":
