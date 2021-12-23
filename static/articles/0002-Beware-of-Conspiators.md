@@ -4,7 +4,7 @@ subtitle: Shaykh Abdul Muhsin Ubaykaan
 
 author: Admin
 
-date: 2001-01-01
+date: 02-01-2001
 
 _Taken from the paper ‘Ash-Sharaq Al-Awsat’ 6 July 2006_
 

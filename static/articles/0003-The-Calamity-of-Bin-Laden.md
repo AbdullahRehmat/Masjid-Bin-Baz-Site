@@ -4,7 +4,7 @@ subtitle: Shaykh Muqbil bin Hadee al-Wad’ee
 
 author: Admin
 
-date: 2001-01-01
+date: 03-01-2001
 
 _In a meeting with al-Jareedah ar-Ra’iy, a Kuwaiti national newspaper [Dated 19th December 1998, Edition 11503]_  
 
