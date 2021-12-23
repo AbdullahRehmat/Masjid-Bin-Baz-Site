@@ -2,28 +2,33 @@
 
 <section id="article-grid">
 
-  <div id="article" class="grid-item">
 
-    <div id="article-title" class="grid-item-title">
-      {{ article.title }}
-    </div>
+  <div id="article-item" class="grid-item">
 
-    <div id="article-subtitle" class="grid-item-subtitle">
-      {{ article.subtitle }}
-    </div>
+    <div class="article-wrapper">
 
-    <div id="greetings-arabic" class="grid-item-subtitle-center style-arabic-light">
-      السلام عليكم ورحمة الله وبركاته
-    </div>
+      <div id="article-title" class="grid-item-title">
+        {{ article.title }}
+      </div>
 
-    <div id="article-content" class="grid-item-text">
-      {{ article.html|safe }}
-    </div>
+      <div id="article-subtitle" class="grid-item-subtitle">
+        {{ article.subtitle }}
+      </div>
 
-    <div id="article-metadata" class="grid-item-metadata">
-      {{ article.author }} | {{ article.date }}
-    </div>
+      <div id="greetings-arabic" class="grid-item-subtitle-center style-arabic-light">
+        السلام عليكم ورحمة الله وبركاته
+      </div>
+
+      <div id="article-content" class="grid-item-text-narrow">
+        {{ article.html|safe }}
+      </div>
+
+      <div id="article-metadata" class="grid-item-metadata">
+        {{ article.author }} | {{ article.date }}
+      </div>
   
+    </div>
+
   </div>
 
 </section>

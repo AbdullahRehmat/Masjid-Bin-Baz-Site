@@ -319,6 +319,12 @@ img {
   border-radius: 3px;
 }
 
+/* MARKDOWN STYLES */
+hr {
+  width: 90%;
+  color: var(--logo--blue);
+}
+
 /* INDEX PAGE SPECIFIC CSS STYLES */
 #home-grid {
   width: 87vw;
@@ -447,6 +453,14 @@ img {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem 1rem;
+}
+
+.article-wrapper {
+  width: 85%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* AUDIO PAGE SPECIFIC CSS STYLES */
