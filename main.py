@@ -95,8 +95,7 @@ class RegisterForm(FlaskForm):
     )
     email = StringField(
         "email",
-        validators=[DataRequired(), Email(
-            message="Invalid email"), Length(max=50)],
+        validators=[DataRequired(), Email(message="Invalid email"), Length(max=50)],
         render_kw={"placeholder": "E-Mail Address"},
     )
     password = StringField(
@@ -107,13 +106,14 @@ class RegisterForm(FlaskForm):
 
 
 class UploadTimetable(FlaskForm):
-    file = FileField("Timetable File", validators=[
-                     FileRequired(), FileAllowed(["pdf"])])
+    file = FileField(
+        "Timetable File", validators=[FileRequired(), FileAllowed(["pdf"])]
+    )
 
 
 class UploadArticle(FlaskForm):
-    file = FileField("Article File", validators=[
-                     FileRequired(), FileAllowed(["md"])])
+    file = FileField("Article File", validators=[FileRequired(), FileAllowed(["md"])])
+
 
 # PUBLIC PAGES
 
@@ -210,8 +210,7 @@ def admin_register():
     form = RegisterForm()
 
     if form.validate_on_submit():
-        hashed_password = generate_password_hash(
-            form.password.data, method="sha256")
+        hashed_password = generate_password_hash(form.password.data, method="sha256")
 
         new_user = User(
             username=form.username.data, email=form.email.data, password=hashed_password
@@ -231,7 +230,12 @@ def admin_portal():
     form_timetable = UploadTimetable()
     form_article = UploadArticle()
 
-    return render_template("admin/admin-portal.html", name="Portal", form_timetable=form_timetable, form_article=form_article)
+    return render_template(
+        "admin/admin-portal.html",
+        name="Portal",
+        form_timetable=form_timetable,
+        form_article=form_article,
+    )
 
 
 @app.route("/admin/articles")
@@ -298,6 +302,7 @@ def admin_upload_file(category):
 
     else:
         return redirect(url_for("page_not_found"))
+
 
 @app.route("/admin/logout")
 @login_required
