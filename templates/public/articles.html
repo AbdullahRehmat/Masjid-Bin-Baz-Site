@@ -22,6 +22,12 @@
             <a href="{{ url_for('article', name=article.path.replace('articles/', '')) }}">{{ article.intro }}</a>
         </div>
         
+        <div class="button-read-more">
+            <a href="{{ url_for('article', name=article.path.replace('articles/', '')) }}">
+                <i class="uil uil-layer-group"> Read More...</i>
+            </a>        
+        </div>
+
         <div id="article-metadata" class="grid-item-metadata">
             {{ article.author }} | {{ article.date }}
         </div>
