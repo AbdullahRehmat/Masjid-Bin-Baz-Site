@@ -178,7 +178,7 @@ def private_policy():
 @app.route("/downloads/<path:filename>")
 def download_file(filename):
     return send_from_directory(
-        app.config["UPLOAD_FOLDER"], filename, as_attachment=True
+        app.config["TIMETABLE_FOLDER"], filename, as_attachment=True
     )
 
 
@@ -240,59 +240,64 @@ def admin_articles():
     return render_template("admin/admin-articles.html", name="Article Editor")
 
 
-@app.route("/admin/upload/timetable", methods=["GET", "POST"])
+@app.route("/admin/upload/<category>", methods=["GET", "POST"])
 @login_required
-def admin_upload_timetable():
+def admin_upload_file(category):
 
-    form = UploadTimetable()
+    if category == "timetable":
+        form = UploadTimetable()
 
-    if form.validate_on_submit():
-        f = form.file.data
-        upload_dir = app.config["UPLOAD_FOLDER"]
+        if form.validate_on_submit():
+            f = form.file.data
+            upload_dir = app.config["TIMETABLE_FOLDER"]
 
-        # Add uploaded File to Timetable Folder
-        timetable_pdf = secure_filename(f.filename)
-        f.save(os.path.join(upload_dir, timetable_pdf))
+            # Add uploaded File to Timetable Folder
+            timetable_pdf = secure_filename(f.filename)
+            f.save(os.path.join(upload_dir, timetable_pdf))
 
-        # Save first PDF Page in JPEG & WebP formats
-        timetable_webp = os.path.splitext(timetable_pdf)[0] + ".webp"
-        timetable_jpeg = os.path.splitext(timetable_pdf)[0] + ".jpg"
-        pdf_location = upload_dir + timetable_pdf
+            # Save first PDF Page in JPEG & WebP formats
+            timetable_webp = os.path.splitext(timetable_pdf)[0] + ".webp"
+            timetable_jpeg = os.path.splitext(timetable_pdf)[0] + ".jpg"
+            pdf_location = upload_dir + timetable_pdf
 
-        images = convert_from_path(pdf_location, 500)
-        images[0].save(os.path.join(upload_dir, timetable_webp))
-        images[0].save(os.path.join(upload_dir, timetable_jpeg))
+            images = convert_from_path(pdf_location, 500)
+            images[0].save(os.path.join(upload_dir, timetable_webp))
+            images[0].save(os.path.join(upload_dir, timetable_jpeg))
 
-        # Save File Names to Database
-        file_data = TimetableConfig(
-            id=1, pdf=timetable_pdf, jpeg=timetable_jpeg, webp=timetable_webp
-        )
+            # Save File Names to Database
+            file_data = TimetableConfig(
+                id=1, pdf=timetable_pdf, jpeg=timetable_jpeg, webp=timetable_webp
+            )
 
-        db.session.query(TimetableConfig).delete()
-        db.session.commit()
+            db.session.query(TimetableConfig).delete()
+            db.session.commit()
 
-        db.session.add(file_data)
-        db.session.commit()
+            db.session.add(file_data)
+            db.session.commit()
 
-    return redirect(url_for("admin_portal"))
+            return redirect(url_for("admin_portal"))
 
+        else:
+            return redirect(url_for("page_not_found"))
 
-@app.route("/admin/upload/article", methods=["GET", "POST"])
-@login_required
-def admin_upload_article():
+    elif category == "article":
+        form = UploadArticle()
 
-    form = UploadArticle()
+        if form.validate_on_submit():
+            f = form.file.data
+            upload_dir = app.config["ARTICLE_FOLDER"]
 
-    if form.validate_on_submit():
-        f = form.file.data
-        upload_dir = app.config["ARTICLE_FOLDER"]
+            # Add uploaded File to Article Folder
+            article_md = secure_filename(f.filename)
+            f.save(os.path.join(upload_dir, article_md))
 
-        # Add uploaded File to Article Folder
-        article_md = secure_filename(f.filename)
-        f.save(os.path.join(upload_dir, article_md))
+            return redirect(url_for("admin_portal"))
 
-    return redirect(url_for("admin_portal"))
+        else:
+            return redirect(url_for("page_not_found"))
 
+    else:
+        return redirect(url_for("page_not_found"))
 
 @app.route("/admin/logout")
 @login_required
@@ -318,4 +323,4 @@ if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "build":
         freezer.freeze()
     else:
-        app.run(host="0.0.0.0", debug=True)
+        app.run(debug=True, host="0.0.0.0", port=5000)
