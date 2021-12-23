@@ -4,10 +4,21 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+flask = "*"
+frozen-flask = "*"
+flask-flatpages = "*"
+markdown = "*"
+python-dotenv = "*"
+flask-wtf = "*"
+flask-login = "*"
+flask-sqlalchemy = "*"
+pdf2image = "*"
+email-validator = "*"
 
 [dev-packages]
-autopep8 = "*"
 black = "*"
+pylint = "*"
+rope = "*"
 
 [requires]
 python_version = "3.8"
