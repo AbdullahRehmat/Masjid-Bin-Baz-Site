@@ -1,0 +1,31 @@
+{% extends "public/layout.html" %} {% block content %}
+
+<section id="article-grid">
+
+  <div id="article" class="grid-item">
+
+    <div id="article-title" class="grid-item-title">
+      {{ article.title }}
+    </div>
+
+    <div id="article-subtitle" class="grid-item-subtitle">
+      {{ article.subtitle }}
+    </div>
+
+    <div id="greetings-arabic" class="grid-item-subtitle-center style-arabic-light">
+      السلام عليكم ورحمة الله وبركاته
+    </div>
+
+    <div id="article-content" class="grid-item-text">
+      {{ article.html|safe }}
+    </div>
+
+    <div id="article-metadata" class="grid-item-metadata">
+      {{ article.author }} | {{ article.date }}
+    </div>
+  
+  </div>
+
+</section>
+
+{% endblock %}

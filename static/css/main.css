@@ -154,14 +154,26 @@ body {
 .grid-item-title-center {
   font-size: 1.6rem;
   margin-bottom: 0.25rem;
-  color: var(--logo--blue);
   text-align: center;
+  color: var(--logo--blue);
 }
 
 .grid-item-title {
   font-size: 1.6rem;
   margin-bottom: 0.25rem;
   color: var(--logo--blue);
+}
+
+.grid-item-title a,
+.grid-item-title a{
+  text-decoration: none;
+  color: var(--logo--blue);
+}
+
+.grid-item-title a:hover,
+.grid-item-title a:hover{
+  transition: 0.5s ease-in-out;
+  color: var(--link-hover-color);
 }
 
 .grid-item-subtitle-center {
@@ -185,6 +197,11 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   font-family: "Lora", serif;
+}
+
+.grid-item-text a {
+  text-decoration: none;
+  color: var(--text-color-primary);
 }
 
 .grid-item-metadata {
@@ -618,321 +635,24 @@ footer {
 }
 
 .footer-item > a {
-	color: var(--footer-link-color);
-	text-decoration: none;
-	font-size: 0.75rem;
+  color: var(--footer-link-color);
+  text-decoration: none;
+  font-size: 0.75rem;
 }
 
-/* CSS Breakpoints */
-@media (max-width: 1280px) {
-  /* INDEX PAGE SPECIFIC CSS STYLES */
-  #home-grid {
-    width: 90vw;
-    grid-template-columns: 35vw 1fr 27vw;
-  }
-  /* TIMETABLE PAGE SPECIFIC CSS STYLES */
-  #timetable-grid {
-    width: 90vw;
-  }
-
-  /* AUDIO PAGE SPECIFIC CSS STYLES */
-  #audio-grid {
-    width: 90vw;
-  }
-
-  /* DONATE PAGE SPECIFIC CSS STYLES */
-  #donate-grid {
-    width: 90vw;
-  }
-
-  /* ABOUT PAGE SPECIFIC CSS STYLES */
-  #about-grid {
-    width: 90vw;
-  }
-
-  /* CONTACT PAGE SPECIFIC CSS STYLES */
-  #contact-grid {
-    width: 90vw;
-  }
-
-  /* 404 ERROR PAGE SPECIFIC CSS STYLES */
-  #error-grid {
-    width: 90vw;
-  }
+/*##################### TEST #####################*/
+#article-grid {
+  width: 87vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem 1rem;
 }
 
-@media (max-width: 1024px) {
-  #logo-img {
-    width: 50vw;
-  }
-
-  /* INDEX PAGE SPECIFIC CSS STYLES */
-  #home-grid {
-    width: 93vw;
-    grid-template-columns: 35vw 1fr 30vw;
-  }
-
-  /* TIMETABLE PAGE SPECIFIC CSS STYLES */
-  #timetable-grid {
-    width: 93vw;
-    grid-template-rows: auto auto 10vh 1fr;
-  }
-  /* AUDIO PAGE SPECIFIC CSS STYLES */
-  #audio-grid {
-    width: 93vw;
-  }
-  /* DONATE PAGE SPECIFIC CSS STYLES */
-  #donate-grid {
-    width: 93vw;
-  }
-
-  /* ABOUT PAGE SPECIFIC CSS STYLES */
-  #about-grid {
-    width: 93vw;
-  }
-
-  #about-text {
-    width: 75vw;
-  }
-
-  #our-call-text {
-    width: 75vw;
-  }
-
-  /* PRIVATE POLICY PAGE SPECIFIC CSS STYLES */
-  #private-policy-grid {
-    width: 93vw;
-  }
-
-  /* CONTACT PAGE SPECIFIC CSS STYLES */
-  #contact-grid {
-    width: 90vw;
-  }
-
-  /* 404 ERROR PAGE SPECIFIC CSS STYLES */
-  #error-grid {
-    width: 93vw;
-  }
-}
-
-@media (max-width: 768px) {
-  #intro {
-    height: 55vh;
-  }
-
-  #logo-img {
-    width: 50vw;
-  }
-
-  .menu-item {
-    font-size: 1rem;
-  }
-
-  /* INDEX PAGE SPECIFIC CSS STYLES */
-  #home-grid {
-    width: 93vw;
-    min-height: 90vh;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    grid-template-areas:
-      "notice-one"
-      "donate-widget"
-      "post-one"
-      "post-two"
-      "post-three"
-      "notice-two"
-      "twitter-feed";
-  }
-
-  #paypal-container input {
-    width: 40%;
-    padding-top: 0.5rem;
-  }
-
-  #twitter-widget-0 {
-    height: fit-content !important;
-  }
-
-  /* TIMETABLE PAGE SPECIFIC CSS STYLES */
-  #timetable-grid {
-    width: 93vw;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto 4vh 1fr;
-    grid-template-areas:
-      "timetable-title"
-      "timetable-subtitle"
-      "timetable-download"
-      "timetable-image"
-      "timetable-info";
-  }
-
-  #timetable-text {
-    width: 75%;
-    margin: auto;
-    text-align: justify;
-    text-align-last: center;
-  }
-
-  /* AUDIO PAGE SPECIFIC CSS STYLES */
-  #audio-grid {
-    width: 93vw;
-  }
-
-  /* DONATE PAGE SPECIFIC CSS STYLES */
-  #donate-grid {
-    width: 93vw;
-  }
-
-  /* ABOUT PAGE SPECIFIC CSS STYLES */
-  #about-grid {
-    width: 93vw;
-  }
-
-  #about-text {
-    width: 75vw;
-  }
-
-  #our-call-text {
-    width: 75vw;
-  }
-
-  /* CONTACT PAGE SPECIFIC CSS STYLES */
-  #contact-grid {
-    width: 93vw;
-  }
-
-  #contact-form {
-    width: 75vw;
-  }
-
-  /* PRIVATE POLICY PAGE SPECIFIC CSS STYLES */
-  #private-policy-grid {
-    width: 93vw;
-  }
-
-  /* 404 ERROR PAGE SPECIFIC CSS STYLES */
-  #error-grid {
-    width: 93vw;
-  }
-}
-
-@media (max-width: 640px) {
-  #logo-img {
-    width: 85vw;
-  }
-
-  .menu-item {
-    font-size: 1rem;
-  }
-
-  .button-blue {
-    max-width: 35vw;
-  }
-
-  /* INDEX PAGE SPECIFIC CSS STYLES */
-  #home-grid {
-    width: 93vw;
-    min-height: 90vh;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem 1rem;
-    grid-template-areas:
-      "notice-one"
-      "donate-widget"
-      "post-one"
-      "post-one"
-      "post-two"
-      "post-two"
-      "post-three"
-      "post-three"
-      "notice-two"
-      "twitter-feed";
-  }
-
-  #twitter-widget-0 {
-    height: fit-content !important;
-  }
-
-  /* TIMETABLE PAGE SPECIFIC CSS STYLES */
-  #timetable-grid {
-    width: 90vw;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto 5vh 1fr;
-    grid-template-areas:
-      "timetable-title"
-      "timetable-subtitle"
-      "timetable-download"
-      "timetable-image"
-      "timetable-info";
-  }
-
-  #timetable-text {
-    width: 85%;
-    margin: auto;
-    text-align: justify;
-    text-align-last: center;
-  }
-
-  /* AUDIO PAGE SPECIFIC CSS STYLES */
-  #audio-grid {
-    width: 93vw;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "mixlr"
-      "sc-a"
-      "sc-b"
-      "sc-c"
-      "sc-d";
-  }
-
-  /* DONATE PAGE SPECIFIC CSS STYLES */
-  #donate-grid {
-    width: 93vw;
-    margin: auto;
-    border-radius: 3px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    grid-template-areas:
-      "donate"
-      "donate-paypal"
-      "donate-bank-national"
-      "donate-bank-int"
-      "donate-local";
-  }
-
-  /* ABOUT PAGE SPECIFIC CSS STYLES */
-  #about-grid {
-    width: 93vw;
-  }
-
-  #about-text {
-    width: 75vw;
-  }
-
-  #our-call-text {
-    width: 75vw;
-  }
-
-  /* CONTACT PAGE SPECIFIC CSS STYLES */
-  #contact-grid {
-    width: 93vw;
-  }
-
-  #contact-form {
-    width: 75vw;
-  }
-
-  /* PRIVATE POLICY PAGE SPECIFIC CSS STYLES */
-  #private-policy-grid {
-    width: 93vw;
-  }
-
-  /* 404 ERROR PAGE SPECIFIC CSS STYLES */
-  #error-grid {
-    width: 93vw;
-  }
+#articles-grid {
+  width: 87vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem 1rem;
 }
