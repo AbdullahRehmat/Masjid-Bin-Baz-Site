@@ -16,10 +16,27 @@
     <div id="timetable-form" class="grid-item-content">
       <form
       method="POST"
-      action="{{ url_for('admin_upload_file') }}"
+      action="{{ url_for('admin_upload_timetable') }}"
       enctype="multipart/form-data"
     >
-      {{form.csrf_token }} {{form.file(class="file-upload")}}
+      {{form_timetable.csrf_token }} {{form_timetable.file(class="file-upload")}}
+      <input type="submit" value="Upload" class="button" />
+    </form>
+    </div>
+  </div>
+
+  <div id="portal-article" class="grid-item">
+    <div id="article-title" class="grid-item-title">Article</div>
+    <div id="article-subtitle" class="grid-item-subtitle">
+      Upload A New Article (MD)
+    </div>
+    <div id="article-form" class="grid-item-content">
+      <form
+      method="POST"
+      action="{{ url_for('admin_upload_article') }}"
+      enctype="multipart/form-data"
+    >
+      {{form_article.csrf_token }} {{form_article.file(class="file-upload")}}
       <input type="submit" value="Upload" class="button" />
     </form>
     </div>
