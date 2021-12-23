@@ -135,6 +135,7 @@ def timtable():
 def articles():
     articles = [a for a in flatpages if a.path.startswith(ARTCICLE_DIR)]
     articles.sort(key=lambda item: item["date"], reverse=False)
+    articles = reversed(articles)
     return render_template("public/articles.html", articles=articles)
 
 
