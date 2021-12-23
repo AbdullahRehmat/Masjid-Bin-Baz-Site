@@ -1,4 +1,5 @@
 import os
+import re
 import sys
 from dotenv import load_dotenv
 from flask_wtf import FlaskForm
@@ -116,8 +117,6 @@ class UploadArticle(FlaskForm):
 
 
 # PUBLIC PAGES
-
-
 @app.route("/")
 @app.route("/index")
 def index():
@@ -145,7 +144,12 @@ def articles():
     articles = [a for a in flatpages if a.path.startswith(ARTCICLE_DIR)]
     articles.sort(key=lambda item: item["date"], reverse=False)
     articles = reversed(articles)
-    return render_template("public/articles.html", articles=articles)
+
+    def strip_tags(text):
+        clean = re.compile("<.*?>")
+        return re.sub(clean, "", text)
+
+    return render_template("public/articles.html", articles=articles, st=strip_tags)
 
 
 @app.route("/article/<name>/")
