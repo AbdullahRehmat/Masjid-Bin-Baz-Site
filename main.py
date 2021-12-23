@@ -39,7 +39,8 @@ load_dotenv()
 app.secret_key = os.environ.get("FLASK_SECRET_KEY")
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.config["UPLOAD_FOLDER"] = os.environ.get("UPLOAD_FOLDER")
+app.config["TIMETABLE_FOLDER"] = os.environ.get("TIMETABLE_FOLDER")
+app.config["ARTICLE_FOLDER"] = os.environ.get("ARTICLE_FOLDER")
 app.config["BOTS_FOLDER"] = os.environ.get("BOTS_FOLDER")
 
 # Database Config
@@ -94,7 +95,8 @@ class RegisterForm(FlaskForm):
     )
     email = StringField(
         "email",
-        validators=[DataRequired(), Email(message="Invalid email"), Length(max=50)],
+        validators=[DataRequired(), Email(
+            message="Invalid email"), Length(max=50)],
         render_kw={"placeholder": "E-Mail Address"},
     )
     password = StringField(
@@ -104,11 +106,18 @@ class RegisterForm(FlaskForm):
     )
 
 
-class UploadFile(FlaskForm):
-    file = FileField("Files", validators=[FileRequired(), FileAllowed(["pdf"])])
+class UploadTimetable(FlaskForm):
+    file = FileField("Timetable File", validators=[
+                     FileRequired(), FileAllowed(["pdf"])])
 
+
+class UploadArticle(FlaskForm):
+    file = FileField("Article File", validators=[
+                     FileRequired(), FileAllowed(["md"])])
 
 # PUBLIC PAGES
+
+
 @app.route("/")
 @app.route("/index")
 def index():
@@ -201,7 +210,8 @@ def admin_register():
     form = RegisterForm()
 
     if form.validate_on_submit():
-        hashed_password = generate_password_hash(form.password.data, method="sha256")
+        hashed_password = generate_password_hash(
+            form.password.data, method="sha256")
 
         new_user = User(
             username=form.username.data, email=form.email.data, password=hashed_password
@@ -218,9 +228,10 @@ def admin_register():
 @app.route("/admin/portal")
 @login_required
 def admin_portal():
-    form = UploadFile()
+    form_timetable = UploadTimetable()
+    form_article = UploadArticle()
 
-    return render_template("admin/admin-portal.html", name="Portal", form=form)
+    return render_template("admin/admin-portal.html", name="Portal", form_timetable=form_timetable, form_article=form_article)
 
 
 @app.route("/admin/articles")
@@ -229,17 +240,17 @@ def admin_articles():
     return render_template("admin/admin-articles.html", name="Article Editor")
 
 
-@app.route("/admin/uploads", methods=["GET", "POST"])
+@app.route("/admin/upload/timetable", methods=["GET", "POST"])
 @login_required
-def admin_upload_file():
+def admin_upload_timetable():
 
-    form = UploadFile()
+    form = UploadTimetable()
 
     if form.validate_on_submit():
         f = form.file.data
         upload_dir = app.config["UPLOAD_FOLDER"]
 
-        # Add uploaded File to Uploads Folder
+        # Add uploaded File to Timetable Folder
         timetable_pdf = secure_filename(f.filename)
         f.save(os.path.join(upload_dir, timetable_pdf))
 
@@ -262,6 +273,23 @@ def admin_upload_file():
 
         db.session.add(file_data)
         db.session.commit()
+
+    return redirect(url_for("admin_portal"))
+
+
+@app.route("/admin/upload/article", methods=["GET", "POST"])
+@login_required
+def admin_upload_article():
+
+    form = UploadArticle()
+
+    if form.validate_on_submit():
+        f = form.file.data
+        upload_dir = app.config["ARTICLE_FOLDER"]
+
+        # Add uploaded File to Article Folder
+        article_md = secure_filename(f.filename)
+        f.save(os.path.join(upload_dir, article_md))
 
     return redirect(url_for("admin_portal"))
 
