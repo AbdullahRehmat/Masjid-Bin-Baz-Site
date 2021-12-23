@@ -19,7 +19,7 @@
         </div>
 
         <div id="article-intro" class="grid-item-text">
-            <a href="{{ url_for('article', name=article.path.replace('articles/', '')) }}">{{ article.intro }}</a>
+            <a href="{{ url_for('article', name=article.path.replace('articles/', '')) }}">{{ " ".join(article.html[3:].split()[:100]) + "..."|safe }}</a>
         </div>
         
         <div class="button-read-more">
