@@ -23,6 +23,7 @@ html {
   --text-color-selected: rgba(48, 92, 119, 0.25);
   --metadata-color: #2d2d31;
   --link-hover-color: #212124;
+  --footer-link-color: #a1a1a9;
   /* Background Colors */
   --background-color: #ffffff;
   --footer-background-color: #212124;
@@ -107,6 +108,7 @@ body {
 .menu-item {
   font-size: 1.1rem;
   font-weight: 700;
+  letter-spacing: 0.025rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
@@ -132,6 +134,12 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.002);
 }
 
+.grid-item-content {
+  width: 97%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .grid-notice {
   text-align: center;
   font-size: 1rem;
@@ -152,18 +160,33 @@ body {
 .grid-item-title-center {
   font-size: 1.6rem;
   margin-bottom: 0.25rem;
-  color: var(--logo--blue);
   text-align: center;
+  color: var(--logo--blue);
 }
 
 .grid-item-title {
+  width: 97%;
   font-size: 1.6rem;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 0.25rem;
   color: var(--logo--blue);
 }
 
+.grid-item-title a,
+.grid-item-title a {
+  text-decoration: none;
+  color: var(--logo--blue);
+}
+
+.grid-item-title a:hover,
+.grid-item-title a:hover {
+  transition: 0.5s ease-in-out;
+  color: var(--link-hover-color);
+}
+
 .grid-item-subtitle-center {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   margin-bottom: 0.75rem;
   font-style: italic;
   font-family: "Lora", serif;
@@ -171,7 +194,10 @@ body {
 }
 
 .grid-item-subtitle {
-  font-size: 1.1rem;
+  width: 97%;
+  font-size: 1.15rem;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 0.75rem;
   font-style: italic;
   font-family: "Lora", serif;
@@ -179,17 +205,33 @@ body {
 
 .grid-item-text {
   width: 97%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.25rem;
   margin-bottom: 1rem;
   font-size: 1rem;
   line-height: 1.5;
   font-family: "Lora", serif;
 }
 
+.grid-item-text a {
+  text-decoration: none;
+  color: var(--text-color-primary);
+}
+
 .grid-item-metadata {
-  width: 100%;
+  width: 99.5%;
   margin-bottom: 0rem;
   font-size: 0.8rem;
   text-align: right;
+  color: var(--metadata-color);
+}
+
+.grid-item-signature {
+  text-align: center;
+  font-size: 0.85rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
   color: var(--metadata-color);
 }
 
@@ -204,11 +246,13 @@ body {
 
 .style-arabic-bold {
   font-family: "Scheherazade New", serif;
+  font-style: normal;
   font-weight: 700;
 }
 
 .style-arabic-light {
   font-family: "Scheherazade New", serif;
+  font-style: normal;
   font-weight: 400;
 }
 
@@ -251,6 +295,24 @@ body {
 .button-blue > a:hover {
   transition: 0.5s ease-in-out;
   color: var(--link-hover-color);
+}
+
+.button-read-more {
+  text-align: center;
+  font-size: 1rem;
+  font-style: italic;
+  font-family: "Lora", serif;
+  font-weight: 600;
+}
+
+.button-read-more > a {
+  text-decoration: none;
+  color: var(--text-color-primary);
+}
+
+.button-read-more a:hover {
+  transition: 0.5s ease-in-out;
+  color: var(--logo--blue);
 }
 
 iframe {
