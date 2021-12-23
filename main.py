@@ -142,8 +142,7 @@ def timtable():
 @app.route("/articles/")
 def articles():
     articles = [a for a in flatpages if a.path.startswith(ARTCICLE_DIR)]
-    articles.sort(key=lambda item: item["date"], reverse=False)
-    articles = reversed(articles)
+    articles.sort(key=lambda item: item["date"], reverse=True)
 
     def strip_tags(text):
         clean = re.compile("<.*?>")
