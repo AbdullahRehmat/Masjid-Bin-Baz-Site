@@ -1,6 +1,9 @@
 import os
+import sys
 from dotenv import load_dotenv
 from flask_wtf import FlaskForm
+from flask_frozen import Freezer
+from flask_flatpages import FlatPages
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user
 from flask import (
@@ -8,8 +11,8 @@ from flask import (
     render_template,
     url_for,
     redirect,
-    request,
     send_from_directory,
+    request,
 )
 from flask_wtf.file import FileField, FileAllowed, FileRequired
 from wtforms import StringField, TextAreaField, PasswordField
@@ -18,7 +21,18 @@ from werkzeug.utils import secure_filename
 from werkzeug.security import generate_password_hash, check_password_hash
 from pdf2image import convert_from_path
 
+
+DEBUG = True
+FLATPAGES_AUTO_RELOAD = DEBUG
+FLATPAGES_EXTENSION = ".md"
+FLATPAGES_ROOT = "content"
+ARTCICLE_DIR = "articles"
+
+
 app = Flask(__name__)
+flatpages = FlatPages(app)
+freezer = Freezer(app)
+app.config.from_object(__name__)
 load_dotenv()
 
 # Flask Server Config
@@ -117,9 +131,18 @@ def timtable():
     )
 
 
-@app.route("/articles")
+@app.route("/articles/")
 def articles():
-    return render_template("public/articles.html")
+    articles = [a for a in flatpages if a.path.startswith(ARTCICLE_DIR)]
+    articles.sort(key=lambda item: item["date"], reverse=False)
+    return render_template("public/articles.html", articles=articles)
+
+
+@app.route("/article/<name>/")
+def article(name):
+    path = "{}/{}".format(ARTCICLE_DIR, name)
+    article = flatpages.get_or_404(path)
+    return render_template("public/article.html", article=article)
 
 
 @app.route("/audio")
@@ -263,4 +286,7 @@ def page_not_found(e):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    if len(sys.argv) > 1 and sys.argv[1] == "build":
+        freezer.freeze()
+    else:
+        app.run(host="0.0.0.0", debug=True)
