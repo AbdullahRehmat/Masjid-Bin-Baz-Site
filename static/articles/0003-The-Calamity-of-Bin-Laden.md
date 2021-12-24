@@ -6,7 +6,7 @@ author: Admin
 
 date: 03-01-2001
 
-_In a meeting with al-Jareedah ar-Ra’iy, a Kuwaiti national newspaper [Dated 19th December 1998, Edition 11503]_  
+_In a meeting with al-Jareedah ar-Ra’iy, a Kuwaiti national newspaper [Dated 19th December 1998, Edition 11503]_
 
 The Allaamah of Yemen Shaykh Muqbil said:
 
