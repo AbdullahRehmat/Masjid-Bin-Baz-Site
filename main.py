@@ -120,7 +120,16 @@ class UploadArticle(FlaskForm):
 @app.route("/")
 @app.route("/index")
 def index():
-    return render_template("public/index.html")
+    articles = [a for a in flatpages if a.path.startswith(ARTCICLE_DIR)]
+    articles.sort(key=lambda item: item["date"], reverse=True)
+
+    def strip_tags(text):
+        clean = re.compile("<.*?>")
+        return re.sub(clean, "", text)
+
+    test = articles[0]
+    print(test)
+    return render_template("public/index.html", articles=articles, st=strip_tags)
 
 
 @app.route("/timetable")

@@ -49,48 +49,30 @@
   </div>
 
   <div class="grid-item" id="post-one">
-    <div class="grid-item-title">Lorem Ipsum</div>
-    <div class="grid-item-subtitle">Lorem ipsum dolor sit</div>
+    <div class="grid-item-title">{{ articles[0].title }}</div>
+    <div class="grid-item-subtitle">{{ articles[0].subtitle }}</div>
     <div class="grid-item-text">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus nam
-      laudantium ex beatae. Ad maxime vitae ea at velit praesentium explicabo
-      dolorum sunt, a laudantium, exercitationem quisquam perspiciatis quod
-      provident! Fuga atque sequi eaque autem accusamus maxime at distinctio,
-      perspiciatis dicta dolore quaerat animi, quibusdam quos provident modi
-      praesentium. Laboriosam ea, sapiente doloribus et at nostrum harum
-      consectetur ad nam!
+      {{ " ".join(st(articles[0].html[3:]).split()[:100]) + "..."|safe }}
     </div>
-    <div class="grid-item-metadata">Post by Admin at 10:20 10/10/2021</div>
+    <div class="grid-item-metadata">{{ articles[0].author }} | {{ articles[0].date }}</div>
   </div>
 
   <div class="grid-item" id="post-two">
-    <div class="grid-item-title">Lorem Ipsum</div>
-    <div class="grid-item-subtitle">Lorem ipsum dolor sit</div>
+    <div class="grid-item-title">{{ articles[1].title }}</div>
+    <div class="grid-item-subtitle">{{ articles[1].subtitle }}</div>
     <div class="grid-item-text">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus nam
-      laudantium ex beatae. Ad maxime vitae ea at velit praesentium explicabo
-      dolorum sunt, a laudantium, exercitationem quisquam perspiciatis quod
-      provident! Fuga atque sequi eaque autem accusamus maxime at distinctio,
-      perspiciatis dicta dolore quaerat animi, quibusdam quos provident modi
-      praesentium. Laboriosam ea, sapiente doloribus et at nostrum harum
-      consectetur ad nam!
+      {{ " ".join(st(articles[1].html[3:]).split()[:100]) + "..."|safe }}
     </div>
-    <div class="grid-item-metadata">Post by Admin at 10:20 10/10/2021</div>
+    <div class="grid-item-metadata">{{ articles[1].author }} | {{ articles[1].date }}</div>
   </div>
 
   <div class="grid-item" id="post-three">
-    <div class="grid-item-title">Lorem Ipsum</div>
-    <div class="grid-item-subtitle">Lorem ipsum dolor sit</div>
+    <div class="grid-item-title">{{ articles[2].title }}</div>
+    <div class="grid-item-subtitle">{{ articles[2].subtitle }}</div>
     <div class="grid-item-text">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus nam
-      laudantium ex beatae. Ad maxime vitae ea at velit praesentium explicabo
-      dolorum sunt, a laudantium, exercitationem quisquam perspiciatis quod
-      provident! Fuga atque sequi eaque autem accusamus maxime at distinctio,
-      perspiciatis dicta dolore quaerat animi, quibusdam quos provident modi
-      praesentium. Laboriosam ea, sapiente doloribus et at nostrum harum
-      consectetur ad nam!
+      {{ " ".join(st(articles[2].html[3:]).split()[:100]) + "..."|safe }}
     </div>
-    <div class="grid-item-metadata">Post by Admin at 10:20 10/10/2021</div>
+    <div class="grid-item-metadata">{{ articles[2].author }} | {{ articles[2].date }}</div>
   </div>
 
   <div id="notice-two" class="grid-item grid-notice button-read-more">
