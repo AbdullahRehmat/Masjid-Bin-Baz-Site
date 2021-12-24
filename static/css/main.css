@@ -335,12 +335,12 @@ hr {
   gap: 1rem 1rem;
   grid-template-areas:
     "notice-one notice-one donate-widget"
-    "post-one post-one donate-widget"
-    "post-one post-one twitter-feed"
-    "post-two post-two twitter-feed"
-    "post-two post-two twitter-feed"
-    "post-three post-three twitter-feed"
-    "post-three post-three twitter-feed"
+    "home-articles home-articles donate-widget"
+    "home-articles home-articles twitter-feed"
+    "home-articles home-articles twitter-feed"
+    "home-articles home-articles twitter-feed"
+    "home-articles home-articles twitter-feed"
+    "home-articles home-articles twitter-feed"
     "notice-two notice-two twitter-feed";
 }
 
@@ -370,16 +370,16 @@ hr {
   padding-bottom: 1rem;
 }
 
-#post-one {
-  grid-area: post-one;
+#home-articles {
+  grid-area: home-articles;
 }
 
-#post-two {
-  grid-area: post-two;
+.home-article {
+  margin-bottom: 1rem;
 }
 
-#post-three {
-  grid-area: post-three;
+.home-article:last-child {
+  margin-bottom: 0rem;
 }
 
 #notice-two {

@@ -48,31 +48,29 @@
     ></script>
   </div>
 
-  <div class="grid-item" id="post-one">
-    <div class="grid-item-title">{{ articles[0].title }}</div>
-    <div class="grid-item-subtitle">{{ articles[0].subtitle }}</div>
-    <div class="grid-item-text">
-      {{ " ".join(st(articles[0].html[3:]).split()[:100]) + "..."|safe }}
+  <div id="home-articles">
+    {% for article in articles[0:3] %}
+    <div class="grid-item home-article">
+      <div id="home-article-title" class="grid-item-title">
+        <a
+          href="{{ url_for('article', name=article.path.replace('articles/', '')) }}"
+          >{{ article.title }}</a
+        >
+      </div>
+      <div id="home-article-subtitle" class="grid-item-subtitle">
+        {{ article.subtitle }}
+      </div>
+      <div id="home-article-text" class="grid-item-text">
+        <a
+          href="{{ url_for('article', name=article.path.replace('articles/', '')) }}"
+          >{{ " ".join(st(article.html[3:]).split()[:100]) + "..."|safe }}</a
+        >
+      </div>
+      <div id="home-article-metadata" class="grid-item-metadata">
+        {{ article.author }} | {{ article.date }}
+      </div>
     </div>
-    <div class="grid-item-metadata">{{ articles[0].author }} | {{ articles[0].date }}</div>
-  </div>
-
-  <div class="grid-item" id="post-two">
-    <div class="grid-item-title">{{ articles[1].title }}</div>
-    <div class="grid-item-subtitle">{{ articles[1].subtitle }}</div>
-    <div class="grid-item-text">
-      {{ " ".join(st(articles[1].html[3:]).split()[:100]) + "..."|safe }}
-    </div>
-    <div class="grid-item-metadata">{{ articles[1].author }} | {{ articles[1].date }}</div>
-  </div>
-
-  <div class="grid-item" id="post-three">
-    <div class="grid-item-title">{{ articles[2].title }}</div>
-    <div class="grid-item-subtitle">{{ articles[2].subtitle }}</div>
-    <div class="grid-item-text">
-      {{ " ".join(st(articles[2].html[3:]).split()[:100]) + "..."|safe }}
-    </div>
-    <div class="grid-item-metadata">{{ articles[2].author }} | {{ articles[2].date }}</div>
+    {% endfor %}
   </div>
 
   <div id="notice-two" class="grid-item grid-notice button-read-more">
