@@ -10,11 +10,15 @@ Website is written in HTML5 and CSS3. Server is written in Python via the Flask 
 
 To run the website on a server:
 
-> cd ./Masjid-Bin-Baz-Site
->
-> pipenv install 
->
-> pipenv run python3 main.py
+
+
+```bash
+cd ./Masjid-Bin-Baz-Site
+
+pipenv install 
+
+pipenv run python3 main.py
+```
 
 
 
