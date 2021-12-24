@@ -39,8 +39,8 @@
 > .
 > ├── Documentation
 > ├── Static
-> │ ├── Articles
-> │ ├── Bots
+> │ ├── Articles	<- Markdown Articles
+> │ ├── Bots		  <-  
 > │ ├── CSS
 > │ ├── Images
 > │ ├── JS
