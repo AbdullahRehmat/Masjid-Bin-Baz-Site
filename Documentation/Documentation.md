@@ -8,14 +8,10 @@
 
 - All articles should be formatted in GitHub Markdown
 
-
-
 ### Timetables
 
 - All timetables should be uploaded in the `PDF` format
 - Server automatically converts `PDF` to `WebP` for Web pages
-
-
 
 ## Tech Stack
 
@@ -25,22 +21,16 @@
 - HTML / Jinja2 Page Syntax
 - SQLite Database
 
-
-
 ### Hosting
 
 - Repository - [GitHub](github.com/abdullahrehmat/masjid-bin-baz-v2)
 - Website - [Python Anywhere](pythonanywhere.com)
 - CDN - Cloudflare
 
-
-
 ### Statistics
 
 - Google Statistics
 - Python Anywhere Statistics
-
-
 
 ## Server Docs
 
@@ -49,20 +39,18 @@
 > .
 > ├── Documentation
 > ├── Static
-> │   ├── Articles
-> │   ├── Bots
-> │   ├── CSS
-> │   ├── Images
-> │   ├── JS
-> │   └── Uploads
+> │ ├── Articles
+> │ ├── Bots
+> │ ├── CSS
+> │ ├── Images
+> │ ├── JS
+> │ └── Uploads
 > └── Templates
->     ├── Admin
->     ├── Error
->     └── Public
+> ├── Admin
+> ├── Error
+> └── Public
 
-
-
-### Python 
+### Python
 
 - Python 3.8
 - PIPENV Virtual Environment
