@@ -20,13 +20,14 @@
     </div>
     <div id="timetable-form" class="grid-item-content">
       <form
-      method="POST"
-      action="{{ url_for('admin_upload_file', category='timetable') }}"
-      enctype="multipart/form-data"
-    >
-      {{form_timetable.csrf_token }} {{form_timetable.file(class="file-upload")}}
-      <input type="submit" value="Upload" class="button" />
-    </form>
+        method="POST"
+        action="{{ url_for('admin_upload_file', category='timetable') }}"
+        enctype="multipart/form-data"
+      >
+        {{form_timetable.csrf_token }}
+        {{form_timetable.file(class="file-upload")}}
+        <input type="submit" value="Upload" class="button" />
+      </form>
     </div>
   </div>
 
@@ -37,13 +38,13 @@
     </div>
     <div id="article-form" class="grid-item-content">
       <form
-      method="POST"
-      action="{{ url_for('admin_upload_file', category='article')}}"
-      enctype="multipart/form-data"
-    >
-      {{form_article.csrf_token }} {{form_article.file(class="file-upload")}}
-      <input type="submit" value="Upload" class="button" />
-    </form>
+        method="POST"
+        action="{{ url_for('admin_upload_file', category='article')}}"
+        enctype="multipart/form-data"
+      >
+        {{form_article.csrf_token }} {{form_article.file(class="file-upload")}}
+        <input type="submit" value="Upload" class="button" />
+      </form>
     </div>
   </div>
 </section>

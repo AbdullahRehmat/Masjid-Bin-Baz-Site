@@ -1,45 +1,50 @@
 {% extends "public/layout.html" %} {% block content %}
 
 <section id="articles-grid">
+  {% for article in articles %}
 
-    {% for article in articles %}
+  <div id="article" class="grid-item">
+    <div class="article-wrapper">
+      <div id="article-title" class="grid-item-title">
+        <a
+          href="{{ url_for('article', name=article.path.replace('articles/', '')) }}"
+          >{{ article.title }}</a
+        >
+      </div>
 
-    <div id="article" class="grid-item">
+      <div id="article-subtitle" class="grid-item-subtitle">
+        {{ article.subtitle }}
+      </div>
 
-        <div class="article-wrapper">
-        
-            <div id="article-title" class="grid-item-title">
-                <a href="{{ url_for('article', name=article.path.replace('articles/', '')) }}">{{ article.title }}</a>
-            </div>
+      <div
+        id="greetings-arabic"
+        class="grid-item-subtitle-center style-arabic-light"
+      >
+        السلام عليكم ورحمة الله وبركاته
+      </div>
 
-            <div id="article-subtitle" class="grid-item-subtitle">
-                {{ article.subtitle }}
-            </div>
+      <div id="article-intro" class="grid-item-text">
+        <a
+          href="{{ url_for('article', name=article.path.replace('articles/', '')) }}"
+          >{{ " ".join(st(article.html[3:]).split()[:100]) + "..."|safe }}</a
+        >
+      </div>
 
-            <div id="greetings-arabic" class="grid-item-subtitle-center style-arabic-light">
-                السلام عليكم ورحمة الله وبركاته
-            </div>
+      <div class="button-read-more">
+        <a
+          href="{{ url_for('article', name=article.path.replace('articles/', '')) }}"
+        >
+          <i class="uil uil-layer-group"> Read More...</i>
+        </a>
+      </div>
 
-            <div id="article-intro" class="grid-item-text">
-                <a href="{{ url_for('article', name=article.path.replace('articles/', '')) }}">{{ " ".join(st(article.html[3:]).split()[:100]) + "..."|safe }}</a>
-            </div>
-            
-            <div class="button-read-more">
-                <a href="{{ url_for('article', name=article.path.replace('articles/', '')) }}">
-                    <i class="uil uil-layer-group"> Read More...</i>
-                </a>        
-            </div>
-
-            <div id="article-metadata" class="grid-item-metadata">
-                {{ article.author }} | {{ article.date }}
-            </div>
-        
-        </div>
-
+      <div id="article-metadata" class="grid-item-metadata">
+        {{ article.author }} | {{ article.date }}
+      </div>
     </div>
-    
-    {% endfor %}
+  </div>
 
+  {% endfor %}
 </section>
 
 {% endblock %}
