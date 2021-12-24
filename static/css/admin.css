@@ -46,86 +46,6 @@ body {
   height: 100%;
 }
 
-#intro {
-  margin: 0;
-  height: 45vh;
-  padding: 0.5rem;
-  position: relative;
-  background-size: cover;
-  background-image: url(../images/background-02.webp);
-  background-position: center;
-}
-
-#logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-#logo-img {
-  width: 35vw;
-}
-
-#social-media-bar {
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  position: absolute;
-  padding-right: 1.2rem;
-  padding-bottom: 0.5rem;
-}
-
-#social-media-bar a {
-  font-size: 1.75rem;
-  margin-left: 0.5rem;
-  color: var(--logo--blue);
-  text-decoration: none;
-}
-
-#social-media-bar a:hover {
-  transition: 0.5s ease-in-out;
-  color: var(--link-hover-color);
-}
-
-#menu-bar {
-  display: flex;
-  flex-wrap: wrap;
-  min-height: 4.5vh;
-  margin-bottom: 1rem;
-  align-items: center;
-  flex-direction: row;
-  align-content: center;
-  justify-content: center;
-  background-color: var(--logo--blue);
-}
-
-.menu-item {
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.025rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  cursor: context-menu;
-}
-
-.menu-item > a {
-  color: var(--text-color-secondary);
-  text-decoration: none;
-}
-
-.menu-item > a:hover {
-  transition: 0.5s ease-in-out;
-  color: var(--link-hover-color);
-}
-
 .grid-item {
   padding: 0.75rem;
   border-radius: 3px;
@@ -444,36 +364,11 @@ img {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.75rem 0.75rem;
-  grid-template-areas:
-    "portal-analytics"
-    "portal-timetable";
 }
 
-#portal-analytics {
-  grid-area: portal-analytics;
-}
-
-#portal-timetable {
-  grid-area: portal-timetable;
-}
-
-#timetable-form {
+.upload-form {
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
-}
-
-/* ADMIN ARTICLES PAGE SPECIFIC CSS STYLES */
-#articles-grid {
-  width: 1fr;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.75rem 0.75rem;
-  grid-template-areas: "articles-editor";
-}
-
-#articles-editor {
-  grid-area: articles-editor;
 }
 
 /* FOOTER SPECIFIC CSS STYLES */
