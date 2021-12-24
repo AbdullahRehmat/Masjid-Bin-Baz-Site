@@ -86,5 +86,11 @@ Sit amet commodo nulla facilisi nullam vehicula ipsum a arcu. Pellentesque habit
 
 ## To Do List
 
+- 
 
 
+
+## Notes
+
+- Icons sourced from [IconScout]([Icons - Line](https://iconscout.com/unicons/explore/line))
+- Banner image sources from [Unsplash](https://unsplash.com/images)
