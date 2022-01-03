@@ -16,7 +16,7 @@ from flask import (
     request,
 )
 from flask_wtf.file import FileField, FileAllowed, FileRequired
-from wtforms import StringField, TextAreaField, PasswordField
+from wtforms import StringField, PasswordField
 from wtforms.validators import DataRequired, Email, Length
 from werkzeug.utils import secure_filename
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -67,18 +67,6 @@ class TimetableConfig(db.Model):
     webp = db.Column(db.String(256), unique=True)
 
 
-class ContactForm(FlaskForm):
-    client_address = StringField(
-        "eMail Address", validators=[DataRequired()], render_kw={"placeholder": "Email"}
-    )
-    client_subject = StringField(
-        "Subject", validators=[DataRequired()], render_kw={"placeholder": "Subject"}
-    )
-    client_message = TextAreaField(
-        "Message", validators=[DataRequired()], render_kw={"placeholder": "Message"}
-    )
-
-
 class LoginForm(FlaskForm):
     username = StringField(
         "Username", validators=[DataRequired()], render_kw={"placeholder": "Username"}
@@ -127,8 +115,6 @@ def index():
         clean = re.compile("<.*?>")
         return re.sub(clean, "", text)
 
-    test = articles[0]
-    print(test)
     return render_template("public/index.html", articles=articles, st=strip_tags)
 
 
