@@ -339,8 +339,6 @@ hr {
     "home-articles home-articles twitter-feed"
     "home-articles home-articles twitter-feed"
     "home-articles home-articles twitter-feed"
-    "home-articles home-articles twitter-feed"
-    "home-articles home-articles twitter-feed"
     "notice-two notice-two twitter-feed";
 }
 
@@ -362,7 +360,8 @@ hr {
 }
 
 #paypal-container input {
-  width: 50%;
+  width: 45%;
+  padding: 0.5rem;
 }
 
 #twitter-feed {
@@ -804,9 +803,7 @@ footer {
     grid-template-areas:
       "notice-one"
       "donate-widget"
-      "post-one"
-      "post-two"
-      "post-three"
+      "home-articles"
       "notice-two"
       "twitter-feed";
   }
@@ -916,12 +913,7 @@ footer {
     grid-template-areas:
       "notice-one"
       "donate-widget"
-      "post-one"
-      "post-one"
-      "post-two"
-      "post-two"
-      "post-three"
-      "post-three"
+      "home-articles"
       "notice-two"
       "twitter-feed";
   }
