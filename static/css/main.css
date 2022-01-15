@@ -15,18 +15,18 @@ html {
 :root {
   /* Grid + Element Colors */
   --logo--blue: #305c77;
-  --grid-element-color: #f5f6fa;
+  --grid-element-color: #f8f8f8;
   --grid-element-outline: #dfdfdf;
   /* Text Colors */
-  --text-color-primary: #000000;
+  --text-color-primary: #111111;
   --text-color-secondary: #ffffff;
   --text-color-selected: rgba(48, 92, 119, 0.25);
   --metadata-color: #2d2d31;
-  --link-hover-color: #212124;
+  --link-hover-color: #111111;
   --footer-link-color: #a1a1a9;
   /* Background Colors */
   --background-color: #ffffff;
-  --footer-background-color: #212124;
+  --footer-background-color: #111111;
 }
 
 ::selection {
@@ -128,7 +128,7 @@ body {
 
 .grid-item {
   padding: 0.75rem;
-  border-radius: 3px;
+  border-radius: 2px;
   background-color: var(--grid-element-color);
   outline: var(--grid-element-outline) 1px solid;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.002);
@@ -271,7 +271,7 @@ body {
   margin: auto;
   padding: 0.6rem;
   font-size: 1.1rem;
-  border-radius: 3px;
+  border-radius: 2px;
   text-align: center;
   margin-bottom: 1.5rem;
   color: #ffffff;
@@ -311,12 +311,12 @@ body {
 
 iframe {
   width: 100%;
-  border-radius: 3px;
+  border-radius: 2px;
   outline: var(--grid-element-outline) solid 1px;
 }
 
 img {
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 /* MARKDOWN STYLES */
@@ -390,7 +390,7 @@ hr {
   width: 87vw;
   margin: auto;
   padding: 0.75rem;
-  border-radius: 3px;
+  border-radius: 2px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto 5vh 1fr;
@@ -495,7 +495,7 @@ hr {
 #donate-grid {
   width: 87vw;
   margin: auto;
-  border-radius: 3px;
+  border-radius: 2px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem 1rem;
@@ -533,7 +533,7 @@ hr {
 #about-grid {
   width: 87vw;
   margin: auto;
-  border-radius: 3px;
+  border-radius: 2px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem 1rem;
@@ -591,7 +591,7 @@ hr {
 #private-policy-grid {
   width: 87vw;
   margin: auto;
-  border-radius: 3px;
+  border-radius: 2px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem 1rem;
@@ -615,7 +615,7 @@ hr {
   width: 87vw;
   margin: auto;
   padding: 0.75rem;
-  border-radius: 3px;
+  border-radius: 2px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem 1rem;
@@ -967,7 +967,7 @@ footer {
   #donate-grid {
     width: 93vw;
     margin: auto;
-    border-radius: 3px;
+    border-radius: 2px;
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
