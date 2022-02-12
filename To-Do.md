@@ -127,14 +127,16 @@
 
 
 - [ ] Pre Launch
-  - [x] Write up documentation
+  - [x] Write up Documentation
   - [x] Create sample Markdown article
   - [x] Minify CSS + Static Assets
-  - [ ] Backup old WordPress Site
+  - [ ] Integrate `Iubenda` Privacy Service
   - [ ] Make GitHub Repository Private
-  - [ ] Create User Profile
+  - [ ] Create User Profiles
   - [ ] Check Website for bugs
   - [ ] Check Website Speed
-  - [ ] Check SEO rating with Google Lighthouse
+  - [ ] Check Google Lighthouse SEO
   - [ ] Optimise Site
+  - [ ] Backup old WordPress Site
+  - [ ] Transfer Domain to new hosting
   - [ ] Cache Site with Cloudflare
