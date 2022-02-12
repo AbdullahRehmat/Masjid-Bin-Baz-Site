@@ -15,7 +15,7 @@ html {
 :root {
   /* Grid + Element Colors */
   --logo--blue: #305c77;
-  --grid-element-color: #f8f8f8;
+  --grid-element-color: #ffffff;
   --grid-element-outline: #dfdfdf;
   /* Text Colors */
   --text-color-primary: #111111;
@@ -25,7 +25,7 @@ html {
   --link-hover-color: #111111;
   --footer-link-color: #a1a1a9;
   /* Background Colors */
-  --background-color: #ffffff;
+  --background-color: #f8f8f8;
   --footer-background-color: #111111;
 }
 
@@ -361,7 +361,7 @@ hr {
 
 #paypal-container input {
   width: 45%;
-  padding: 0.5rem;
+  padding: 0.75rem;
 }
 
 #twitter-feed {
