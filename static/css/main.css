@@ -203,7 +203,7 @@ body {
   margin-right: auto;
   margin-top: 0.25rem;
   margin-bottom: 1rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.5;
   font-family: "Lora", serif;
 }
@@ -251,7 +251,8 @@ body {
 }
 
 .style-hadeeth {
-  font-size: 1.1rem;
+  font-size: 1rem;
+  line-height: 1.5;
   font-style: italic;
   font-family: "Lora", serif;
   color: var(--logo--blue);
@@ -399,7 +400,6 @@ hr {
     "timetable-title timetable-title"
     "timetable-subtitle timetable-subtitle"
     "timetable-image timetable-download"
-    "timetable-image timetable-info"
     "timetable-image timetable-info";
 
   background-color: var(--grid-element-color);
