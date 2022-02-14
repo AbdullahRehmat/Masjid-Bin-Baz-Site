@@ -89,7 +89,7 @@ body {
 }
 
 #social-media-bar a:hover {
-  transition: 0.5s ease-in-out;
+  transition: 0.5s linear;
   color: var(--link-hover-color);
 }
 
@@ -122,7 +122,7 @@ body {
 }
 
 .menu-item > a:hover {
-  transition: 0.5s ease-in-out;
+  transition: 0.5s linear;
   color: var(--link-hover-color);
 }
 
@@ -152,6 +152,7 @@ body {
 }
 
 .grid-item-title-center {
+  padding-top: 0.35rem;
   font-size: 1.6rem;
   margin-bottom: 0.25rem;
   text-align: center;
@@ -159,6 +160,7 @@ body {
 }
 
 .grid-item-title {
+  padding-top: 0.35rem;
   width: 97%;
   font-size: 1.6rem;
   margin-left: auto;
@@ -175,7 +177,7 @@ body {
 
 .grid-item-title a:hover,
 .grid-item-title a:hover {
-  transition: 0.5s ease-in-out;
+  transition: 0.5s linear;
   color: var(--link-hover-color);
 }
 
@@ -288,7 +290,7 @@ body {
 }
 
 .button-blue > a:hover {
-  transition: 0.5s ease-in-out;
+  transition: 0.5s linear;
   color: var(--link-hover-color);
 }
 
@@ -306,7 +308,7 @@ body {
 }
 
 .button-read-more a:hover {
-  transition: 0.5s ease-in-out;
+  transition: 0.5s linear;
   color: var(--logo--blue);
 }
 
@@ -365,9 +367,13 @@ hr {
   padding: 0.75rem;
 }
 
+#twitter-feed-header {
+  padding-bottom: 0.35rem;
+}
+
 #twitter-feed {
+  padding-bottom: 1.75rem;
   grid-area: twitter-feed;
-  padding-bottom: 1rem;
 }
 
 #home-articles {
