@@ -315,7 +315,6 @@ body {
 iframe {
   width: 100%;
   border-radius: 2px;
-  outline: var(--grid-element-outline) solid 1px;
 }
 
 img {
@@ -487,6 +486,7 @@ hr {
 
 #mixlr-embed iframe {
   height: 180px;
+  outline: var(--grid-element-outline) solid 1px;
 }
 
 .soundcloud-embed iframe {
@@ -820,6 +820,7 @@ footer {
   }
 
   #twitter-widget-0 {
+    border: 0;
     height: fit-content !important;
   }
 
