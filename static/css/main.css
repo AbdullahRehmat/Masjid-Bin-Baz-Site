@@ -160,7 +160,7 @@ body {
 }
 
 .grid-item-title {
-  padding-top: 0.35rem;
+  padding-top: 0.5rem;
   width: 97%;
   font-size: 1.6rem;
   margin-left: auto;
@@ -395,7 +395,8 @@ hr {
 #timetable-grid {
   width: 87vw;
   margin: auto;
-  padding: 0.75rem;
+  padding: 1.7rem;
+  padding-bottom: 1.75rem;
   border-radius: 2px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -550,6 +551,13 @@ hr {
 
 #about {
   grid-area: about;
+  padding: 1.75rem;
+}
+
+#about-subtitle {
+  padding-top: 0.75rem;
+  padding-bottom: 0.25rem;
+  text-align: center;
 }
 
 #about-text {
@@ -559,12 +567,18 @@ hr {
   text-align-last: center;
 }
 
+#our-call {
+  grid-area: our-call;
+  padding: 1.75rem;
+}
+
 #our-call-title {
   text-align: center;
 }
 
 #our-call-subtitle {
-  margin-bottom: 0.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.25rem;
   text-align: center;
 }
 
