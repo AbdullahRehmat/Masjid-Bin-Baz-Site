@@ -6,7 +6,7 @@ author: Admin
 
 date: 02-01-2001
 
-_Taken from the paper ‘Ash-Sharaq Al-Awsat’ 6 July 2006_
+_The following was taken from the paper ‘Ash-Sharaq Al-Awsat’ 6 July 2006_
 
 At this time last year a great evil took place. It visibly affected peoples’ wealth and lives, and injured the image of Islam and the Muslims throughout the whole world. This time last year attacks were made against the London underground system and (London) buses and explosions went off. Tens of people died and were injured, as a result of these (actions).
 
