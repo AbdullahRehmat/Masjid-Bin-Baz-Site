@@ -1,6 +1,7 @@
 import os
 import re
 import sys
+import json
 from dotenv import load_dotenv
 from flask_wtf import FlaskForm
 from flask_frozen import Freezer
@@ -39,6 +40,7 @@ load_dotenv()
 # Flask Server Config
 app.secret_key = os.environ.get("FLASK_SECRET_KEY")
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
+app.config["JSON_PLAYLISTS"] = os.environ.get("JSON_PLAYLISTS")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["TIMETABLE_FOLDER"] = os.environ.get("TIMETABLE_FOLDER")
 app.config["ARTICLE_FOLDER"] = os.environ.get("ARTICLE_FOLDER")
@@ -50,6 +52,9 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = "login"
 
+# Soundcloud Database Config
+with open(app.config["JSON_PLAYLISTS"]) as f:
+    json_playlists = json.load(f)
 
 class User(UserMixin, db.Model):
     __tablename__ = "user"
@@ -155,7 +160,7 @@ def article(name):
 
 @app.route("/audio")
 def audio():
-    return render_template("public/audio.html")
+    return render_template("public/audio.html", data=json_playlists)
 
 
 @app.route("/donate")
