@@ -475,14 +475,12 @@ hr {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem 1rem;
-  grid-template-areas:
-    "mixlr mixlr"
-    "sc-a sc-b"
-    "sc-c sc-d";
 }
 
 #mixlr {
   grid-area: mixlr;
+  grid-column: 1 / span 2;
+  grid-row: 1;
 }
 
 #mixlr-embed iframe {
@@ -492,10 +490,6 @@ hr {
 
 .soundcloud-embed iframe {
   height: 35vh;
-}
-
-#soundcloud-a {
-  grid-area: sc-a;
 }
 
 /* DONATE PAGE SPECIFIC CSS STYLES */
@@ -976,12 +970,10 @@ footer {
   #audio-grid {
     width: 93vw;
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "mixlr"
-      "sc-a"
-      "sc-b"
-      "sc-c"
-      "sc-d";
+  }
+
+  #mixlr {
+    grid-row: 1;
   }
 
   /* DONATE PAGE SPECIFIC CSS STYLES */
