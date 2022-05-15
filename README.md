@@ -1,8 +1,6 @@
 # Masjid Bin Baz
 
-Official Website for Masjid Abdul Aziz Bin Baz (UK).
-
-Website is written in HTML5 and CSS3. Server is written in Python via the Flask framework.
+Official Website for Masjid Abdul Aziz Bin Baz (London, UK).
 
 
 
@@ -30,7 +28,7 @@ While old timetables will **not** be visible on the site, old download URLs will
 
 
 
-#### Location
+#### Storage Location
 
 ```bash
 ./static/uploads/<timetable>.pdf
@@ -40,11 +38,11 @@ While old timetables will **not** be visible on the site, old download URLs will
 
 ### Articles
 
-Articles should be written in GitHub Markdown syntax and uploaded as a `.md` file.  Articles are automatically formatted and served.  In the case that an article needs to be edited, please contact the developer.
+Articles are to be written in GitHub Markdown syntax and uploaded as a `.md` file.  Articles are automatically formatted and served.  In the case that an article needs to be edited, please contact the developer. Server must be restarted for new articles to be displayed (?).
 
 
 
-#### Location
+#### Storage Location
 
 ```bash
 ./static/articles/<article>.md
@@ -52,15 +50,12 @@ Articles should be written in GitHub Markdown syntax and uploaded as a `.md` fil
 
 
 
-#### Sample Markdown Article:
+#### Sample Article:
 
 ```markdown
 title: ARTICLE TITLE
-
 subtitle: ARTICLE SUBTITLE
-
 author: AUTHORS NAME
-
 date: 01/01/2021
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id aliquet risus feugiat in ante metus dictum. Rhoncus aenean vel elit scelerisque mauris pellentesque.  
@@ -75,9 +70,9 @@ Sit amet commodo nulla facilisi nullam vehicula ipsum a arcu. Pellentesque habit
 
 ### Audio
 
-Audio files are hosted on SoundCloud. Playlist are automatically embedded via Python & Jinja2.
+Audio files are hosted on SoundCloud. Playlists are automatically embedded via a Python & Jinja2 script. Server must be restarted for new playlists to be loaded.
 
-#### Location
+#### Storage Location
 
 ```bash
 ./static/audios/audio.json
@@ -123,16 +118,16 @@ Audio files are hosted on SoundCloud. Playlist are automatically embedded via Py
 
 
 
+## Credits
+
+- Icons sourced from [IconScout]([Icons - Line](https://iconscout.com/unicons/explore/line))
+- Banner image sources from [Unsplash](https://unsplash.com/images)
+
+
+
 ## To Do List
 
 - [ ] Refactor Codebase
 - [ ] Simplify CSS Styles
 - [ ] Improve image formats
 - [ ] Optimise Website For Performance
-
-
-
-## Notes
-
-- Icons sourced from [IconScout]([Icons - Line](https://iconscout.com/unicons/explore/line))
-- Banner image sources from [Unsplash](https://unsplash.com/images)
