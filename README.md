@@ -10,8 +10,6 @@ Website is written in HTML5 and CSS3. Server is written in Python via the Flask 
 
 To run the website on a server:
 
-
-
 ```bash
 cd ./Masjid-Bin-Baz-Site
 
@@ -32,9 +30,25 @@ While old timetables will **not** be visible on the site, old download URLs will
 
 
 
+#### Location
+
+```bash
+./static/uploads/<timetable>.pdf
+```
+
+
+
 ### Articles
 
 Articles should be written in GitHub Markdown syntax and uploaded as a `.md` file.  Articles are automatically formatted and served.  In the case that an article needs to be edited, please contact the developer.
+
+
+
+#### Location
+
+```bash
+./static/articles/<article>.md
+```
 
 
 
@@ -55,6 +69,31 @@ Diam in arcu cursus euismod quis viverra nibh cras. Arcu dui vivamus arcu felis 
   
 Sit amet commodo nulla facilisi nullam vehicula ipsum a arcu. Pellentesque habitant morbi tristique senectus. Tincidunt eget nullam non nisi est sit amet facilisis. Semper feugiat nibh sed pulvinar proin gravida hendrerit lectus. Eget aliquet nibh praesent tristique magna sit. Quam quisque id diam vel.
 
+```
+
+
+
+### Audio
+
+Audio files are hosted on SoundCloud. Playlist are automatically embedded via Python & Jinja2.
+
+#### Location
+
+```bash
+./static/audios/audio.json
+```
+
+
+
+#### File Format
+
+```json
+{
+    "playlists":{
+        "playlist-name": "soundcloud playlist url minus display options",
+        "Sahih Al-Bukhāri": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1267629787"
+    }
+}
 ```
 
 
@@ -86,7 +125,10 @@ Sit amet commodo nulla facilisi nullam vehicula ipsum a arcu. Pellentesque habit
 
 ## To Do List
 
-- 
+- [ ] Refactor Codebase
+- [ ] Simplify CSS Styles
+- [ ] Improve image formats
+- [ ] Optimise Website For Performance
 
 
 
