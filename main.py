@@ -56,6 +56,7 @@ login_manager.login_view = "login"
 with open(app.config["JSON_PLAYLISTS"]) as f:
     json_playlists = json.load(f)
 
+
 class User(UserMixin, db.Model):
     __tablename__ = "user"
     id = db.Column(db.Integer, primary_key=True)
