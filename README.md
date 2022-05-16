@@ -131,3 +131,6 @@ Audio files are hosted on SoundCloud. Playlists are automatically embedded via a
 - [ ] Simplify CSS Styles
 - [ ] Improve image formats
 - [ ] Optimise Website For Performance
+- [ ] Create a method for audios to be reloaded while site is live
+- [ ] Create a method for articles to be reloaded while site is live
+
