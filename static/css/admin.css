@@ -67,13 +67,6 @@ body {
   color: var(--logo--blue);
 }
 
-.grid-item-title-center {
-  font-size: 1.6rem;
-  margin-bottom: 0.25rem;
-  text-align: center;
-  color: var(--logo--blue);
-}
-
 .grid-item-title {
   width: 97%;
   font-size: 1.6rem;
@@ -81,26 +74,6 @@ body {
   margin-right: auto;
   margin-bottom: 0.25rem;
   color: var(--logo--blue);
-}
-
-.grid-item-title a,
-.grid-item-title a {
-  text-decoration: none;
-  color: var(--logo--blue);
-}
-
-.grid-item-title a:hover,
-.grid-item-title a:hover {
-  transition: 0.5s ease-in-out;
-  color: var(--link-hover-color);
-}
-
-.grid-item-subtitle-center {
-  font-size: 1.15rem;
-  margin-bottom: 0.75rem;
-  font-style: italic;
-  font-family: "Lora", serif;
-  text-align: center;
 }
 
 .grid-item-subtitle {
@@ -129,58 +102,6 @@ body {
   color: var(--text-color-primary);
 }
 
-.grid-item-metadata {
-  width: 99.5%;
-  margin-bottom: 0rem;
-  font-size: 0.8rem;
-  text-align: right;
-  color: var(--metadata-color);
-}
-
-.grid-item-signature {
-  text-align: center;
-  font-size: 0.85rem;
-  padding-top: 0.5rem;
-  padding-bottom: 1rem;
-  color: var(--metadata-color);
-}
-
-.lora-bold {
-  font-weight: 600;
-}
-
-.lora-italic {
-  font-style: italic;
-  font-family: "Lora", serif;
-}
-
-.style-arabic-bold {
-  font-family: "Scheherazade New", serif;
-  font-style: normal;
-  font-weight: 700;
-}
-
-.style-arabic-light {
-  font-family: "Scheherazade New", serif;
-  font-style: normal;
-  font-weight: 400;
-}
-
-.style-hadeeth {
-  font-size: 1.1rem;
-  font-style: italic;
-  font-family: "Lora", serif;
-  color: var(--logo--blue);
-}
-
-.style-reporters {
-  font-size: 1rem;
-  font-style: italic;
-  margin-top: 0.75rem;
-  font-family: "Lora", serif;
-  color: var(--metadata-color);
-}
-
 .button-blue {
   width: 40%;
   max-width: 17vw;
@@ -207,33 +128,6 @@ body {
   color: var(--link-hover-color);
 }
 
-.button-read-more {
-  text-align: center;
-  font-size: 1rem;
-  font-style: italic;
-  font-family: "Lora", serif;
-  font-weight: 600;
-}
-
-.button-read-more > a {
-  text-decoration: none;
-  color: var(--text-color-primary);
-}
-
-.button-read-more a:hover {
-  transition: 0.5s ease-in-out;
-  color: var(--logo--blue);
-}
-
-iframe {
-  width: 100%;
-  border-radius: 2px;
-  outline: var(--grid-element-outline) solid 1px;
-}
-
-img {
-  border-radius: 2px;
-}
 /* ADMIN LOGIN + REGISTER PAGE SPECIFIC CSS STYLES */
 #login-form,
 #register-form {
