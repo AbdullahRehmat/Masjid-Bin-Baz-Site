@@ -37,24 +37,32 @@ freezer = Freezer(app)
 app.config.from_object(__name__)
 load_dotenv()
 
-# Flask Server Config
+# Flask Server Configuration
 app.secret_key = os.environ.get("FLASK_SECRET_KEY")
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
-app.config["JSON_PLAYLISTS"] = os.environ.get("JSON_PLAYLISTS")
+app.config["AUDIO_FOLDER"] = os.environ.get("AUDIO_FOLDER")
+app.config["JSON_PLAYLISTS"] = None
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["TIMETABLE_FOLDER"] = os.environ.get("TIMETABLE_FOLDER")
 app.config["ARTICLE_FOLDER"] = os.environ.get("ARTICLE_FOLDER")
 app.config["BOTS_FOLDER"] = os.environ.get("BOTS_FOLDER")
+
+# Audio Configuration
+def load_audios():
+    with open(app.config["AUDIO_FOLDER"]) as f:
+        app.config["JSON_PLAYLISTS"] = json.load(f)
+
+    return None
+
+
+# Pull JSON From Audio File
+load_audios()
 
 # Database Config
 db = SQLAlchemy(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = "login"
-
-# Soundcloud Database Config
-with open(app.config["JSON_PLAYLISTS"]) as f:
-    json_playlists = json.load(f)
 
 
 class User(UserMixin, db.Model):
@@ -125,7 +133,7 @@ def index():
 
 
 @app.route("/timetable")
-def timtable():
+def timetable():
     t = TimetableConfig.query.filter_by(id=1).first()
     if t:
         timetable_pdf = t.pdf
@@ -161,7 +169,7 @@ def article(name):
 
 @app.route("/audio")
 def audio():
-    return render_template("public/audio.html", data=json_playlists)
+    return render_template("public/audio.html", data=app.config["JSON_PLAYLISTS"])
 
 
 @app.route("/donate")
@@ -303,6 +311,24 @@ def admin_upload_file(category):
 
         else:
             return redirect(url_for("page_not_found"))
+
+    else:
+        return redirect(url_for("page_not_found"))
+
+
+@app.route("/admin/reload/<path>")
+@login_required
+def reload_content(path):
+    if path == "audio":
+        # Reload SoundCloud Playlist URLs
+        load_audios()
+        return redirect(url_for("admin_portal"))
+
+    elif path == "articles":
+        # Freeze Markdown Files -> HTML
+        # freezer.freeze()
+        # return redirect(url_for("admin_portal"))
+        pass
 
     else:
         return redirect(url_for("page_not_found"))
