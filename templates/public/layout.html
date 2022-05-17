@@ -68,19 +68,11 @@
   <body>
     <section id="intro">
       <div id="logo">
-        <!-- <a href="/">
-          <img
-            id="logo-img"
-            src="{{url_for('static', filename='images/Logo.avif')}}"
-            alt="Logo"
-          /> -->
-
           <picture>
             <source id="logo-img" type="image/avif" srcset="{{url_for('static', filename='images/Logo.avif')}}">
               <img id="logo-img" alt="Fallback Image: AVIF Not Supported" src="{{url_for('static', filename='images/Logo.webp')}}">
             </source>
           </picture>
-
         </a>
       </div>
 
