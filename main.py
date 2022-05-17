@@ -61,6 +61,7 @@ def strip_tags(text):
 
     return safe_text
 
+
 # Database Config
 db = SQLAlchemy(app)
 login_manager = LoginManager()
@@ -128,6 +129,8 @@ def index():
     articles = [a for a in flatpages if a.path.startswith(ARTCICLE_DIR)]
     articles.sort(key=lambda item: item["date"], reverse=True)
 
+    # strip_tags - Passes Tag Stripping Function To Jinja2 Script
+
     return render_template(
         "public/index.html", articles=articles, strip_tags=strip_tags
     )
@@ -153,6 +156,8 @@ def timetable():
 def articles():
     articles = [a for a in flatpages if a.path.startswith(ARTCICLE_DIR)]
     articles.sort(key=lambda item: item["date"], reverse=True)
+
+    # strip_tags - Passes Tag Stripping Function To Jinja2 Script
 
     return render_template(
         "public/articles.html", articles=articles, strip_tags=strip_tags
