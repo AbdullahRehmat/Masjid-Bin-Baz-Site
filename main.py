@@ -47,16 +47,19 @@ app.config["TIMETABLE_FOLDER"] = os.environ.get("TIMETABLE_FOLDER")
 app.config["ARTICLE_FOLDER"] = os.environ.get("ARTICLE_FOLDER")
 app.config["BOTS_FOLDER"] = os.environ.get("BOTS_FOLDER")
 
-# Audio Configuration
-def load_audios():
+# Playlist Name + URL Loader
+def load_playlists():
     with open(app.config["AUDIO_FOLDER"]) as f:
         app.config["JSON_PLAYLISTS"] = json.load(f)
 
     return None
 
 
-# Pull JSON From Audio File
-load_audios()
+# Article HTML Tag Stripper
+def strip_tags(text):
+    safe_text = re.sub(re.compile("<.*?>"), "", text)
+
+    return safe_text
 
 # Database Config
 db = SQLAlchemy(app)
@@ -125,11 +128,9 @@ def index():
     articles = [a for a in flatpages if a.path.startswith(ARTCICLE_DIR)]
     articles.sort(key=lambda item: item["date"], reverse=True)
 
-    def strip_tags(text):
-        clean = re.compile("<.*?>")
-        return re.sub(clean, "", text)
-
-    return render_template("public/index.html", articles=articles, st=strip_tags)
+    return render_template(
+        "public/index.html", articles=articles, strip_tags=strip_tags
+    )
 
 
 @app.route("/timetable")
@@ -153,11 +154,9 @@ def articles():
     articles = [a for a in flatpages if a.path.startswith(ARTCICLE_DIR)]
     articles.sort(key=lambda item: item["date"], reverse=True)
 
-    def strip_tags(text):
-        clean = re.compile("<.*?>")
-        return re.sub(clean, "", text)
-
-    return render_template("public/articles.html", articles=articles, st=strip_tags)
+    return render_template(
+        "public/articles.html", articles=articles, strip_tags=strip_tags
+    )
 
 
 @app.route("/article/<name>/")
@@ -321,7 +320,7 @@ def admin_upload_file(category):
 def reload_content(path):
     if path == "audio":
         # Reload SoundCloud Playlist URLs
-        load_audios()
+        load_playlists()
         return redirect(url_for("admin_portal"))
 
     elif path == "articles":
@@ -355,6 +354,12 @@ def page_not_found(e):
 
 
 if __name__ == "__main__":
+
+    # Pull Playlist URLS From JSON File
+    # & Save to App Config Variable
+    load_playlists()
+
+    # Run Application
     if len(sys.argv) > 1 and sys.argv[1] == "build":
         freezer.freeze()
     else:
