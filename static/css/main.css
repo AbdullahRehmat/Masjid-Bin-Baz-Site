@@ -64,7 +64,7 @@ body {
 }
 
 #logo-img {
-  width: 35vw;
+  width: 30vw;
 }
 
 #social-media-bar {
@@ -152,7 +152,6 @@ body {
 }
 
 .grid-item-title-center {
-  padding-top: 0.35rem;
   font-size: 1.6rem;
   margin-bottom: 0.25rem;
   text-align: center;
@@ -336,7 +335,7 @@ hr {
   grid-template-columns: 35vw 1fr 23vw;
   gap: 1rem 1rem;
   grid-template-areas:
-    "notice-one notice-one donate-widget"
+    "notice-bar notice-bar donate-widget"
     "home-articles home-articles donate-widget"
     "home-articles home-articles twitter-feed"
     "home-articles home-articles twitter-feed"
@@ -344,16 +343,12 @@ hr {
     "notice-two notice-two twitter-feed";
 }
 
-#notice-one {
-  grid-area: notice-one;
+#notice-bar {
+  grid-area: notice-bar;
 }
 
 #donate-widget {
   grid-area: donate-widget;
-}
-
-#paypal-container {
-  height: 70%;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -362,17 +357,18 @@ hr {
 }
 
 #paypal-container input {
-  width: 45%;
-  padding: 0.75rem;
+  width: 40%;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+#twitter-feed {
+  grid-area: twitter-feed;
+  padding-bottom: 1.75rem;
 }
 
 #twitter-feed-header {
   padding-bottom: 0.35rem;
-}
-
-#twitter-feed {
-  padding-bottom: 1.75rem;
-  grid-area: twitter-feed;
 }
 
 #home-articles {
@@ -380,6 +376,7 @@ hr {
 }
 
 .home-article {
+  padding-top: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -444,14 +441,7 @@ hr {
 }
 
 /* ARTICLES PAGE SPECIFIC CSS STYLES */
-#article-grid {
-  width: 87vw;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem 1rem;
-}
-
+#article-grid,
 #articles-grid {
   width: 87vw;
   margin: auto;
@@ -653,7 +643,7 @@ hr {
 
 /* FOOTER SPECIFIC CSS STYLES */
 footer {
-  padding: 0.75rem;
+  padding: 2rem;
   margin-top: 2rem;
   min-height: 5vh;
   text-align: center;
@@ -672,7 +662,7 @@ footer {
 }
 
 .footer-item {
-  padding: 0.1rem;
+  padding: 0.25rem;
   font-size: 0.85rem;
 }
 
@@ -934,6 +924,7 @@ footer {
   }
 
   #twitter-widget-0 {
+    border: 0;
     height: fit-content !important;
   }
 
