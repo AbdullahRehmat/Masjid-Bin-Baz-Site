@@ -899,7 +899,8 @@ footer {
 
   /* TIMETABLE PAGE SPECIFIC CSS STYLES */
   #timetable-grid {
-    width: 85.75vw;
+    /* width: 85.75vw; */
+    width: calc(93vw - 3.4rem);
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 4vh 1fr;
     grid-template-areas:
@@ -1022,7 +1023,7 @@ footer {
 
   /* TIMETABLE PAGE SPECIFIC CSS STYLES */
   #timetable-grid {
-    width: 84.75vw;
+    width: calc(93vw - 3.4rem);
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 5vh 1fr;
     grid-template-areas:
