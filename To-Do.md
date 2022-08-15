@@ -10,9 +10,10 @@
   - [ ] Create updated Twitter Card
   - [x] Fix Site-wide Copywriting
   - [x] Make Site Responsive
-  - [ ] Have Private + Cookie Policy Written
+  - [ ] Write Private + Cookie Policy
   - [x] Build `Robots.txt` File
   - [x] Build `XML` File
+  - [x] Host Fonts Locally On Server
 
 
 
