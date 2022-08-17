@@ -88,7 +88,7 @@ body {
   padding: 0.5rem;
   position: relative;
   background-size: cover;
-  background-image: url(../images/Background-02.avif);
+  background-image: url(../images/Header-Background.webp);
   background-position: center;
 }
 
@@ -198,8 +198,7 @@ body {
   padding-top: 0.5rem;
   width: 97%;
   font-size: var(--font-size-title);
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   margin-bottom: 0.25rem;
   color: var(--logo--blue);
 }
@@ -227,8 +226,7 @@ body {
 .grid-item-subtitle {
   width: 97%;
   font-size: var(--font-size-subtitle);
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   margin-bottom: 0.75rem;
   font-style: italic;
   font-family: "Lora", serif;
@@ -236,8 +234,7 @@ body {
 
 .grid-item-text {
   width: 97%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   margin-top: 0.25rem;
   margin-bottom: 1rem;
   font-size: var(--font-size-text);
@@ -877,7 +874,7 @@ footer {
     --font-size-title: 1.5rem;
     --font-size-subtitle: 1.1rem;
     --font-size-text: 1rem;
-    --font-size-metadata: 0.8rem;
+    --font-size-metadata: 0.75rem;
     --font-size-signature: 0.85rem;
   }
 
@@ -1001,7 +998,7 @@ footer {
     --font-size-title: 1.3rem;
     --font-size-subtitle: 1.1rem;
     --font-size-text: 1rem;
-    --font-size-metadata: 0.8rem;
+    --font-size-metadata: 0.75rem;
     --font-size-signature: 0.85rem;
   }
 
