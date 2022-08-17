@@ -1,4 +1,11 @@
-{% extends "public/layout.html" %} {% block content %}
+{% extends "public/layout.html" %} 
+
+{% block social_media_metadata %} 
+<meta property="og:url" content="https://www.masjidbinbaz.com/" />
+<meta property="og:title" content="Masjid Abdul-Aziz Bin Bāz" />
+{% endblock %}
+
+{% block content %}
 <section id="home-grid">
   <div class="grid-item grid-notice" id="notice-bar">
     <i class="uil uil-exclamation-circle">

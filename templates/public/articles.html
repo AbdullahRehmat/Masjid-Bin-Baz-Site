@@ -1,4 +1,11 @@
-{% extends "public/layout.html" %} {% block content %}
+{% extends "public/layout.html" %} 
+
+{% block social_media_metadata %} 
+<meta property="og:url" content="https://www.masjidbinbaz.com/articles" />
+<meta property="og:title" content="Masjid Abdul-Aziz Bin Bāz - Articles" />
+{% endblock %}
+
+{% block content %}
 
 <section id="articles-grid">
   {% for article in articles %}
@@ -48,4 +55,10 @@
   {% endfor %}
 </section>
 
+{% endblock %}
+
+{% block footer_notice %} 
+<p>
+The Copying & Distribution Of Articles Is Prohibited. Short Excerpts May Be Shared Freely Alongside URL.
+</p>
 {% endblock %}

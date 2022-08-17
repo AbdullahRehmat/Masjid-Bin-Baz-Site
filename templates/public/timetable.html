@@ -1,4 +1,11 @@
-{% extends "public/layout.html" %} {% block content %}
+{% extends "public/layout.html" %} 
+
+{% block social_media_metadata %} 
+<meta property="og:url" content="https://www.masjidbinbaz.com/timetable" />
+<meta property="og:title" content="Masjid Abdul-Aziz Bin Bāz - Prayer Timetable" />
+{% endblock %}
+
+{% block content %}
 
 <section id="timetable-grid">
   <div id="timetable-title" class="grid-item-title-center">Timetable</div>
