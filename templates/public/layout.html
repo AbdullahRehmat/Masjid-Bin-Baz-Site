@@ -8,19 +8,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Al-Athariyyah" />
-    <meta name="description" content="Masjid Abdul-Aziz Bin Baz | East Road | Stratford | London | E15 3QR"/>
-    <meta name="keywords" content="Salafi Masjid Mosque London Al-Athariyyah Sunnah"/>
+    <meta
+      name="description"
+      content="Masjid Abdul-Aziz Bin Baz | East Road | Stratford | London | E15 3QR"
+    />
+    <meta
+      name="keywords"
+      content="Salafi Masjid Mosque London Al-Athariyyah Sunnah"
+    />
     <meta name="theme-color" content="#305c77" />
 
     <meta property="og:locale" content="en_GB" />
     {% block social_media_metadata %} {% endblock %}
-    <meta property="og:description" content="East Road | Stratford | London | E15 3QR" />
+    <meta
+      property="og:description"
+      content="East Road | Stratford | London | E15 3QR"
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:image" src="{{url_for('static', filename='images/Twitter-Card.webp')}}" />
+    <meta
+      property="og:image"
+      src="{{url_for('static', filename='images/Twitter-Card.webp')}}"
+    />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@Athariyyah" />
-  
+
     <!-- Internal Dependencies -->
     <link
       rel="icon"
@@ -33,6 +45,8 @@
     />
 
     <!-- External Dependencies -->
+    {% block external_dependencies %} {% endblock %}
+
     <link
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v3.0.1/css/line.css"
@@ -40,11 +54,6 @@
   </head>
 
   <body>
-    <!-- <div class="cookie-banner js-cookie-banner">
-      <i class="uil uil-exclamation-circle"></i> We Use Cookies...
-      <button class="js-cookie-dismiss">Accept</button>
-   </div> -->
-
     <section id="intro">
       <div id="logo">
         <picture>

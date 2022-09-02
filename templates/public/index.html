@@ -1,11 +1,7 @@
-{% extends "public/layout.html" %} 
-
-{% block social_media_metadata %} 
+{% extends "public/layout.html" %} {% block social_media_metadata %}
 <meta property="og:url" content="https://www.masjidbinbaz.com/" />
 <meta property="og:title" content="Masjid Abdul-Aziz Bin Bāz" />
-{% endblock %}
-
-{% block content %}
+{% endblock %} {% block content %}
 <section id="home-grid">
   <div class="grid-item grid-notice" id="notice-bar">
     <i class="uil uil-exclamation-circle">
@@ -70,7 +66,8 @@
       <div id="home-article-text" class="grid-item-text">
         <a
           href="{{ url_for('article', name=article.path.replace('articles/', '')) }}"
-          >{{ " ".join(strip_tags(article.html[3:]).split()[:100]) + "..."|safe }}</a
+          >{{ " ".join(strip_tags(article.html[3:]).split()[:100]) + "..."|safe
+          }}</a
         >
       </div>
       <div id="home-article-metadata" class="grid-item-metadata">
