@@ -61,30 +61,9 @@ body {
   height: 100%;
 }
 
-/* .cookie-banner {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  color: white;
-  background-color: black;
-  padding: 20px;
-}
-
-.js-cookie-dismiss {
-  height: 1.75rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  margin-left: 0.5rem;
-  border-radius: 2px;
-  text-align: center;
-  color: #ffffff;
-  background-color: #000000;
-  border: 1.35px solid #ffffff;
-} */
-
 #intro {
   margin: 0;
-  height: 45vh;
+  height: 50vh;
   padding: 0.5rem;
   position: relative;
   background-size: cover;
@@ -245,6 +224,11 @@ body {
 .grid-item-text a {
   text-decoration: none;
   color: var(--text-color-primary);
+}
+
+.grid-item-text::first-letter {
+  color: var(--logo--blue);
+  font-size: calc(var(--font-size-text) + 0.55rem);
 }
 
 .grid-item-metadata {
@@ -493,8 +477,15 @@ hr {
 }
 
 /* ARTICLES PAGE SPECIFIC CSS STYLES */
-#article-grid,
 #articles-grid {
+  width: 87vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1rem;
+}
+
+#article-grid {
   width: 87vw;
   margin: auto;
   display: grid;
@@ -508,6 +499,12 @@ hr {
   margin-bottom: 0.75rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+#article-title,
+#article-subtitle,
+#article-intro {
+  width: 100%;
 }
 
 /* AUDIO PAGE SPECIFIC CSS STYLES */
@@ -554,6 +551,11 @@ hr {
 
 .donate-text {
   text-align: center;
+}
+
+.donate-text::first-letter {
+  color: var(--font-size-text);
+  font-size: var(--font-size-text);
 }
 
 #donate-paypal {
@@ -1000,6 +1002,10 @@ footer {
     --font-size-text: 1rem;
     --font-size-metadata: 0.75rem;
     --font-size-signature: 0.85rem;
+  }
+
+  #intro {
+    height: 55vh;
   }
 
   #logo-img {
