@@ -7,7 +7,7 @@
   - [x] Create Flask Server
   - [x] Implement Flask Server security
   - [x] Add Meta-data tags for Twitter Integration
-  - [ ] Create updated Twitter Card
+  - [x] Create updated Twitter Card
   - [x] Fix Site-wide Copywriting
   - [x] Make Site Responsive
   - [ ] Write Private + Cookie Policy
