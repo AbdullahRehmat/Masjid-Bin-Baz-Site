@@ -78,7 +78,7 @@ body {
 
 .grid-item-subtitle {
   width: 97%;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0.75rem;
@@ -102,20 +102,20 @@ body {
   color: var(--text-color-primary);
 }
 
-.button-blue {
-  width: 40%;
-  max-width: 17vw;
+.button-grey {
+  display: inline-block;
+  width: 35%;
+  max-width: 7vw;
   margin: auto;
-  padding: 0.6rem;
-  font-size: 1.1rem;
-  border-radius: 2px;
+  padding: 0.45rem;
+  font-size: 0.85rem;
+  border-radius: 5px;
   text-align: center;
-  margin-bottom: 1.5rem;
-  color: #ffffff;
-  background-color: #305c77;
+  background-color: #e9e9ed;
+  outline: 1px solid #8f8f9d;
 }
 
-.button-blue > a {
+.button-grey > a {
   width: 100%;
   display: block;
   color: #ffffff;
@@ -123,7 +123,7 @@ body {
   text-align-last: center;
 }
 
-.button-blue > a:hover {
+.button-grey > a:hover {
   transition: 0.5s ease-in-out;
   color: var(--link-hover-color);
 }
