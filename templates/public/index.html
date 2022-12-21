@@ -38,11 +38,9 @@
     <div id="twitter-feed-header" class="grid-item-title">Twitter</div>
     <a
       class="twitter-timeline"
-      data-height="95.5%"
-      data-width="100%"
-      data-dnt="true"
-      data-chrome="noheader nofooter noborders transparent"
       href="https://twitter.com/Athariyyah?ref_src=twsrc%5Etfw"
+      data-height="750"
+      data-chrome="noheader nofooter noborders noscrollbar"
     ></a>
     <script
       async
@@ -66,7 +64,7 @@
       <div id="home-article-text" class="grid-item-text">
         <a
           href="{{ url_for('article', name=article.path.replace('articles/', '')) }}"
-          >{{ " ".join(strip_tags(article.html[3:]).split()[:100]) + "..."|safe
+          >{{ " ".join(tag_stripper(article.html[3:]).split()[:100]) + "..."|safe
           }}</a
         >
       </div>
