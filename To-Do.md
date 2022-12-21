@@ -111,11 +111,12 @@
 
 
 
-- [x] Database
+- [ ] Database
   - [x] Research PythonAnywhere DB options - SQlite?
   - [x] Create & connect Database
   - [x] Store User Data
   - [x] Store Config Data
+  - [ ] Store Login & Logout Times + IP Addresses
 
 
 
