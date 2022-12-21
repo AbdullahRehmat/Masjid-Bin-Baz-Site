@@ -28,7 +28,7 @@ DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = ".md"
 FLATPAGES_ROOT = "static"
-ARTCICLE_DIR = "articles"
+ARTICLE_DIR = "articles"
 
 
 app = Flask(__name__)
@@ -56,7 +56,7 @@ def load_playlists():
 
 
 # Article HTML Tag Stripper
-def strip_tags(text):
+def tag_stripper(text):
     safe_text = re.sub(re.compile("<.*?>"), "", text)
 
     return safe_text
@@ -126,13 +126,13 @@ class UploadArticle(FlaskForm):
 @app.route("/")
 @app.route("/index")
 def index():
-    articles = [a for a in flatpages if a.path.startswith(ARTCICLE_DIR)]
+    articles = [a for a in flatpages if a.path.startswith(ARTICLE_DIR)]
     articles.sort(key=lambda item: item["date"], reverse=True)
 
-    # strip_tags - Passes Tag Stripping Function To Jinja2 Script
+    # tag_stripper() -> Passes Tag Stripping Function To Jinja2 Script
 
     return render_template(
-        "public/index.html", articles=articles, strip_tags=strip_tags
+        "public/index.html", articles=articles, tag_stripper=tag_stripper
     )
 
 
@@ -154,19 +154,19 @@ def timetable():
 
 @app.route("/articles/")
 def articles():
-    articles = [a for a in flatpages if a.path.startswith(ARTCICLE_DIR)]
+    articles = [a for a in flatpages if a.path.startswith(ARTICLE_DIR)]
     articles.sort(key=lambda item: item["date"], reverse=True)
 
-    # strip_tags - Passes Tag Stripping Function To Jinja2 Script
+    # tag_stripper -> Passes Tag Stripping Function To Jinja2 Script
 
     return render_template(
-        "public/articles.html", articles=articles, strip_tags=strip_tags
+        "public/articles.html", articles=articles, tag_stripper=tag_stripper
     )
 
 
 @app.route("/article/<name>/")
 def article(name):
-    path = "{}/{}".format(ARTCICLE_DIR, name)
+    path = "{}/{}".format(ARTICLE_DIR, name)
     article = flatpages.get_or_404(path)
     return render_template("public/article.html", article=article)
 
