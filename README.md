@@ -102,7 +102,6 @@ Audio files are hosted on SoundCloud. Playlists are automatically embedded via a
 - SQLite Database
 
 
-
 ### Hosting
 
 - Repository - [GitHub](github.com/abdullahrehmat/masjid-bin-baz-v2)
