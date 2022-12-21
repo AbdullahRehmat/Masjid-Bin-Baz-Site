@@ -1,10 +1,8 @@
 import os
 import re
-import sys
 import json
 from dotenv import load_dotenv
 from flask_wtf import FlaskForm
-from flask_frozen import Freezer
 from flask_flatpages import FlatPages
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user
@@ -24,16 +22,14 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from pdf2image import convert_from_path
 
 
-DEBUG = True
-FLATPAGES_AUTO_RELOAD = DEBUG
+# FLATPAGES Config
 FLATPAGES_EXTENSION = ".md"
 FLATPAGES_ROOT = "static"
 ARTICLE_DIR = "articles"
 
-
+# FLASK App Config
 app = Flask(__name__)
 flatpages = FlatPages(app)
-freezer = Freezer(app)
 app.config.from_object(__name__)
 load_dotenv()
 
@@ -53,6 +49,11 @@ def load_playlists():
         app.config["JSON_PLAYLISTS"] = json.load(f)
 
     return None
+
+
+# Load All Markdown Articles
+def load_articles():
+    FlatPages.reload()
 
 
 # Article HTML Tag Stripper
@@ -248,7 +249,7 @@ def portal_index():
 
     return render_template(
         "portal/portal-index.html",
-        name="Portal",
+        name="Dashboard",
         form_timetable=form_timetable,
         form_article=form_article,
     )
@@ -329,10 +330,10 @@ def reload_content(path):
         return redirect(url_for("portal_index"))
 
     elif path == "articles":
-        # Freeze Markdown Files -> HTML
-        # freezer.freeze()
-        # return redirect(url_for("portal_index"))
-        pass
+        # Reload Markdown Articles
+        # load_articles()
+        # FlatPages.reload()
+        return redirect(url_for("portal_index"))
 
     else:
         return redirect(url_for("page_not_found"))
@@ -360,12 +361,8 @@ def page_not_found(e):
 
 if __name__ == "__main__":
 
-    # Pull Playlist URLS From JSON File
-    # & Save to App Config Variable
+    # Load SoundCloud Playlist URLs
     load_playlists()
 
     # Run Application
-    if len(sys.argv) > 1 and sys.argv[1] == "build":
-        freezer.freeze()
-    else:
-        app.run(debug=True, host="0.0.0.0", port=5000)
+    app.run(debug=True, host="0.0.0.0", port=5000)
