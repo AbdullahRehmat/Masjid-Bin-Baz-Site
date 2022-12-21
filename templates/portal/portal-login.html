@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin - Login</title>
+    <title>Portal - Login</title>
 
     <!-- Internal Dependencies -->
     <link
       rel="stylesheet"
-      href="{{url_for('static', filename='css/admin.css')}}"
+      href="{{url_for('static', filename='css/portal.css')}}"
     />
 
     <!-- External Dependencies -->
@@ -21,7 +21,7 @@
   </head>
   <body>
     <div id="login-form">
-      <form method="POST" autocomplete="off" action="/admin/login">
+      <form method="POST" autocomplete="off" action="/portal/login">
         {{form.csrf_token }} {{form.username(class="login-field")}}
         {{form.password(class="login-field")}}
         <input id="login-button" type="submit" value="Enter" />

@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin - Register</title>
+    <title>Portal - Register</title>
 
     <!-- Internal Dependencies -->
     <link
       rel="stylesheet"
-      href="{{url_for('static', filename='css/admin.css')}}"
+      href="{{url_for('static', filename='css/portal.css')}}"
     />
 
     <!-- External Dependencies -->
@@ -21,7 +21,7 @@
   </head>
   <body>
     <div id="register-form">
-      <form method="POST" autocomplete="off" action="/admin/register">
+      <form method="POST" autocomplete="off" action="/portal/register">
         {{form.csrf_token }} {{form.username(class="register-field")}}
         {{form.email(class="register-field")}}
         {{form.password(class="register-field")}}

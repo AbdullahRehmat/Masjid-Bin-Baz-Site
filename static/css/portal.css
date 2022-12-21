@@ -128,7 +128,7 @@ body {
   color: var(--link-hover-color);
 }
 
-/* ADMIN LOGIN + REGISTER PAGE SPECIFIC CSS STYLES */
+/* PORTAL LOGIN + REGISTER PAGE SPECIFIC CSS STYLES */
 #login-form,
 #register-form {
   top: 50%;
@@ -177,8 +177,8 @@ body {
   background-color: #d9d9d9;
 }
 
-/* ADMIN LAYOUT PAGE SPECIFIC CSS STYLES */
-#admin-header {
+/* PORTAL LAYOUT PAGE SPECIFIC CSS STYLES */
+#portal-header {
   height: 7vh;
   margin-bottom: 2rem;
   padding: 1.5rem;
@@ -186,23 +186,23 @@ body {
   outline: var(--grid-element-outline) 1px solid;
 }
 
-#admin-header-text {
+#portal-header-text {
   font-size: 1.5rem;
   color: var(--text-color-secondary);
 }
-#admin-grid {
+#portal-grid {
   width: 90vw;
   margin: auto;
   display: grid;
   grid-template-columns: 15vw 1fr;
   gap: 0.75rem 0.75rem;
   grid-template-areas:
-    "admin-sidebar admin-content"
-    "admin-sidebar admin-content";
+    "portal-sidebar portal-content"
+    "portal-sidebar portal-content";
 }
 
-#admin-sidebar {
-  grid-area: admin-sidebar;
+#portal-sidebar {
+  grid-area: portal-sidebar;
   padding: 1.5rem;
   margin-bottom: 0.75rem;
   border-radius: 2px;
@@ -212,37 +212,37 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.002);
 }
 
-#admin-sidebar div {
+#portal-sidebar div {
   color: var(--text-color-secondary);
 }
 
-#admin-sidebar-title {
+#portal-sidebar-title {
   margin-bottom: 2rem;
   font-size: 1.3rem;
 }
 
-#admin-sidebar-links ul {
+#portal-sidebar-links ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
-#admin-sidebar-links li {
+#portal-sidebar-links li {
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
 }
 
-#admin-sidebar-links li a {
+#portal-sidebar-links li a {
   text-decoration: none;
   color: var(--text-color-secondary);
 }
 
-#admin-sidebar-links li a:hover {
+#portal-sidebar-links li a:hover {
   color: var(--link-hover-color);
 }
 
-/* ADMIN PORTAL PAGE SPECIFIC CSS STYLES */
-#portal-grid {
+/* PORTAL INDEX PAGE SPECIFIC CSS STYLES */
+#portal-index-grid {
   width: 1fr;
   margin: auto;
   display: grid;

@@ -1,6 +1,6 @@
-{% extends "admin/admin-layout.html" %} {% block content %}
+{% extends "portal/portal-layout.html" %} {% block content %}
 
-<section id="portal-grid">
+<section id="portal-index-grid">
   <div id="portal-analytics" class="grid-item">
     <div id="analytics-title" class="grid-item-title">Analytics</div>
     <div id="analytics-subtitle" class="grid-item-subtitle">
@@ -21,7 +21,7 @@
     <div id="timetable-form" class="grid-item-content upload-form">
       <form
         method="POST"
-        action="{{ url_for('admin_upload_file', category='timetable') }}"
+        action="{{ url_for('portal_upload_file', category='timetable') }}"
         enctype="multipart/form-data"
       >
         {{form_timetable.csrf_token }}
@@ -39,7 +39,7 @@
     <div id="article-form" class="grid-item-content upload-form">
       <form
         method="POST"
-        action="{{ url_for('admin_upload_file', category='article')}}"
+        action="{{ url_for('portal_upload_file', category='article')}}"
         enctype="multipart/form-data"
       >
         {{form_article.csrf_token }} {{form_article.file(class="file-upload")}}
@@ -55,7 +55,7 @@
       Reload Soundcloud Playlists
     </div>
     <div id="audio-text" class="grid-item-text">
-      <a class="button-blue" href="/admin/reload/audio">Reload</a>
+      <a class="button-blue" href="/portal/reload/audio">Reload</a>
     </div>
   </div>
 

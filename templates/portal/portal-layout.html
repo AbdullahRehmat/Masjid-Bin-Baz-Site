@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
-    <title>Admin - {{ name }}</title>
+    <title>Portal - {{ name }}</title>
 
     <!-- Internal Dependencies -->
     <link
       rel="stylesheet"
-      href="{{url_for('static', filename='css/admin.css')}}"
+      href="{{url_for('static', filename='css/portal.css')}}"
     />
     <script src="{{url_for('static', filename='js/app.js')}}"></script>
 
@@ -27,27 +27,27 @@
     />
   </head>
   <body>
-    <section id="admin-header">
-      <div id="admin-header-text">Admin: {{name}}</div>
+    <section id="portal-header">
+      <div id="portal-header-text">Portal: {{name}}</div>
     </section>
 
-    <section id="admin-grid">
-      <div id="admin-sidebar">
-        <div id="admin-sidebar-title">User</div>
+    <section id="portal-grid">
+      <div id="portal-sidebar">
+        <div id="portal-sidebar-title">User</div>
 
-        <div id="admin-sidebar-links">
+        <div id="portal-sidebar-links">
           <ul>
-            <li class="sidebar-link"><a href="/admin/portal">Portal</a></li>
+            <li class="sidebar-link"><a href="/portal/portal">Portal</a></li>
             <li class="sidebar-link"><a href="#portal-timetable">Timetables</a></li>
             <li class="sidebar-link"><a href="#portal-article">Articles</a></li>
             <li class="sidebar-link"><a href="#portal-audio">Audio</a></li>
             <li class="sidebar-link"><a href=""><br /</a></li>
-            <li class="sidebar-link"><a href="/admin/logout">Logout</a></li>
+            <li class="sidebar-link"><a href="/portal/logout">Logout</a></li>
           </ul>
         </div>
       </div>
 
-      <div id="admin-content">{% block content %} {% endblock %}</div>
+      <div id="portal-content">{% block content %} {% endblock %}</div>
     </section>
 
     <footer>

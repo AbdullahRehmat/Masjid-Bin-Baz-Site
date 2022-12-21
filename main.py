@@ -204,7 +204,7 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 
-@app.route("/admin/login", methods=("GET", "POST"))
+@app.route("/portal/login", methods=("GET", "POST"))
 def login():
     form = LoginForm()
 
@@ -213,16 +213,16 @@ def login():
         if user:
             if check_password_hash(user.password, form.password.data):
                 login_user(user, remember=False)
-                return redirect(url_for("admin_portal"))
+                return redirect(url_for("portal_index"))
 
-        return redirect(url_for("admin_portal"))
+        return redirect(url_for("portal_index"))
 
-    return render_template("admin/admin-login.html", name="Login", form=form)
+    return render_template("portal/portal-login.html", name="Login", form=form)
 
 
-@app.route("/admin/register", methods=["GET", "POST"])
+@app.route("/portal/register", methods=["GET", "POST"])
 @login_required
-def admin_register():
+def portal_register():
     form = RegisterForm()
 
     if form.validate_on_submit():
@@ -235,34 +235,34 @@ def admin_register():
         db.session.add(new_user)
         db.session.commit()
 
-        return redirect(url_for("admin_portal"))
+        return redirect(url_for("portal_index"))
 
-    return render_template("admin/admin-register.html", form=form)
+    return render_template("portal/portal-register.html", form=form)
 
 
-@app.route("/admin/portal")
+@app.route("/portal")
 @login_required
-def admin_portal():
+def portal_index():
     form_timetable = UploadTimetable()
     form_article = UploadArticle()
 
     return render_template(
-        "admin/admin-portal.html",
+        "portal/portal-index.html",
         name="Portal",
         form_timetable=form_timetable,
         form_article=form_article,
     )
 
 
-@app.route("/admin/articles")
+@app.route("/portal/articles")
 @login_required
-def admin_articles():
-    return render_template("admin/admin-articles.html", name="Article Editor")
+def portal_articles():
+    return render_template("portal/portal-articles.html", name="Article Editor")
 
 
-@app.route("/admin/upload/<category>", methods=["GET", "POST"])
+@app.route("/portal/upload/<category>", methods=["GET", "POST"])
 @login_required
-def admin_upload_file(category):
+def portal_upload_file(category):
 
     if category == "timetable":
         form = UploadTimetable()
@@ -295,7 +295,7 @@ def admin_upload_file(category):
             db.session.add(file_data)
             db.session.commit()
 
-            return redirect(url_for("admin_portal"))
+            return redirect(url_for("portal_index"))
 
         else:
             return redirect(url_for("page_not_found"))
@@ -311,7 +311,7 @@ def admin_upload_file(category):
             article_md = secure_filename(f.filename)
             f.save(os.path.join(upload_dir, article_md))
 
-            return redirect(url_for("admin_portal"))
+            return redirect(url_for("portal_index"))
 
         else:
             return redirect(url_for("page_not_found"))
@@ -320,25 +320,25 @@ def admin_upload_file(category):
         return redirect(url_for("page_not_found"))
 
 
-@app.route("/admin/reload/<path>")
+@app.route("/portal/reload/<path>")
 @login_required
 def reload_content(path):
     if path == "audio":
         # Reload SoundCloud Playlist URLs
         load_playlists()
-        return redirect(url_for("admin_portal"))
+        return redirect(url_for("portal_index"))
 
     elif path == "articles":
         # Freeze Markdown Files -> HTML
         # freezer.freeze()
-        # return redirect(url_for("admin_portal"))
+        # return redirect(url_for("portal_index"))
         pass
 
     else:
         return redirect(url_for("page_not_found"))
 
 
-@app.route("/admin/logout")
+@app.route("/portal/logout")
 @login_required
 def logout():
     logout_user()
